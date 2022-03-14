@@ -15,7 +15,7 @@
 </head>
 
 <body>
-    <section class="navbar">
+    <section class="navbarSection">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="#"><img src="{{ url('website/images/logo.png') }}" alt="" srcset=""></a>
             <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -27,10 +27,10 @@
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <a class="nav-link" href="#">Desktop <span class="sr-only">(current)</span></a>
+                        <a class="nav-link" href="#">Offers <span class="sr-only">(current)</span></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">Laptop</a>
+                        <a class="nav-link" href="#">Laptop Deal</a>
                     </li>
                     <li class="nav-item dropdown">
                         <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -69,7 +69,7 @@
 
     <!-- compare product -->
 
-    <section class="product slider">
+    <section class="product-slider">
         <div class="container-fluid">
             <div class="makeFlex">
                 <div class="carousel" data-ride="carousel">
@@ -103,7 +103,49 @@
                         <br>
                         <input type="submit" style="color:white;background-color: grey;">
                     </form>
-
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Feature Category {{ asset('website/images/t1.jpg') }}-->
+    <section class="featured-Category">
+        <div class="categoryHeader">
+            <h1>Featured Category</h1>
+            <p>Get Your Desired Product from Featured Category!</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <a href="#" class="btn btn-primary">All laptop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <a href="#" class="btn btn-primary">Desktop</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" srcset=""class="img-fluid"><br><br>
+                            <a href="#" class="btn btn-primary">Processor</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-3">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <a href="#" class="btn btn-primary">SSD</a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

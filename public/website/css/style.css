@@ -1,3 +1,7 @@
+        *{
+            margin: 0;
+            padding: 0;
+        }
         /* Menu */
         /* .menu {} */
         
@@ -51,6 +55,12 @@
         .menu ul li:hover .sub_menu_1 ul li:last-child {
             border-bottom: none;
         }
+
+        /* Product Slider */
+
+        .product-slider{
+            background-color: #ecf0f1;
+        }
         /*  Carousol */
         
         .carousel{
@@ -63,17 +73,36 @@
         /* compare product */
 
         .compare-product{
-            border: 3px solid grey;
+            /* border: 3px solid grey; */
             padding: 4%; 
-            margin-top: 2%;
-            background-color: #7f8c8d;
+            margin: 2% 0;
+            background-color: #F8EFBA;
         }
+
+        /* Feateured Category */
+        .featured-Category{
+            background-color: #f1f2f6;
+        }
+        .categoryHeader{
+            text-align: center;
+            margin:2%;
+            padding: 1%;
+        }
+        .card{
+            margin:auto;
+            border: 3px solid grey;
+            width:100%;
+            border-radius: 25px;
+            background-color: #d1d8e0;
+        }
+        
+        
 
         @media only screen and (max-width:768px) {
             .menu ul li {
                 display: block;
                 padding-left: 0%;
-                text-align: left;
+                text-align: center;
             }
             .carousel{
                 width:100%;height:100%;margin:0%;
