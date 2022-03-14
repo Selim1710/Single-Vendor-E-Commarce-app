@@ -13,6 +13,7 @@
 
     <title>BGD online limited</title>
 </head>
+
 <body>
     <section class="navbar">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
@@ -63,6 +64,48 @@
                     </div>
                 </li>
             </ul>
+        </div>
+    </section>
+
+    <!-- compare product -->
+
+    <section class="product slider">
+        <div class="container-fluid">
+            <div class="makeFlex">
+                <div class="carousel" data-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            <img class="d-block w-100" src="{{ asset('website/images/t1.jpg') }}" alt="First slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('website/images/t2.jpg') }}" alt="Second slide">
+                        </div>
+                        <div class="carousel-item">
+                            <img class="d-block w-100" src="{{ asset('website/images/t3.jpg') }}" alt="Third slide">
+                        </div>
+                    </div>
+                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+                <div class="compare-product">
+                    <h1>Compare Product</h1>
+                    <p>Choose two product to compare</p>
+                    <form class="form-inline my-2 my-lg-0">
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <br>
+                        <input class="form-control mr-sm-2" type="search" placeholder="Search" aria-label="Search">
+                        <br>
+                        <input type="submit" style="color:white;background-color: grey;">
+                    </form>
+
+                </div>
+            </div>
         </div>
     </section>
 
