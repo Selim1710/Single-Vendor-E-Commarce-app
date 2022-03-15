@@ -1,5 +1,4 @@
 /* 
-
     Bootstrap version: 4.0;
     Designed by: Md.Selim Hossain Suhag
 
@@ -10,10 +9,14 @@
     padding: 0;
 }
 
+/* navbar */
+
+.searchBar{
+    width:40%;
+}
 .menu ul {
     list-style-type: none;
     width: 100%;
-    /* border: 3px solid red; */
 }
 
 .menu ul li {
@@ -33,6 +36,7 @@
 
 .sub_menu_1 {
     display: none;
+    z-index: 100;
 }
 
 .menu ul li:hover .sub_menu_1 {
@@ -66,14 +70,6 @@
 .product-slider{
     background-color: #ecf0f1;
 }
-/*  Carousol */
-
-.carousel{
-    width:40%;height:40%;margin:2%;
-}
-.makeFlex{
-    display: flex;
-}
 
 /* compare product */
 
@@ -94,7 +90,6 @@
 }
 .cardCategory{
     margin:2%;
-    /* border: 3px solid grey; */
     width:100%;
     border-radius: 25px;
     background-color: #ffffff;
@@ -118,7 +113,6 @@
     margin:2%;
     width:100%;
     border-radius: 5px;
-    /* background-color: #d1d8e0; */
 }
 
 
@@ -146,6 +140,9 @@
 
 
 @media only screen and (max-width:768px) {
+    .searchBar{
+        width:100%;
+    }
     .menu ul li {
         display: block;
         padding-left: 0%;
@@ -167,21 +164,20 @@
 
     /* footer */
 
-.footerD{
-    display: block;
-}
-.support{
-    padding:4%;
-    width: 80%;
-}
-.about-us{
-    padding: 4%;    
-    width: 80%;
-}
-.stay-connected{
-    padding: 4%;
-    width: 80%;
-}
-
+    .footerD{
+        display: block;
+    }
+    .support{
+        padding:4%;
+        width: 100%;
+    }
+    .about-us{
+        padding: 4%;    
+        width: 100%;
+    }
+    .stay-connected{
+        padding: 4%;
+        width: 100%;
+    }
     
 }
