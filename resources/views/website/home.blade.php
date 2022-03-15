@@ -107,7 +107,7 @@
             </div>
         </div>
     </section>
-    <!-- Feature Category {{ asset('website/images/t1.jpg') }}-->
+    <!-- Feature Category -->
     <section class="featured-Category">
         <div class="categoryHeader">
             <h1>Featured Category</h1>
@@ -115,41 +115,209 @@
         </div>
         <div class="container">
             <div class="row">
-                <div class="col-3">
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+                <!-- extra -->
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="col-3 col-lg-2">
+                    <div class="cardCategory">
+                        <a href="#">
+                            <div class="card-body">
+                                <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                                <h5>Desktop</h5>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+    </section>
+
+    <!-- featured product -->
+
+    <section class="featured-Product">
+        <div class="productHeader">
+            <h1>Featured Product</h1>
+            <p>Check & Get Your Desired Product !</p>
+        </div>
+        <div class="container">
+            <div class="row">
+                <div class="col-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <a href="#" class="btn btn-primary">All laptop</a>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
+                <!-- extra -->
+                <div class="col-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <a href="#" class="btn btn-primary">Desktop</a>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
                         </div>
                     </div>
                 </div>
-                <div class="col-3">
-                    <div class="card">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" srcset=""class="img-fluid"><br><br>
-                            <a href="#" class="btn btn-primary">Processor</a>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-3">
+                <div class="col-6 col-lg-4">
                     <div class="card">
                         <div class="card-body">
                             <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <a href="#" class="btn btn-primary">SSD</a>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-6 col-lg-4">
+                    <div class="card">
+                        <div class="card-body">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
+                            <span>Price: $20</span>
+                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
     </section>
+
+
+
+
+
+
+
+
+
+
+
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
