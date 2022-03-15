@@ -122,6 +122,28 @@
 }
 
 
+/* footer */
+
+.companyDescripton{
+    background-color: #34495e;
+    color:#f1f2f6;
+}
+.footerD{
+    display: flex;
+}
+.support{
+    padding: 4%;
+    width: 30%;
+}
+.about-us{
+    padding: 4%;    
+    width: 30%;
+}
+.stay-connected{
+    padding: 4%;
+    width: 30%;
+}
+
 
 @media only screen and (max-width:768px) {
     .menu ul li {
@@ -143,5 +165,23 @@
         border-radius: 25px;
     }
 
-    /* product */
+    /* footer */
+
+.footerD{
+    display: block;
+}
+.support{
+    padding:4%;
+    width: 80%;
+}
+.about-us{
+    padding: 4%;    
+    width: 80%;
+}
+.stay-connected{
+    padding: 4%;
+    width: 80%;
+}
+
+    
 }
