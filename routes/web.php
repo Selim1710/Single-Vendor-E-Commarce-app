@@ -14,5 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/',[HomeController::class,'home'])->name('website.home');
-Route::get('/website/product/details',[HomeController::class,'productDetails'])->name('website.product.details');
+Route::get('/', [HomeController::class, 'home'])->name('website.home');
+
+Route::group(['prefix' => 'website'], function () {
+
+    Route::get('/product/details', [HomeController::class, 'productDetails'])->name('website.product.details');
+    
+});
