@@ -1,6 +1,26 @@
 @extends('website.master')
 @section('contents')
-
+<!-- Category -->
+<div class="category bg-secondary p-lg-3">
+    <div class="menu">
+        <ul>
+            <li><a href="#">Desktop</a></li>
+            <li><a href="#">Laptop</a></li>
+            <li><a href="#">Component</a></li>
+            <li><a href="#">Monitor</a></li>
+            <li><a href="#">UPS</a>
+                <div class="sub_menu_1 bg-success">
+                    <ul>
+                        <li><a href="#">Online UPS</a></li>
+                        <li><a href="#">Offline UPS</a></li>
+                        <li><a href="#">Battery</a></li>
+                        <li><a href="#">All UPS</a></li>
+                    </ul>
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>
 <!-- compare product -->
 
 <section class="product-slider">
