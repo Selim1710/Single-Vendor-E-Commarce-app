@@ -1,10 +1,13 @@
 <?php
 
 use App\Http\Controllers\Backend\CategoryController;
+use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\DashBoardController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\StockController;
 use App\Http\Controllers\Backend\subCategoryController;
+use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Website\HomeController;
 use Illuminate\Support\Facades\Route;
 
@@ -28,5 +31,11 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/manage/product',[ProductController::class,'manageProduct'])->name('admin.manage.product');
 
     Route::get('/manage/stock',[StockController::class,'manageStock'])->name('admin.manage.stock');
+
+    Route::get('/manage/order',[OrderController::class,'manageOrder'])->name('admin.manage.order');
+
+    Route::get('/manage/customer',[CustomerController::class,'manageCustomer'])->name('admin.manage.customer');
+
+    Route::get('/view/report',[ReportController::class,'viewReport'])->name('admin.view.report');
 
 });
