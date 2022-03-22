@@ -4,15 +4,15 @@
     <form>
         <div class="form-group">
             <label for="m1">Model</label>
-            <input type="text" name="model" class="form-control" id="m1" placeholder="Enter product model">
+            <input type="text" name="model" value="" class="form-control" id="m1" placeholder="Enter product model">
         </div>
         <div class="form-group">
             <label for="pn1">Product Name</label>
-            <input type="text" name="product_name" class="form-control" id="pn1" placeholder="Enter product name">
+            <input type="text" name="product_name" value="" class="form-control" id="pn1" placeholder="Enter product name">
         </div>
         <div class="form-group">
             <label for="rp1"> Regular Price</label>
-            <input type="number" name="regular_price" class="form-control" id="rp1" placeholder="Enter product price">
+            <input type="number" name="regular_price" value="" class="form-control" id="rp1" placeholder="Enter product price">
         </div>
         <div class="form-group">
             <label for="img1">Image</label>
@@ -20,7 +20,7 @@
         </div>
         <div class="form-group">
             <label for="o1">Offer</label>
-            <input type="number" name="product_offer" class="form-control" id="o1" placeholder="Enter product offer(if don't enter 0)">
+            <input type="number" name="product_offer" value=""  class="form-control" id="o1" placeholder="Enter product offer(if don't enter 0)">
         </div>
         <div class="form-group">
             <label for="sc1">Sub-Category</label>

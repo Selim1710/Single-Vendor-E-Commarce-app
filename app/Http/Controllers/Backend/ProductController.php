@@ -13,4 +13,7 @@ class ProductController extends Controller
     public function addProduct(){
         return view('admin.layouts.product.add_product');
     }
+    public function editProduct(){
+        return view('admin.layouts.product.edit_product');
+    }
 }

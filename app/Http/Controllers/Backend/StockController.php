@@ -13,4 +13,7 @@ class StockController extends Controller
     public function addStock(){
         return view('admin.layouts.stock.add_stock');
     }
+    public function editStock(){
+        return view('admin.layouts.stock.edit_stock');
+    }
 }

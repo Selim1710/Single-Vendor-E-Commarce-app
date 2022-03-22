@@ -15,4 +15,8 @@ class CategoryController extends Controller
     {
         return view('admin.layouts.category.add_category');
     }
+    public function editCategory()
+    {
+        return view('admin.layouts.category.edit_category');
+    }
 }

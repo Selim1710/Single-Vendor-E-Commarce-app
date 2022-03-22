@@ -23,7 +23,7 @@
                 <td>1</td>
                 <td>1</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('admin.edit.stock') }}" class="btn btn-primary">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>               
             </tr>

@@ -21,7 +21,7 @@
                 <td>special desktop</td>
                 <td>1</td>
                 <td>
-                    <a href="#" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('admin.edit.subCategory') }}" class="btn btn-primary">Edit</a>
                     <a href="#" class="btn btn-danger">Delete</a>
                 </td>               
             </tr>

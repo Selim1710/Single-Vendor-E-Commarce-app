@@ -4,7 +4,7 @@
     <form>
         <div class="form-group">
             <label for="exampleFormControlInput1">Sub-Category Name</label>
-            <input type="text" name="" class="form-control" id="exampleFormControlInput1" placeholder="Enter Subcategory Name">
+            <input type="text" name="subCategory_name" value="" class="form-control" id="exampleFormControlInput1" placeholder="Enter Subcategory Name">
         </div>
         <div class="form-group">
             <label for="exampleFormControlSelect1">Category Name</label>
