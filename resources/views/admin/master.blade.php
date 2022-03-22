@@ -12,6 +12,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
+    
 
 </head>
 

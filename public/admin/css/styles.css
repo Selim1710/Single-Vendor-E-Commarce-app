@@ -90,12 +90,25 @@ body {
 }
 
 /* table */
+
 .manage_table{
   margin:2% 1% 0 2%;
 }
 .table_button{
   margin:2% 1% 0 2%;
 }
+
+/* form */
+
+.myform{
+  margin:2%;
+}
+.myform label{
+  margin:1% 0%;
+  font-size:1.25rem;
+}
+
+
 
 hr {
   margin: 1rem 0;

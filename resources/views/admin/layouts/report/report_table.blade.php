@@ -1,9 +1,6 @@
 @extends('admin.master')
 @section('contents')
 
-<div class="table_button">
-    <a href="#" class="btn btn-primary">Add Category</a>
-</div>
 <div class="manage_table">
     <table class="table table-borderless table-hover">
         <thead class="table-primary">

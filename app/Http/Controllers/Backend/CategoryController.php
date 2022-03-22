@@ -7,7 +7,12 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    public function manageCategory(){
+    public function manageCategory()
+    {
         return view('admin.layouts.category.category_table');
+    }
+    public function addCategory()
+    {
+        return view('admin.layouts.category.add_category');
     }
 }
