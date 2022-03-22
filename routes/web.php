@@ -26,7 +26,10 @@ Route::group(['prefix' => 'admin'], function () {
 
     Route::get('/manage/category',[CategoryController::class,'manageCategory'])->name('admin.manage.category');
     Route::get('/add/category',[CategoryController::class,'addCategory'])->name('admin.add.category');
-    Route::get('/edit/category',[CategoryController::class,'editCategory'])->name('admin.edit.category');
+    Route::post('/store/category',[CategoryController::class,'store'])->name('admin.store.category');
+    Route::get('/edit/category/{id}',[CategoryController::class,'editCategory'])->name('admin.edit.category');
+    Route::post('/update/category/{id}',[CategoryController::class,'update'])->name('admin.update.category');
+    Route::get('/delete/category/{id}',[CategoryController::class,'delete'])->name('admin.delete.category');
 
     Route::get('/manage/product',[ProductController::class,'manageProduct'])->name('admin.manage.product');
     Route::get('/add/product',[ProductController::class,'addProduct'])->name('admin.add.product');

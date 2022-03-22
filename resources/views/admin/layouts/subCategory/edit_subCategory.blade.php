@@ -16,6 +16,8 @@
                 <option>5</option>
             </select>
         </div>
+        <button type="submit" class="btn btn-primary">Submit Now</button>
+
     </form>
 </div>
 @endsection

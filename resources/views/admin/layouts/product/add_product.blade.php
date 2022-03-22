@@ -36,6 +36,8 @@
             <label for="pd1">Product Description</label>
             <textarea name="product_description" class="form-control" id="pd1" rows="3"></textarea>
         </div>
+        <button type="submit" class="btn btn-primary">Submit Now</button>
+
     </form>
 </div>
 @endsection

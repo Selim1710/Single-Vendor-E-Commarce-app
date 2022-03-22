@@ -16,6 +16,8 @@
             <label for="exampleFormControlInput1">Total Produce</label>
             <input type="number" name="total_produce" class="form-control" id="exampleFormControlInput1" placeholder="Enter quantity">
         </div>
+        <button type="submit" class="btn btn-primary">Submit Now</button>
+
     </form>
 </div>
 @endsection

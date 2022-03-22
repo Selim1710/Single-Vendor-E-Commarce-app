@@ -1,5 +1,14 @@
 @extends('admin.master')
 @section('contents')
+<!-- Added, Edit, Delete Message -->
+@if(session()->has('error'))
+<p class="alert alert-danger">{{ session()->get('error') }}</p>
+@endif
+@if(session()->has('message'))
+<p class="alert alert-success">{{ session()->get('message') }}</p>
+@endif
+<!-- end -->
+
 
 <div class="table_button">
     <a href="{{ route('admin.add.category') }}" class="btn btn-primary">Add Category</a>
@@ -14,16 +23,16 @@
             </tr>
         </thead>
         <tbody>
-
+            @foreach($category as $key=>$cat)
             <tr class="text-center">
-                <td>1</td>
-                <td>Desktop</td>
+                <td>{{ $key+1 }}</td>
+                <td>{{ $cat->category_name }}</td>
                 <td>
-                    <a href="{{ route('admin.edit.category') }}" class="btn btn-primary">Edit</a>
-                    <a href="#" class="btn btn-danger">Delete</a>
-                </td>               
+                    <a href="{{ route('admin.edit.category',$cat->id) }}" class="btn btn-primary">Edit</a>
+                    <a href="{{ route('admin.delete.category',$cat->id) }}" class="btn btn-danger">Delete</a>
+                </td>
             </tr>
-            
+            @endforeach
         </tbody>
     </table>
 </div>
