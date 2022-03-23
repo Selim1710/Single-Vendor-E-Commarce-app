@@ -4,23 +4,20 @@
     <form>
         <div class="form-group">
             <label for="m1">Model</label>
-            <input type="text" name="model" value="" class="form-control" id="m1" placeholder="Enter product model">
+            <input type="text" name="model" value="" class="form-control" id="m1" placeholder="Enter product model" required>
         </div>
         <div class="form-group">
             <label for="pn1">Product Name</label>
-            <input type="text" name="product_name" value="" class="form-control" id="pn1" placeholder="Enter product name">
+            <input type="text" name="product_name" value="" class="form-control" id="pn1" placeholder="Enter product name" required>
         </div>
         <div class="form-group">
             <label for="rp1"> Regular Price</label>
-            <input type="number" name="regular_price" value="" class="form-control" id="rp1" placeholder="Enter product price">
+            <input type="number" name="regular_price" value="" class="form-control" id="rp1" placeholder="Enter product price" required>
         </div>
-        <div class="form-group">
-            <label for="img1">Image</label>
-            <input type="file" name="product_image" class="form-control" id="img1">
-        </div>
+        
         <div class="form-group">
             <label for="o1">Offer</label>
-            <input type="number" name="product_offer" value=""  class="form-control" id="o1" placeholder="Enter product offer(if don't enter 0)">
+            <input type="number" name="product_offer" value=""  class="form-control" id="o1" placeholder="Enter product offer(if don't enter 0)" required>
         </div>
         <div class="form-group">
             <label for="sc1">Sub-Category</label>
@@ -34,7 +31,7 @@
         </div>
         <div class="form-group">
             <label for="pd1">Product Description</label>
-            <textarea name="product_description" class="form-control" id="pd1" rows="3"></textarea>
+            <textarea name="product_description" class="form-control" id="pd1" rows="3" required></textarea>
         </div>
         <button type="submit" class="btn btn-primary">Submit Now</button>
 

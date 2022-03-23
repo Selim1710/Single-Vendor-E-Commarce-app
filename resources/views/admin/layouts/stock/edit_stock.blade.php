@@ -14,7 +14,7 @@
         </div>
         <div class="form-group">
             <label for="exampleFormControlInput1">Total Produce</label>
-            <input type="number" name="total_produce" value="" class="form-control" id="exampleFormControlInput1" placeholder="Enter quantity">
+            <input type="number" name="total_produce" value="" class="form-control" id="exampleFormControlInput1" placeholder="Enter quantity" required>
         </div>
         <button type="submit" class="btn btn-primary">Submit Now</button>
 
