@@ -17,7 +17,7 @@ class CreateSubcategoriesTable extends Migration
             $table->id();
             $table->string('sub_category_name');
 
-            $table->unsignedBigInteger('category_id');
+            $table->unsignedBigInteger('category_id')->default();
             $table->foreign('category_id')
                     ->references('id')
                     ->on('categories')

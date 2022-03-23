@@ -1,23 +1,13 @@
 @extends('admin.master')
 @section('contents')
 <div class="myform">
-    <form>
+    <form action="{{ route('admin.update.subCategory',$subCategory->id) }}" method="post">
+        @csrf
         <div class="form-group">
             <label for="exampleFormControlInput1">Sub-Category Name</label>
-            <input type="text" name="subCategory_name" value="" class="form-control" id="exampleFormControlInput1" placeholder="Enter Subcategory Name" required>
+            <input type="text" name="sub_category_name" value="{{ $subCategory->sub_category_name}}" class="form-control" id="exampleFormControlInput1" placeholder="Enter Subcategory Name" required>
         </div>
-        <div class="form-group">
-            <label for="exampleFormControlSelect1">Category Name</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option value="">1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
-            </select>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit Now</button>
-
+        <button type="submit" class="btn btn-primary">Update Now</button>
     </form>
 </div>
 @endsection

@@ -31,6 +31,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/update/category/{id}',[CategoryController::class,'update'])->name('admin.update.category');
     Route::get('/delete/category/{id}',[CategoryController::class,'delete'])->name('admin.delete.category');
 
+
+    Route::get('/manage/subCategory',[SubCategoryController::class,'manageSubCategory'])->name('admin.manage.subCategory');
+    Route::get('/add/subCategory',[SubCategoryController::class,'addSubCategory'])->name('admin.add.subCategory');
+    Route::post('/store/subCategory',[SubCategoryController::class,'store'])->name('admin.store.subCategory');
+    Route::get('/edit/subCategory/{id}',[SubCategoryController::class,'edit'])->name('admin.edit.subCategory');
+    Route::post('/update/subCategory/{id}',[SubCategoryController::class,'update'])->name('admin.update.subCategory');
+    Route::get('/delete/subCategory/{id}',[SubCategoryController::class,'delete'])->name('admin.delete.subCategory');
+
+
     Route::get('/manage/product',[ProductController::class,'manageProduct'])->name('admin.manage.product');
     Route::get('/add/product',[ProductController::class,'addProduct'])->name('admin.add.product');
     Route::get('/edit/product',[ProductController::class,'editProduct'])->name('admin.edit.product');
@@ -38,10 +47,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/manage/stock',[StockController::class,'manageStock'])->name('admin.manage.stock');
     Route::get('/add/stock',[StockController::class,'addStock'])->name('admin.add.stock');
     Route::get('/edit/stock',[StockController::class,'editStock'])->name('admin.edit.stock');
-
-    Route::get('/manage/subCategory',[SubCategoryController::class,'manageSubCategory'])->name('admin.manage.subCategory');
-    Route::get('/add/subCategory',[SubCategoryController::class,'addSubCategory'])->name('admin.add.subCategory');
-    Route::get('/edit/subCategory',[SubCategoryController::class,'editSubCategory'])->name('admin.edit.subCategory');
 
     Route::get('/manage/order',[OrderController::class,'manageOrder'])->name('admin.manage.order');
 
