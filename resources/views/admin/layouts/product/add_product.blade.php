@@ -1,7 +1,8 @@
 @extends('admin.master')
 @section('contents')
 <div class="myform">
-    <form>
+    <form action="{{ route('admin.store.product') }}" method="POST" enctype="multipart/form-data">
+        @csrf
         <div class="form-group">
             <label for="m1">Model</label>
             <input type="text" name="model" class="form-control" id="m1" placeholder="Enter product model" required>
@@ -16,7 +17,7 @@
         </div>
         <div class="form-group">
             <label for="img1">Image</label>
-            <input type="file" name="product_image" class="form-control" id="img1" required>
+            <input type="file" accept="image/*" name="product_image" class="form-control" id="img1" required>
         </div>
         <div class="form-group">
             <label for="o1">Offer</label>
@@ -24,12 +25,10 @@
         </div>
         <div class="form-group">
             <label for="sc1">Sub-Category</label>
-            <select class="form-control" id="sc1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <select class="form-control" id="sc1" name="subCategory_id">
+                @foreach($products as $product)
+                <option value="{{ $product->id }}">{{ $product->sub_category_name }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">
