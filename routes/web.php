@@ -58,8 +58,11 @@ Route::group(['prefix' => 'admin'], function () {
 
     // Stock
     Route::get('/manage/stock',[StockController::class,'manageStock'])->name('admin.manage.stock');
-    Route::get('/add/stock',[StockController::class,'addStock'])->name('admin.add.stock');
-    Route::get('/edit/stock',[StockController::class,'editStock'])->name('admin.edit.stock');
+    Route::get('/add/stock',[StockController::class,'add'])->name('admin.add.stock');
+    Route::post('/store/stock',[StockController::class,'store'])->name('admin.store.stock');
+    Route::get('/edit/stock/{id}',[StockController::class,'edit'])->name('admin.edit.stock');
+    Route::post('/update/stock/{id}',[StockController::class,'update'])->name('admin.update.stock');
+    Route::get('/delete/stock/{id}',[StockController::class,'delete'])->name('admin.delete.stock');
 
     // Order List
     Route::get('/manage/order',[OrderController::class,'manageOrder'])->name('admin.manage.order');

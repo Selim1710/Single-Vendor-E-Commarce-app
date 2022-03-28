@@ -1,15 +1,14 @@
 @extends('admin.master')
 @section('contents')
 <div class="myform">
-    <form>
+    <form action="{{ route('admin.store.stock') }}" method="post">
+        @csrf
         <div class="form-group">
-            <label for="exampleFormControlSelect1">Product Name</label>
-            <select class="form-control" id="exampleFormControlSelect1">
-                <option>1</option>
-                <option>2</option>
-                <option>3</option>
-                <option>4</option>
-                <option>5</option>
+            <label for="pnn1">Product Name</label>
+            <select class="form-control" id="pnn1" name="product_id">
+                @foreach($stock as $product)
+                <option value="{{ $product->id }}">{{ $product->product_name }}</option>
+                @endforeach
             </select>
         </div>
         <div class="form-group">
