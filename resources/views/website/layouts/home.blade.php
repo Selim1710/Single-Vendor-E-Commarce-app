@@ -7,20 +7,18 @@
 <div class=" collapse category p-lg-1" id="category">
     <div class="menu">
         <ul>
-            <li><a href="#">Desktop</a></li>
-            <li><a href="#">Laptop</a></li>
-            <li><a href="#">Component</a></li>
-            <li><a href="#">Monitor</a></li>
-            <li><a href="#">UPS</a>
+            @foreach($categories as $category)
+            <li><a href="#">{{ $category->category_name }}</a>
+                @endforeach
                 <div class="sub_menu_1 bg-success">
                     <ul>
-                        <li><a href="#">Online UPS</a></li>
-                        <li><a href="#">Offline UPS</a></li>
-                        <li><a href="#">Battery</a></li>
-                        <li><a href="#">All UPS</a></li>
+                        @foreach($subCategories as $subCategory)
+                        <li><a href="#">{{ $subCategory->sub_category_name }} </a></li>
+                        @endforeach
                     </ul>
                 </div>
             </li>
+
         </ul>
     </div>
 </div>
@@ -76,18 +74,19 @@
     </div>
     <div class="container">
         <div class="row">
+            @foreach($categories as $category)
             <div class="col-4 col-lg-2">
                 <div class="cardCategory m-2">
                     <a href="#">
                         <div class="cart-img img-fluid">
                             <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid">
-                                <br>
-                            <p class="text-center">Desktop</p>
+                            <br>
+                            <p class="text-center">{{ $category->category_name }}</p>
                         </div>
                     </a>
                 </div>
             </div>
-            
+            @endforeach
         </div>
     </div>
 </section>
@@ -101,90 +100,20 @@
     </div>
     <div class="container">
         <div class="row">
+            @foreach($products as $product)
             <div class="col-6 col-lg-4">
                 <div class="card">
-                    <a href="{{ route('website.product.details') }}" style="color:black;">
+                    <a href="{{ route('website.product.details',$product->id) }}" style="color:black;">
                         <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <span>Price: $20</span>
-                            <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
+                            <img src="{{ asset('uploads/products/'.$product->product_image) }}" alt="" class="img-fluid"><br><br>
+                            <p>{{ $product->model }}</p>
+                            <span class="text-success">Price: {{ $product->regular_price }}</span>
+                           
                         </div>
                     </a>
                 </div>
             </div>
-            <!-- extra -->
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
-            <div class="col-6 col-lg-4">
-                <div class="card">
-                    <div class="card-body">
-                        <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                        <span>Price: $20</span>
-                        <p>Gree GSH-18NFV410 1.5 Ton Split Type Inverter Air Conditioner</p>
-                    </div>
-                </div>
-            </div>
+            @endforeach
         </div>
     </div>
 </section>
