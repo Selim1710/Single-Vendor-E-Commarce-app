@@ -2,8 +2,7 @@
 	<a href="#" class="navbar-brand"><i class="fa fa-cube"></i>BGD</a>  
 			<!-- icon -->
 	<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-		<span class="navbar-toggler-icon">Menu</span>
-		<!--  style="padding:3px;background:green;width:100%;" -->
+		<span class="navbar-toggler-icon">menu</span>
 	</button>
 	<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">		
 		<form class="navbar-form form-inline">

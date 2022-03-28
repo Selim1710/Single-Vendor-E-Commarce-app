@@ -13,8 +13,8 @@
 
 .navbar {
 	color: #fff;
-	background: #9b59b6 !important;
-	padding: 5px 16px;
+	background: #16a085 !important;
+	padding: 5px 32px;
 	border-radius: 0;
 	border: none;
 }
@@ -194,11 +194,11 @@
 .menu ul li a {
     text-decoration: none;
     font-weight: bold;
-    color: #ecf0f1;
+    color: black;
 }
 
 .menu ul li a:hover {
-    color: #10ac84;
+    color: black;
 }
 
 .sub_menu_1 {
@@ -222,7 +222,7 @@
     width: 150px;
     padding: 10px;
     border-bottom: 1px dotted rgb(100, 96, 96);
-    background: transparent;
+    /* background: #2ecc71; */
     border-radius: 0;
     text-align: right;
 }
@@ -255,10 +255,8 @@
     padding: 1%;
 }
 .cardCategory{
-    margin:2%;
-    width:100%;
-    border-radius: 25px;
     background-color: #ffffff;
+    overflow: hidden;
 }
 
 .cardCategory a {

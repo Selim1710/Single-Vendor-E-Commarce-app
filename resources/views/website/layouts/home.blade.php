@@ -1,7 +1,10 @@
 @extends('website.master')
 @section('contents')
+<button class="btn btn-info w-100" type="button" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseExample">
+    See All Categories
+</button>
 <!-- Category -->
-<div class="category bg-secondary p-lg-3">
+<div class=" collapse category p-lg-1" id="category">
     <div class="menu">
         <ul>
             <li><a href="#">Desktop</a></li>
@@ -21,13 +24,14 @@
         </ul>
     </div>
 </div>
+
 <!-- compare product -->
 
 <section class="product-slider">
     <div class="container">
         <div class="row">
-            <div class="col col-md-8">
-                <div class="carousel" data-ride="carousel">
+            <div class="col-sm-4 col-lg-8">
+                <div class="carousel" data-ride="carousel" id="carouselExampleControls">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
                             <img class="d-block w-100" src="{{ asset('website/images/t1.jpg') }}" alt="First slide">
@@ -36,7 +40,7 @@
                             <img class="d-block w-100" src="{{ asset('website/images/t2.jpg') }}" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="{{ asset('website/images/t3.jpg') }}" alt="Third slide">
+                            <img class="d-block w-100" src="{{ asset('website/images/t3.png') }}" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -49,16 +53,15 @@
                     </a>
                 </div>
             </div>
-            <div class="col col-md-4">
-                <div class="compare-product">
+            <div class="col-md-4">
+                <div class="compare-product text-center">
                     <h1>Compare Product</h1>
                     <p>Choose two product to compare</p>
                     <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control m-2 w-100" type="search" placeholder="Search" aria-label="Search">
+                        <input class="form-control m-2 w-100" type="search" placeholder="Search" aria-label="Search">
                         <br>
-                        <input class="form-control m-2" type="search" placeholder="Search" aria-label="Search">
-                        <br>
-                        <input type="submit" style="color:white;background-color: grey;">
+                        <input type="submit" class="bg-secondary p-2 border text-white w-100">
                     </form>
                 </div>
             </div>
@@ -73,98 +76,18 @@
     </div>
     <div class="container">
         <div class="row">
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
+            <div class="col-4 col-lg-2">
+                <div class="cardCategory m-2">
                     <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
+                        <div class="cart-img img-fluid">
+                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid">
+                                <br>
+                            <p class="text-center">Desktop</p>
                         </div>
                     </a>
                 </div>
             </div>
-
-            <!-- extra -->
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div class="col-3 col-lg-2">
-                <div class="cardCategory">
-                    <a href="#">
-                        <div class="card-body">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <h5>Desktop</h5>
-                        </div>
-                    </a>
-                </div>
-            </div>
+            
         </div>
     </div>
 </section>
