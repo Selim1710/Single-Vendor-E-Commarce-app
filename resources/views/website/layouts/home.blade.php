@@ -1,29 +1,32 @@
 @extends('website.master')
 @section('contents')
-<button class="btn btn-info w-100" type="button" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseExample">
-    See All Categories
-</button>
-<!-- Category -->
-<div class=" collapse category p-lg-1" id="category">
-    <div class="menu">
-        <ul>
-            @foreach($categories as $category)
-            <li><a href="#">{{ $category->category_name }}</a>
-                @endforeach
-                <div class="sub_menu_1 bg-success">
-                    <ul>
-                        @foreach($subCategories as $subCategory)
-                        <li><a href="#">{{ $subCategory->sub_category_name }} </a></li>
-                        @endforeach
-                    </ul>
-                </div>
-            </li>
 
-        </ul>
+<!-- See All Categories Button -->
+
+<button class="btn w-100 text-white" style="background:#16a085;" type="button" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseExample">
+    See All Categories &rarr;
+</button>
+
+<!-- Category -->
+
+<div class=" collapse category p-lg-1" id="category">
+@foreach($categories as $category)
+    <div class="btn-group">
+        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            {{ $category->category_name }}
+        </button>
+        @if(!empty($category->subCategories))
+        <div class="dropdown-menu">
+            @foreach($category->subCategories as $subCategory)
+            <a class="dropdown-item" href="#">{{ $subCategory->sub_category_name }}</a>
+            @endforeach
+        </div>
+        @endif
     </div>
+    @endforeach
 </div>
 
-<!-- compare product -->
+<!-- Carousel -->
 
 <section class="product-slider">
     <div class="container">
@@ -51,6 +54,7 @@
                     </a>
                 </div>
             </div>
+            <!-- compare product -->
             <div class="col-md-4">
                 <div class="compare-product text-center">
                     <h1>Compare Product</h1>
@@ -101,14 +105,14 @@
     <div class="container">
         <div class="row">
             @foreach($products as $product)
-            <div class="col-6 col-lg-4">
+            <div class="col-6 col-lg-3">
                 <div class="card">
                     <a href="{{ route('website.product.details',$product->id) }}" style="color:black;">
                         <div class="card-body">
                             <img src="{{ asset('uploads/products/'.$product->product_image) }}" alt="" class="img-fluid"><br><br>
                             <p>{{ $product->model }}</p>
                             <span class="text-success">Price: {{ $product->regular_price }}</span>
-                           
+
                         </div>
                     </a>
                 </div>
