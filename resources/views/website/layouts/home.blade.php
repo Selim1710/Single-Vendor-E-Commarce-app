@@ -10,11 +10,11 @@
 <!-- Category -->
 
 <div class=" collapse category p-lg-1" id="category">
-@foreach($categories as $category)
+    @foreach($categories as $category)
     <div class="btn-group">
-        <button type="button" class="btn btn-success dropdown-toggle" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+        <a href="#" class="btn btn-success dropdown-toggle m-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
             {{ $category->category_name }}
-        </button>
+        </a>
         @if(!empty($category->subCategories))
         <div class="dropdown-menu">
             @foreach($category->subCategories as $subCategory)
@@ -59,9 +59,9 @@
                 <div class="compare-product text-center">
                     <h1>Compare Product</h1>
                     <p>Choose two product to compare</p>
-                    <form class="form-inline my-2 my-lg-0">
-                        <input class="form-control m-2 w-100" type="search" placeholder="Search" aria-label="Search">
-                        <input class="form-control m-2 w-100" type="search" placeholder="Search" aria-label="Search">
+                    <form action="{{ route('user.compare.product') }}" class="form-inline my-2 my-lg-0">
+                        <input type="search" name="search_c1" value="" placeholder="Search" class="form-control m-2 w-100" aria-label="Search">
+                        <input type="search" name="search_c2" value="" placeholder="Search" class="form-control m-2 w-100" aria-label="Search">
                         <br>
                         <input type="submit" class="bg-secondary p-2 border text-white w-100">
                     </form>

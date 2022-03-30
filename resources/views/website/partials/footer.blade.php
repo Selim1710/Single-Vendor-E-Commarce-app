@@ -16,7 +16,7 @@
         </div>
         <div class="stay-connected text-center">
             <h4>STAY CONNECTED </h4>
-            <p>BGD online limitd <br>
+            <p>BGD online limited <br>
                 Phone : +88 019-72379494 <br>
                 Landline : : +88 02-8090528 <br>
                 Email : info@bgdonline.net <br>

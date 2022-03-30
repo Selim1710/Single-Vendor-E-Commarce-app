@@ -10,6 +10,7 @@ use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Demo;
 use App\Http\Controllers\Website\HomeController;
+use App\Http\Controllers\Website\UserController;
 use Illuminate\Support\Facades\Route;
 
 
@@ -19,8 +20,20 @@ use Illuminate\Support\Facades\Route;
 // Website Part
 Route::get('/', [HomeController::class, 'home'])->name('website.home');
 
+
+
+
 Route::group(['prefix' => 'website'], function () {
+
+    // login
+    Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
+    Route::get('/registration/form', [UserController::class, 'registrationForm'])->name('user.registration.form');
+
+
+    // product details
     Route::get('/product/details/{id}', [HomeController::class, 'productDetails'])->name('website.product.details');
+    Route::get('/user/compare/product', [HomeController::class, 'compareProduct'])->name('user.compare.product');
+
 });
 
 

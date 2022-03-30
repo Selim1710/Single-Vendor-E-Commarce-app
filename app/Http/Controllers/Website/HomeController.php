@@ -26,9 +26,19 @@ class HomeController extends Controller
     }
 
 
-    public function store(Request $request)
+    public function compareProduct(Request $request)
     {
-        //
+        $search_c1 = $request['search_c1'] ?? "";
+        $search_c2 = $request['search_c1'] ?? "";
+        // remain: specific product will be show
+        if($search_c1 && $search_c2!=""){
+            $products = Product::with('subCategory')->get();
+            return view('website.layouts.compare_product_table',compact('products'));
+        }else{
+            dd('Search is empty ');
+        }
+
+
     }
 
 
