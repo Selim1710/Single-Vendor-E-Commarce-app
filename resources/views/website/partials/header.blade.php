@@ -12,7 +12,7 @@
 			</div>
 		</form>
 		<div class="navbar-nav ml-auto">
-			<a href="#" class="nav-item nav-link active"style="padding-right: 3.5rem;padding-left: 3.5rem;"><i class="fa fa-home"></i><span>Home</span></a>
+			<a href="{{ route('website.home') }}" class="nav-item nav-link active"style="padding-right: 3.5rem;padding-left: 3.5rem;"><i class="fa fa-home"></i><span>Home</span></a>
             <a href="#" class="nav-item nav-link" style="padding-right: 3.5rem;padding-left: 3.5rem;"><i class="fa fa-bell"></i><span>Offers</span></a>
             <a href="#" class="nav-item nav-link" style="padding-right: 3.5rem;padding-left: 3.5rem;"><i class="fa fa-briefcase"></i><span>Laptop Deals</span></a>
 			<a href="{{ route('users.login.form') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-users"></i><span>Accounts</span></a>

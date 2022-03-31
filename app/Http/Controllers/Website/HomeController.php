@@ -35,7 +35,7 @@ class HomeController extends Controller
             $products = Product::with('subCategory')->get();
             return view('website.layouts.compare_product_table',compact('products'));
         }else{
-            dd('Search is empty ');
+            return redirect()->route('website.home')->with('error','Search is empty');
         }
 
 
