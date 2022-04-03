@@ -17,6 +17,12 @@ class HomeController extends Controller
         $products = Product::with('subCategory')->get();
         return view('website.layouts.home', compact('categories', 'products'));
     }
+    public function offers(){
+        return view('website.layouts.offers');
+    }
+    public function offerDetails(){
+        return view('website.layouts.offer_details');
+    }
 
 
     public function productDetails($id)
