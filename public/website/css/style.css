@@ -179,14 +179,13 @@
 
 /* Navbar ends here */
 
-
-/* category */
-
-
-/* Product Slider */
-
+/* product slider */
 .product-slider{
-    background-color: #ecf0f1;
+  background-color: #dfe6e9;
+}
+
+.slider{
+  display: flex;
 }
 
 /* compare product */
@@ -205,15 +204,6 @@
     text-align: center;
     margin:2%;
     padding: 1%;
-}
-.cardCategory{
-    background-color: #ffffff;
-    overflow: hidden;
-}
-
-.cardCategory a {
-    text-decoration: none;
-    color:#e1b12c;
 }
 
 /* Feateured Product */
@@ -254,6 +244,19 @@
     width: 30%;
 }
 
+/* FOR IPAD DESIGN*/
+
+@media only screen and (max-width:820px) {
+    /* product slider */
+
+    .slider{
+      display: flex;
+    }
+}
+
+
+
+/* FOR MOBILE DESIGN */
 
 @media only screen and (max-width:768px) {
 
@@ -269,13 +272,17 @@
         padding-left: 0%;
         text-align: center;
     }
-    .carousel{
-        width:100%;height:100%;margin:0%;
-    }
     .makeFlex{
         display: block;
 
     }
+
+    /* product slider */
+
+    .slider{
+      display: block;
+    }
+
     /* Category */
     .cardCategory{
         margin:2%;

@@ -21,10 +21,9 @@ class ProductController extends Controller
     }
     public function store(Request $request)
     {
-
         $request->validate([
-            'model' => 'required',
-            'product_name' => 'required',
+            'model' => 'required|unique:products',
+            'product_name' => 'required|unique:products',
             'regular_price' => 'required',
             'product_image' => 'required|mimes:jpg,png,jpeg|max:5048',
             'product_offer' => 'required',
@@ -32,7 +31,7 @@ class ProductController extends Controller
             'product_description' => 'required',
 
         ]);
-
+        
         //method we can use on request
         //guessExtension()
         //getMimeType()

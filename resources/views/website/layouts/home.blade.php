@@ -3,45 +3,43 @@
 
 <!-- See All Categories Button -->
 
-<button class="btn w-100 text-white" style="background:#16a085;" type="button" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseExample">
-    See All Categories &rarr;
-</button>
-
-<!-- Category -->
-
-<div class=" collapse category p-lg-1" id="category">
-    @foreach($categories as $category)
-    <div class="btn-group">
-        <a href="#" class="btn btn-success dropdown-toggle m-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-            {{ $category->category_name }}
-        </a>
-        @if(!empty($category->subCategories))
-        <div class="dropdown-menu">
-            @foreach($category->subCategories as $subCategory)
-            <a class="dropdown-item" href="#">{{ $subCategory->sub_category_name }}</a>
-            @endforeach
+<section class="all-categories">
+    <button class="btn w-100 text-white" style="background:#16a085;" type="button" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseExample">
+        See All Categories &rarr;
+    </button>
+    <div class=" collapse category p-lg-1" id="category">
+        @foreach($categories as $category)
+        <div class="btn-group">
+            <a href="#" class="btn dropdown-toggle m-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                {{ $category->category_name }}
+            </a>
+            @if(!empty($category->subCategories))
+            <div class="dropdown-menu">
+                @foreach($category->subCategories as $subCategory)
+                <a class="dropdown-item" href="#">{{ $subCategory->sub_category_name }}</a>
+                @endforeach
+            </div>
+            @endif
         </div>
-        @endif
+        @endforeach
     </div>
-    @endforeach
-</div>
+</section>
 
-<!-- Carousel -->
+<!-- Carousel  -->
 
 <section class="product-slider">
-    <div class="container">
-        <div class="row">
-            <div class="col-sm-4 col-lg-8">
+        <div class="slider">
+            <div class="col-lg-8">
                 <div class="carousel" data-ride="carousel" id="carouselExampleControls">
                     <div class="carousel-inner">
                         <div class="carousel-item active">
-                            <img class="d-block w-100" src="{{ asset('website/images/t1.jpg') }}" alt="First slide">
+                            <img class="d-block" src="{{ asset('website/images/t1.jpg') }}" alt="First slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="{{ asset('website/images/t2.jpg') }}" alt="Second slide">
+                            <img class="d-block" src="{{ asset('website/images/t2.jpg') }}" alt="Second slide">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block w-100" src="{{ asset('website/images/t3.png') }}" alt="Third slide">
+                            <img class="d-block" src="{{ asset('website/images/t3.png') }}" alt="Third slide">
                         </div>
                     </div>
                     <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
@@ -54,8 +52,8 @@
                     </a>
                 </div>
             </div>
-            <!-- compare product -->
-            <div class="col-md-4">
+            <!-- compare product  -->
+            <div class="col-lg-4">
                 <div class="compare-product text-center">
                     <h1>Compare Product</h1>
                     <p>Choose two product to compare</p>
@@ -68,7 +66,6 @@
                 </div>
             </div>
         </div>
-    </div>
 </section>
 <!-- Feature Category -->
 <section class="featured-Category">
@@ -79,11 +76,11 @@
     <div class="container">
         <div class="row">
             @foreach($categories as $category)
-            <div class="col-4 col-lg-2">
-                <div class="cardCategory m-2">
+            <div class="col-4 col-lg-2 rounded">
+                <div class="card">
                     <a href="#">
                         <div class="cart-img img-fluid">
-                            <img src="{{ asset('website/images/t1.jpg') }}" alt="" class="img-fluid">
+                            <img src="{{ asset('website/images/c1.jpg') }}" alt="" class="img-fluid">
                             <br>
                             <p class="text-center">{{ $category->category_name }}</p>
                         </div>

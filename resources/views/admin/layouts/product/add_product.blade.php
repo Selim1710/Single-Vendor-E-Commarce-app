@@ -1,6 +1,19 @@
 @extends('admin.master')
 @section('contents')
 <div class="myform">
+    <!-- Validation Error Message -->
+    <div class="message">
+        @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif
+    </div>
+
     <form action="{{ route('admin.store.product') }}" method="POST" enctype="multipart/form-data">
         @csrf
         <div class="form-group">

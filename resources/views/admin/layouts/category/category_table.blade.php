@@ -1,6 +1,6 @@
 @extends('admin.master')
 @section('contents')
-<!-- Added, Edit, Delete Message -->
+<!-- Message -->
 @if(session()->has('error'))
 <p class="alert alert-danger">{{ session()->get('error') }}</p>
 @endif
