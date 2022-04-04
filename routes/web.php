@@ -8,7 +8,7 @@ use App\Http\Controllers\Backend\StockController;
 use App\Http\Controllers\Backend\SubCategoryController;
 use App\Http\Controllers\Backend\OrderController;
 use App\Http\Controllers\Backend\ReportController;
-use App\Http\Controllers\Demo;
+use App\Http\Controllers\Website\OfferController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\UserController;
 use Illuminate\Support\Facades\Route;
@@ -79,6 +79,10 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/edit/stock/{id}',[StockController::class,'edit'])->name('admin.edit.stock');
     Route::post('/update/stock/{id}',[StockController::class,'update'])->name('admin.update.stock');
     Route::get('/delete/stock/{id}',[StockController::class,'delete'])->name('admin.delete.stock');
+   
+    // Offer
+    Route::get('/manage/offer',[OfferController::class,'manageOffer'])->name('admin.manage.offer');
+    Route::get('/add/offer',[OfferController::class,'add'])->name('admin.add.offer');
 
     // Order List
     Route::get('/manage/order',[OrderController::class,'manageOrder'])->name('admin.manage.order');

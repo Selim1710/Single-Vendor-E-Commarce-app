@@ -199,7 +199,7 @@
 } 
 .digit{
   color:white;
-  background-color: red;
+  background-color: #e84118;
   padding:10%;
   border-radius: 5px;
 }
@@ -402,6 +402,16 @@
       display: -webkit-flex;
       display: -ms-flexbox;
       display: flex; } }
+
+      /* start */
+      
+      .time{
+        margin-left:10%;
+      }
+      .title{
+        margin-right: 3%;
+      } 
+      /* end */
   
   .details {
     display: -webkit-box;

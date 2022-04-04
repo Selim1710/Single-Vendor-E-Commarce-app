@@ -31,7 +31,7 @@
             </div>
             <br><br>
             <div class="offer-details">
-                <img src="{{ asset('website/images/offer-1.jpg') }}" class="w-75"><br><br>
+                <img src="{{ asset('website/images/offer-1.jpg') }}" class="w-100 h-75"><br><br>
                 <p>
                     পবিত্র রমজান মাস উপলক্ষে স্টার টেক উত্তরা সোনারগাঁ জনপথ শাখা থেকে ল্যাপটপ বা ডেস্কটপ কিনলেই নিশ্চিত উপহার হিসেবে পাচ্ছেন ৬৫০ টাকা সমমূল্যের শপিং ভাউচার এবং টি-শার্ট সহ আকর্ষনীয় নিশ্চিত উপহার।
 
@@ -47,8 +47,8 @@
                     অফারটি ৩ এপ্রিল - ১৩ই এপ্রিল পর্যন্ত কার্যকর থাকবে।
                 </span>
             </div>
+            <br> <br>
         </div>
-
     </div>
 </section>
 @endsection

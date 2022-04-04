@@ -32,7 +32,7 @@
                         </a>
                         <div class="sb-sidenav-menu-heading">Forms</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
-                            <div class="sb-nav-link-icon"><i class="fas fa-columns"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
                                 Add
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
@@ -42,11 +42,13 @@
                                 <a class="nav-link" href="{{ route('admin.manage.subCategory') }}">Sub-Category</a>
                                 <a class="nav-link" href="{{ route('admin.manage.product') }}">Product</a>
                                 <a class="nav-link" href="{{ route('admin.manage.stock') }}">Stock</a>
+                                <a class="nav-link" href="{{ route('admin.manage.offer') }}">Offer</a>
+
                             </nav>
                         </div>
                         <div class="sb-sidenav-menu-heading">Table</div>
                         <a class="nav-link" href="{{ route('admin.manage.order') }}">
-                            <div class="sb-nav-link-icon"><i class="fas fa-chart-area"></i></div>
+                            <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Order
                         </a>
                         <a class="nav-link" href="{{ route('admin.manage.customer') }}">
