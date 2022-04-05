@@ -12,7 +12,7 @@ class OfferController extends Controller
 
     public function manageOffer()
     {
-        $offers=Offer::all();
+        $offers = Offer::all();
         // dd($offers);
         return view('admin.layouts.offer.offer_table', compact('offers'));
     }
@@ -25,29 +25,28 @@ class OfferController extends Controller
     public function store(Request $request)
     {
         $request->validate([
-            'deadline'=>'required',
-            'title'=>'required',
-            'short_details'=>'required',
-            'details'=>'required',
-            'condition'=>'required',
-            'image'=>'required',
+            'deadline' => 'required',
+            'title' => 'required',
+            'short_details' => 'required',
+            'details' => 'required',
+            'condition' => 'required',
+            'image' => 'required',
         ]);
-        $filename="";
-        if($request->hasFile('image')){
-            $file=$request->file('image');
-            $filename=date('ymdhms') . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('/uploads/offer/'),$filename);
+        $filename = "";
+        if ($request->hasFile('image')) {
+            $file = $request->file('image');
+            $filename = date('ymdhms') . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('/uploads/offer/'), $filename);
         }
         Offer::create([
-            'deadline'=>$request->deadline,
-            'title'=>$request->title,
-            'short_details'=>$request->short_details,
-            'details'=>$request->details,
-            'condition'=>$request->condition,
-            'image'=>$filename,
+            'deadline' => $request->deadline,
+            'title' => $request->title,
+            'short_details' => $request->short_details,
+            'details' => $request->details,
+            'condition' => $request->condition,
+            'image' => $filename,
         ]);
-        return redirect()->route('admin.manage.offer')->with('message','Offer Added Successfully');
-
+        return redirect()->route('admin.manage.offer')->with('message', 'Offer Added Successfully');
     }
 
     public function viewOffer($id)
@@ -56,20 +55,19 @@ class OfferController extends Controller
         return view('admin.layouts.offer.view_offer', compact('offer'));
     }
 
-    public function change(Request $request,$id){
-        $offer=Offer::find($id);
+    public function change(Request $request, $id)
+    {
+        $offer = Offer::find($id);
         $filename = "";
         if ($request->hasfile('image')) {
             $file = $request->file('image');
             $filename = date('Ymdmhs') . '.' . $file->getClientOriginalExtension();
             $file->move(public_path('/uploads/offer'), $filename);
-
         }
         $offer->update([
-            'image'=>$filename,
+            'image' => $filename,
         ]);
         return redirect()->route('admin.manage.offer')->with('message', 'Offer Image Updated');
-
     }
 
     public function edit($id)
@@ -82,18 +80,19 @@ class OfferController extends Controller
     {
         $offer = Offer::find($id);
         $offer->update([
-            'deadline'=>$request->deadline,
-            'title'=>$request->title,
-            'short_details'=>$request->short_details,
-            'details'=>$request->details,
-            'condition'=>$request->condition,
+            'deadline' => $request->deadline,
+            'title' => $request->title,
+            'short_details' => $request->short_details,
+            'details' => $request->details,
+            'condition' => $request->condition,
         ]);
         return redirect()->route('admin.manage.offer')->with('message', 'Offer Updated');
-
     }
 
-    public function destroy($id)
+    public function delete($id)
     {
-        //
+        $offer = Offer::find($id);
+        $offer->delete();
+        return redirect()->route('admin.manage.offer')->with('error', 'Offer deleted');
     }
 }

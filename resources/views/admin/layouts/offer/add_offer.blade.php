@@ -18,7 +18,7 @@
         @csrf
         <div class="form-group">
             <label for="deadline">deadline</label>
-            <input type="datetime-local" name="deadline" class="form-control w-25" id="deadline" placeholder="Enter Deadline" required>
+            <input type="datetime-local" name="deadline" class="form-control w-25" id="deadline"required>
         </div>
         <div class="form-group">
             <label for="t1">title</label>

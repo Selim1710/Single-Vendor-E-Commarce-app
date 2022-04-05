@@ -87,6 +87,7 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/change/offer/image/{id}', [OfferController::class, 'change'])->name('admin.change.offer.image');
     Route::get('/edit/offer/{id}', [OfferController::class, 'edit'])->name('admin.edit.offer');
     Route::post('/update/offer/{id}', [OfferController::class, 'update'])->name('admin.update.offer');
+    Route::get('/delete/offer/{id}', [OfferController::class, 'delete'])->name('admin.delete.offer');
 
     // Order List
     Route::get('/manage/order', [OrderController::class, 'manageOrder'])->name('admin.manage.order');
