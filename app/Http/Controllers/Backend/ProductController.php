@@ -91,7 +91,7 @@ class ProductController extends Controller
     public function view($id)
     {
         $product = Product::find($id);
-        return view('admin.layouts.product.show_product', compact('product'));
+        return view('admin.layouts.product.view_product', compact('product'));
     }
     public function change(Request $request,$id){
         $product=Product::find($id);

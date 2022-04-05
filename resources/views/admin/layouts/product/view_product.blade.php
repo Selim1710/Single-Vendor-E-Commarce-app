@@ -8,7 +8,7 @@
     <div class="image_desc">
         <form action="{{ route('admin.change.product.image',$product->id) }}" method="post" enctype="multipart/form-data">
             @csrf
-            <input type="file" name="product_image" class="w-25 mt-2 form-control">
+            <input type="file" name="product_image" class="w-25 mt-2 form-control" required>
             <button type="submit" class="btn btn-primary mt-2">Change</button>
         </form>
     </div>

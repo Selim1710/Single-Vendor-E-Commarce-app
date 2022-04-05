@@ -5,7 +5,7 @@
 <section class="featured-Product">
     <div class="productHeader">
         <h1> See Our Offers</h1>
-        <p>Check & Get Your Desired Product !</p>
+        <p class="text-center">অফারের অফারগুলো দেখতে নিচে স্ক্রল করুন &nbsp;⬇️</p>
     </div>
     <div class="container">
         <div class="row">

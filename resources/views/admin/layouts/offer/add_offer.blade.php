@@ -14,7 +14,7 @@
 </div>
 
 <div class="myform">
-    <form action="" method="" class="text-capitalize">
+    <form action="{{ route('admin.store.offer') }}" method="POST" enctype="multipart/form-data" class="text-capitalize">
         @csrf
         <div class="form-group">
             <label for="deadline">deadline</label>
