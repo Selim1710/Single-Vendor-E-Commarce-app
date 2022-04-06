@@ -24,7 +24,7 @@
 				<a href="{{ route('users.login.form') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-users"></i>
 					<span>Accounts</span>
 				</a>
-				<a href="#" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-user"></i>
+				<a href="{{ route('user.profile') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-user"></i>
 					<span>Profile</span>
 				</a>
 			</div>

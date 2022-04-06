@@ -17,7 +17,7 @@
                             <img src="{{ asset('/uploads/offer/'.$offer->image) }}" alt="" class="img-fluid w-100"><br><br>
                             <p>{{ $offer->title }}</p>
                         </a>
-                        <span class="text-secondary">{{ $offer->short_details }}</span> <br><br>
+                        <span class="text-secondary font-italic">{{ $offer->short_details }}</span> <br><br>
                         <a href="{{ route('website.offer.details',$offer->id) }}" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
