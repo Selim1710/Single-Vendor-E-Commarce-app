@@ -5,7 +5,7 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\Category;
 use App\Models\Product;
-use App\Models\Subcategory;
+use App\Models\Offer;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
@@ -17,14 +17,22 @@ class HomeController extends Controller
         $products = Product::with('subCategory')->get();
         return view('website.layouts.home', compact('categories', 'products'));
     }
-    public function offers(){
-        return view('website.layouts.offers');
+
+    public function offers()
+    {
+        $offers = Offer::all();
+        return view('website.layouts.offers', compact('offers'));
     }
-    public function offerDetails(){
-        return view('website.layouts.offer_details');
+    public function offerDetails($id)
+    {
+        $offer = Offer::find($id);
+        return view('website.layouts.offer_details', compact('offer'));
     }
 
-
+    public function laptopDeals()
+    {
+        return view('website.layouts.laptop_deals');
+    }
     public function productDetails($id)
     {
         $product = Product::find($id);
@@ -37,14 +45,12 @@ class HomeController extends Controller
         $search_c1 = $request['search_c1'] ?? "";
         $search_c2 = $request['search_c1'] ?? "";
         // remain: specific product will be show
-        if($search_c1 && $search_c2!=""){
+        if ($search_c1 && $search_c2 != "") {
             $products = Product::with('subCategory')->get();
-            return view('website.layouts.compare_product_table',compact('products'));
-        }else{
-            return redirect()->route('website.home')->with('error','Search is empty');
+            return view('website.layouts.compare_product_table', compact('products'));
+        } else {
+            return redirect()->route('website.home')->with('error', 'Search is empty');
         }
-
-
     }
 
 

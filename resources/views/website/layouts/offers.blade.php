@@ -9,111 +9,20 @@
     </div>
     <div class="container">
         <div class="row">
-
+            @foreach($offers as $offer)
             <div class="col-6 col-lg-6">
                 <div class="card text-center">
                     <div class="card-body">
                         <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
+                            <img src="{{ asset('/uploads/offer/'.$offer->image) }}" alt="" class="img-fluid w-100"><br><br>
+                            <p>{{ $offer->title }}</p>
                         </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="{{ route('website.offer.details') }}" class="btn btn-primary">View Details</a>
+                        <span class="text-secondary">{{ $offer->short_details }}</span> <br><br>
+                        <a href="{{ route('website.offer.details',$offer->id) }}" class="btn btn-primary">View Details</a>
                     </div>
                 </div>
             </div>
-
-            <!-- extra -->
-            <div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-2.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-6">
-                <div class="card text-center">
-                    <div class="card-body">
-                        <a href="#" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid w-100"><br><br>
-                            <p>Uttara Sonargaon Janapath Branch Ramadan Mega Deal</p>
-                        </a>
-                        <span class="text-secondary">Buy Laptop or Desktop & Get Exciting Gifts!</span> <br><br>
-                        <a href="#" class="btn btn-primary">View Details</a>
-                    </div>
-                </div>
-            </div>
-
+            @endforeach
         </div>
     </div>
 </section>

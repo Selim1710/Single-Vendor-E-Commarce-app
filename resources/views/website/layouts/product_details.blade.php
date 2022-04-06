@@ -1,42 +1,84 @@
 @extends('website.master')
 @section('contents')
 
-<section class="poroduct-details">
+<section class="snippet-body">
 	<div class="container">
-		<div class="productDetailsCard">
-			<div class="container-fliud">
-				<div class="wrapper row">
-					<div class="preview col-md-6">
-						<div class="preview-pic tab-content">
-							<div><img src="{{ asset('uploads/products/'.$product->product_image) }}" /></div>
+		<div class="col-lg-10 border p-3 main-section bg-white">
+			<div class="row hedding  pl-3 pt-0 pb-3">
+				Product Detail Design Using Bootstrap 4.0
+			</div>
+			<div class="row ">
+				<div class="col-lg-4 left-side-product-box pb-3">
+					<img src="http://nicesnippets.com/demo/pd-image1.jpg" class="border p-3">
+					<span class="sub-img">
+						<img src="http://nicesnippets.com/demo/pd-image2.jpg" class="border p-2">
+						<img src="http://nicesnippets.com/demo/pd-image3.jpg" class="border p-2">
+						<img src="http://nicesnippets.com/demo/pd-image4.jpg" class="border p-2">
+					</span>
+				</div>
+				<div class="col-lg-8">
+					<div class="right-side-pro-detail border p-3 ">
+						<div class="row">
+							<div class="col-lg-12">
+								<span>Who What Wear</span>
+								<p class=" p-0">Women's Velvet Dress</p>
+							</div>
+							<div class="col-lg-12">
+								<p class=" p-0 price-pro">$30</p>
+								<hr class="p-0 ">
+							</div>
+							<div class="col-lg-12 pt-2">
+								<h5>Product Detail</h5>
+								<span>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+									tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+									quis nostrud exercitation ullamco laboris.</span>
+								<hr class=" pt-2 mt-2">
+							</div>
+							<div class="col-lg-12">
+								<p class="tag-section"><strong>Tag : </strong><a href="">Woman</a><a href="">,Man</a></p>
+							</div>
+							<div class="col-lg-12">
+								<h6>Quantity :</h6>
+								<input type="number" class="form-control text-center w-100" value="1">
+							</div>
+							<div class="col-lg-12 mt-3">
+								<div class="row">
+									<div class="col-lg-6 pb-2">
+										<a href="#" class="btn btn-danger w-100">Add To Cart</a>
+									</div>
+									<div class="col-lg-6">
+										<a href="#" class="btn btn-success w-100">Shop Now</a>
+									</div>
+								</div>
+							</div>
 						</div>
 					</div>
-					<div class="details col-md-6">
-						<h3 class="product-title">{{ $product->product_name }}</h3>
-						<div class="rating">
-							<div class="stars">
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star checked"></span>
-								<span class="fa fa-star"></span>
-								<span class="fa fa-star"></span>
-							</div>
-							<span class="review-no">41 reviews</span>
-						</div>
-						<p class="product-description">{{ $product->product_description }}</p>
-						<h4 class="price">current price: <span> $ {{ $product->regular_price }}</span></h4>
-						<p class="vote"><strong>{{ $product->product_offer }} %</strong> of buyers enjoyed this product! <strong>(87 votes)</strong></p>
-						<h5 class="sizes">Model:
-							<span class="size" data-toggle="tooltip" title="small">{{ $product->model }}</span>
-							
-						</h5>
-						<h5 class="colors">Stock Status:
-							<span>Not Available</span>
-						</h5>
-						<div class="action">
-							<button class="add-to-cart btn btn-default" type="button">add to cart</button>
-							<button class="like btn btn-default" type="button"><span class="fa fa-heart"></span></button>
-						</div>
+				</div>
+			</div>
+			<div class="row">
+				<div class="col-lg-12 text-center pt-3">
+					<h4>More Product</h4>
+				</div>
+			</div>
+			<div class="row mt-3 p-0 text-center pro-box-section">
+				<div class="col-lg-3 pb-2">
+					<div class="pro-box border p-0 ">
+						<img src="http://nicesnippets.com/demo/pd-b-image1.jpg">
+					</div>
+				</div>
+				<div class="col-lg-3 pb-2">
+					<div class="pro-box border p-0 ">
+						<img src="http://nicesnippets.com/demo/pd-b-images2.jpg">
+					</div>
+				</div>
+				<div class="col-lg-3 pb-2">
+					<div class="pro-box border p-0 ">
+						<img src="http://nicesnippets.com/demo/pd-b-images3.jpg">
+					</div>
+				</div>
+				<div class="col-lg-3 pb-2">
+					<div class="pro-box border p-0 ">
+						<img src="http://nicesnippets.com/demo/pd-b-images4.jpg">
 					</div>
 				</div>
 			</div>

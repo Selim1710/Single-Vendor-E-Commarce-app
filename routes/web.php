@@ -25,14 +25,19 @@ Route::get('/', [HomeController::class, 'home'])->name('website.home');
 
 Route::group(['prefix' => 'website'], function () {
 
+    // offers
+    Route::get('/offers', [HomeController::class, 'offers'])->name('website.offers');
+    Route::get('/offer/details/{id}', [HomeController::class, 'offerDetails'])->name('website.offer.details');
+
+    // laptop deals
+    Route::get('/laptop/deals', [HomeController::class, 'laptopDeals'])->name('website.laptop.deals');
+
+
     // login
     Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
     Route::get('/registration/form', [UserController::class, 'registrationForm'])->name('user.registration.form');
 
-    // offers
-    Route::get('/offers', [HomeController::class, 'offers'])->name('website.offers');
-    Route::get('/offer/details', [HomeController::class, 'offerDetails'])->name('website.offer.details');
-
+    
     // product details
     Route::get('/product/details/{id}', [HomeController::class, 'productDetails'])->name('website.product.details');
     Route::get('/user/compare/product', [HomeController::class, 'compareProduct'])->name('user.compare.product');
