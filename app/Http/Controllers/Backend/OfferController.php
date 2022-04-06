@@ -92,7 +92,12 @@ class OfferController extends Controller
     public function delete($id)
     {
         $offer = Offer::find($id);
-        $offer->delete();
-        return redirect()->route('admin.manage.offer')->with('error', 'Offer deleted');
+        $image = str_replace('\\', '/', public_path('/uploads/offer/' . $offer->image));
+        if (file_exists($image)) {
+            unlink($image);
+            $offer->delete();
+            return redirect()->route('admin.manage.offer')->with('error', 'Offer deleted');
+        }
+
     }
 }

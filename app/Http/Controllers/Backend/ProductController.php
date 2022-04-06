@@ -78,9 +78,9 @@ class ProductController extends Controller
     public function delete($id)
     {
         $product = Product::find($id);
-        $file = public_path('uploads/products/' . $product->product_image);
-        if (is_file($file)) {
-            unlink($file);
+        $image = str_replace('\\','/',public_path('uploads/products/' . $product->product_image));
+        if (is_file($image)) {
+            unlink($image);
             $product->delete();
             return redirect()->route('admin.manage.product')->with('error', 'Product deleted');
         } else {
