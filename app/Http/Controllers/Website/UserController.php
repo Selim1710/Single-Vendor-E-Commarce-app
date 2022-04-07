@@ -32,9 +32,9 @@ class UserController extends Controller
     }
 
  
-    public function edit($id)
+    public function edit()
     {
-        //
+        return view('website.pages.edit_profile');
     }
 
    
