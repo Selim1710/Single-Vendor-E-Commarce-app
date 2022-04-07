@@ -45,6 +45,11 @@ Route::group(['prefix' => 'website'], function () {
     // product details
     Route::get('/product/details/{id}', [HomeController::class, 'productDetails'])->name('website.product.details');
     Route::get('/user/compare/product', [HomeController::class, 'compareProduct'])->name('user.compare.product');
+
+    // footer
+    Route::get('/user/refund/policy', [HomeController::class, 'refundPolicy'])->name('user.refund.policy');
+    Route::get('/user/terms/and/conditions', [HomeController::class, 'termsConditions'])->name('user.terms.&.conditions');
+
 });
 
 

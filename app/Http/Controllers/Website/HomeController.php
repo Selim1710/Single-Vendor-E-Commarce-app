@@ -53,27 +53,14 @@ class HomeController extends Controller
         }
     }
 
-
-    public function show($id)
+    public function refundPolicy()
     {
-        //
+        return view('website.layouts.refund_policy');
+    }
+    public function termsConditions()
+    {
+        return view('website.layouts.terms_condition');
     }
 
 
-    public function edit($id)
-    {
-        //
-    }
-
-
-    public function update(Request $request, $id)
-    {
-        //
-    }
-
-
-    public function destroy($id)
-    {
-        //
-    }
 }

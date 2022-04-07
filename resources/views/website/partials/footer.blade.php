@@ -11,8 +11,8 @@
         </div>
         <div class="about-us text-center">
             <h4>ABOUT US </h4>
-            <a href="#">Refund Policy</a>
-            <a href="#" class="ml-2">Terms & Condition</a>
+            <a href="{{ route('user.refund.policy') }}">Refund Policy</a>
+            <a href="{{ route('user.terms.&.conditions') }}" class="ml-2">Terms & Condition</a>
         </div>
         <div class="stay-connected text-center">
             <h4>STAY CONNECTED </h4>
