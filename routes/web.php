@@ -42,7 +42,8 @@ Route::group(['prefix' => 'website'], function () {
 
     // user profile
     Route::get('/user/profile/{id}', [UserController::class, 'profile'])->name('user.profile');
-    Route::get('/user/edit/profile', [UserController::class, 'edit'])->name('user.edit.profile');
+    Route::get('/user/edit/profile/{id}', [UserController::class, 'edit'])->name('user.edit.profile');
+    Route::post('/user/update/profile/{id}', [UserController::class, 'updateProfile'])->name('user.update.profile');
 
     
     // product details

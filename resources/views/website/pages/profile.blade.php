@@ -16,8 +16,16 @@
     <section class="user-profile text-white">
         <div class="container">
             <h1 class="text-center pt-3 text-capitalize">{{ $user->name }}<br></h1>
+            <!-- Message -->
+            @if(session()->has('error'))
+            <p class="alert alert-danger text-center">{{ session()->get('error') }}</p>
+            @endif
+            @if(session()->has('message'))
+            <p class="alert alert-success text-center">{{ session()->get('message') }}</p>
+            @endif
+            <!-- end -->
             <div class="edit-profile text-right">
-                <a href="{{ route('user.edit.profile') }}" class="btn btn-secondary">Edit profile</a>
+                <a href="{{ route('user.edit.profile',$user->id) }}" class="btn btn-secondary">Edit profile</a>
                 <a href="{{ route('user.logout') }}" class="btn btn-danger">Logout</a>
             </div>
             <!-- user image -->
@@ -130,7 +138,7 @@
                                     <td>15620000</td>
                                     <td>15620000</td>
                                     <td>
-                                    <a href="#" class="btn btn-success">Order</a>
+                                        <a href="#" class="btn btn-success">Order</a>
                                         <a href="#" class="btn btn-danger">Cancel</a>
                                     </td>
                                 </tr>

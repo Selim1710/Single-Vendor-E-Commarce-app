@@ -66,8 +66,20 @@ class UserController extends Controller
     }
 
 
-    public function edit()
+    public function edit($id)
     {
-        return view('website.pages.edit_profile');
+        $user=User::find($id);
+        return view('website.pages.edit_profile',compact('user'));
+    }
+    public function updateProfile(Request $request,$id){
+        $user = User::find($id);
+        $user->update([
+            "name" => $request->name,
+            "email" => $request->email,
+            "address" => $request->address,
+            "phone" => $request->phone,
+        ]);
+        return redirect()->route('user.profile',$user->id)->with('message', 'Profile Updated');
+
     }
 }
