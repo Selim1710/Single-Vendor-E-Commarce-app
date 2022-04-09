@@ -59,9 +59,10 @@ class UserController extends Controller
     }
 
 
-    public function profile()
+    public function profile($id)
     {
-        return view('website.pages.profile');
+        $user=User::find($id);
+        return view('website.pages.profile',compact('user'));
     }
 
 

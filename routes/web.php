@@ -41,7 +41,7 @@ Route::group(['prefix' => 'website'], function () {
     Route::get('/user/logout', [UserController::class, 'logout'])->name('user.logout');
 
     // user profile
-    Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
+    Route::get('/user/profile/{id}', [UserController::class, 'profile'])->name('user.profile');
     Route::get('/user/edit/profile', [UserController::class, 'edit'])->name('user.edit.profile');
 
     

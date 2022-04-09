@@ -15,14 +15,14 @@
 <body class="bg-dark">
     <section class="user-profile text-white">
         <div class="container">
-            <h1 class="text-center pt-3">User Profile</h1>
+            <h1 class="text-center pt-3 text-capitalize">{{ $user->name }}<br></h1>
             <div class="edit-profile text-right">
                 <a href="{{ route('user.edit.profile') }}" class="btn btn-secondary">Edit profile</a>
                 <a href="{{ route('user.logout') }}" class="btn btn-danger">Logout</a>
             </div>
             <!-- user image -->
-            <div class="user-image mt-3">
-                <img src="{{ asset('website/images/emp.jpg') }}" class="img w-50" style="border:2px solid red;">
+            <div class="user-image mt-2">
+                <img src="{{ asset('website/images/emp.jpg') }}" alt="#" class="img-fluid" style="border:2px solid red;">
             </div>
             <div class="change-image mt-2">
                 <a href="#" class="btn btn-primary">Change</a>
@@ -51,9 +51,8 @@
                 <!-- User details -->
                 <div class="tab-content" id="myTabContent">
                     <div class="tab-pane fade show active mt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
-                        Name: <br>
-                        E-mail: <br>
-                        Address: <br>
+                        E-mail: {{ $user->email }}<br>
+                        Address: {{ $user->address }}<br>
                     </div>
                     <!-- product order -->
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
