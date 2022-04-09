@@ -21,12 +21,18 @@
 				<a href="{{ route('website.laptop.deals') }}" class="nav-item nav-link" style="padding-right: 3.5rem;padding-left: 3.5rem;"><i class="fa fa-briefcase"></i>
 					<span>Laptop Deals</span>
 				</a>
-				<a href="{{ route('users.login.form') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-users"></i>
-					<span>Accounts</span>
-				</a>
+				@if(auth()->user())
 				<a href="{{ route('user.profile') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-user"></i>
 					<span>Profile</span>
 				</a>
+				@else
+				<a href="{{ route('users.login.form') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-users"></i>
+					<span>Accounts</span>
+				</a>
+				
+				@endif
+
+
 			</div>
 		</div>
 	</nav>

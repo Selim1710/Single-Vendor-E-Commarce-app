@@ -17,14 +17,23 @@
 
 <body>
     <div class="wrapper fadeInDown">
+        <!-- Message -->
+        @if(session()->has('error'))
+        <p class="alert alert-danger">{{ session()->get('error') }}</p>
+        @endif
+        @if(session()->has('message'))
+        <p class="alert alert-success text-center">{{ session()->get('message') }}</p>
+        @endif
+        <!-- end -->
         <div id="formContent">
             <div class="fadeIn first">
                 <br>
                 <p>Please! Login from here</p>
             </div>
-            <form>
-                <input type="text" name="name" class="fadeIn second" placeholder="Enter User Name">
-                <input type="text" name="password" class="fadeIn third" placeholder="Enter Password">
+            <form action="{{ route('user.do.login') }}" method="POST">
+                @csrf
+                <input type="email" name="email" class="fadeIn second" placeholder="Enter Email" required>
+                <input type="password" name="password" class="fadeIn third" placeholder="Enter Password" required>
                 <input type="submit" class="fadeIn fourth" value="Sign In">
             </form>
             <div id="formFooter">

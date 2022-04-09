@@ -18,7 +18,7 @@
             <h1 class="text-center pt-3">User Profile</h1>
             <div class="edit-profile text-right">
                 <a href="{{ route('user.edit.profile') }}" class="btn btn-secondary">Edit profile</a>
-                <a href="#" class="btn btn-danger">Logout</a>
+                <a href="{{ route('user.logout') }}" class="btn btn-danger">Logout</a>
             </div>
             <!-- user image -->
             <div class="user-image mt-3">

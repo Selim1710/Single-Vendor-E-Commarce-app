@@ -30,6 +30,7 @@
                             <div class="sb-nav-link-icon"><i class="fas fa-tachometer-alt"></i></div>
                             Dashboard
                         </a>
+                        <!-- forms -->
                         <div class="sb-sidenav-menu-heading">Forms</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
@@ -46,6 +47,7 @@
 
                             </nav>
                         </div>
+                        <!-- table -->
                         <div class="sb-sidenav-menu-heading">Table</div>
                         <a class="nav-link" href="{{ route('admin.manage.order') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
@@ -58,6 +60,16 @@
                         <a class="nav-link" href="{{ route('admin.view.report') }}">
                             <div class="sb-nav-link-icon"><i class="fas fa-table"></i></div>
                             Report
+                        </a>
+                        <!-- website footer -->
+                        <div class="sb-sidenav-menu-heading">footer</div>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="fas fa-credit-card"></i></div>
+                            Refund Policy
+                        </a>
+                        <a class="nav-link" href="#">
+                            <div class="sb-nav-link-icon"><i class="fas fa-list"></i></div>
+                            Terms and Condition
                         </a>
                     </div>
                 </div>

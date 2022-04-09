@@ -35,7 +35,10 @@ Route::group(['prefix' => 'website'], function () {
 
     // login
     Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
+    Route::post('/user/do/login', [UserController::class, 'doLogin'])->name('user.do.login');
     Route::get('/registration/form', [UserController::class, 'registrationForm'])->name('user.registration.form');
+    Route::post('/user/do/registration', [UserController::class, 'doRegistration'])->name('user.do.registration');
+    Route::get('/user/logout', [UserController::class, 'logout'])->name('user.logout');
 
     // user profile
     Route::get('/user/profile', [UserController::class, 'profile'])->name('user.profile');
