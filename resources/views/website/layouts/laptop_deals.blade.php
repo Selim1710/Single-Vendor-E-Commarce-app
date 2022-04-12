@@ -13,35 +13,34 @@
         </div>
     </div>
 </section>
-
-<!-- Feature Category -->
+<!-- laptop -->
 <section class="featured-Category">
     <div class="categoryHeader">
-        <h1>Ramadan Graphics Card Mega Deal</h1>
+        <h1>Ramadan Laptop Mega Deal</h1>
         <p>Get exciting discount on Graphics Card</p>
     </div>
     <div class="container">
         <div class="row">
-            
+            @foreach($laptopDeals as $deal)
             <div class="col-6 col-lg-3">
                 <div class="card">
                     <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
+                        <p class="p-1 text-white rounded" style="background:#40739e;">
+                            Save: {{ $deal->save_money }} ৳
+                        </p>
                         <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
+                            <img src="{{ asset('uploads/laptop_deals/'.$deal->image) }}" alt="" class="img-fluid"><br><br>
+                            <p>Model: {{ $deal->model }}</p>
+                            <span class="text-danger">Price: {{ $deal->base_price }} ৳</span>
                         </a>
                     </div>
                 </div>
             </div>
-
+            @endforeach
         </div>
     </div>
 </section>
-
-<!-- featured product -->
-
+<!-- tablet -->
 <section class="featured-Product">
     <div class="productHeader">
         <h1>Ramadan Tablet Mega Deal</h1>
@@ -49,19 +48,23 @@
     </div>
     <div class="container">
         <div class="row">
-
-        <div class="col-6 col-lg-3">
+            @foreach($tabletDeals as $deal)
+            <div class="col-6 col-lg-3">
                 <div class="card">
                     <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
+                        <!-- save money -->
+                        <p class="p-1 text-white rounded" style="background:#40739e;">
+                            Save: {{ $deal->save_money }} ৳
+                        </p>
                         <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
+                            <img src="{{ asset('uploads/laptop_deals/'.$deal->image) }}" alt="" class="img-fluid"><br><br>
+                            <p>Model: {{ $deal->model }}</p>
+                            <span class="text-danger">Price: {{ $deal->base_price }} ৳</span>
                         </a>
                     </div>
                 </div>
             </div>
+            @endforeach
         </div>
     </div>
 </section>

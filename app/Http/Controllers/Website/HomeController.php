@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
+use App\Models\LaptopDeal;
 use App\Models\Product;
 use App\Models\Offer;
 use App\Models\User;
@@ -32,7 +33,9 @@ class HomeController extends Controller
 
     public function laptopDeals()
     {
-        return view('website.layouts.laptop_deals');
+        $laptopDeals=LaptopDeal::where('type','laptop')->get();
+        $tabletDeals=LaptopDeal::where('type','tablet')->get();
+        return view('website.layouts.laptop_deals',compact('laptopDeals','tabletDeals'));
     }
     public function productDetails($id)
     {
