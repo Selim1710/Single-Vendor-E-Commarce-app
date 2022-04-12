@@ -22,77 +22,8 @@
     </div>
     <div class="container">
         <div class="row">
+            
             <div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <!-- extra -->
-
-            <div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
                 <div class="card">
                     <div class="card-body font-weight-bold">
                         <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
@@ -120,63 +51,6 @@
         <div class="row">
 
         <div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <!-- extra -->
-            <div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
-                <div class="card">
-                    <div class="card-body font-weight-bold">
-                        <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('website/images/offer-1.jpg') }}" alt="" class="img-fluid"><br><br>
-                            <p>Model</p>
-                            <span class="text-danger">Price: 50,000 ৳</span>
-                        </a>
-                    </div>
-                </div>
-            </div><div class="col-6 col-lg-3">
                 <div class="card">
                     <div class="card-body font-weight-bold">
                         <p class="p-1 text-white rounded" style="background:#40739e;">Save: 8,000 ৳</p>
