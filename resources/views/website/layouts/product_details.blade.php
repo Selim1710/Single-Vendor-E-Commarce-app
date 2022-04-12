@@ -1,30 +1,24 @@
 @extends('website.master')
 @section('contents')
-
-<section class="snippet-body">
+<section class="Product-Details">
 	<div class="container">
-		<div class="col-lg-10 border p-3 main-section bg-white">
-			<div class="row hedding pl-3 pt-0 pb-3">
-				Product Detail
-			</div>
-			<div class="row ">
-				<div class="col-lg-4 left-side-product-box pb-3">
-					<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class="border p-3">
+		<div class="col-lg-12  p-3 main-section bg-white">
+			<div class="row">
+				<div class="col-lg-6 left-side-product-box pb-3">
+					<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class=" p-3">
 					<span class="sub-img">
-						<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class="border p-2">
-						<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class="border p-2">
-						<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class="border p-2">
+						<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class=" p-2">
+						<img src="{{ asset('/uploads/products/'.$product->product_image ) }}" class=" p-2">
 					</span>
 				</div>
-				<div class="col-lg-8">
-					<div class="right-side-pro-detail border p-3 ">
+				<div class="col-lg-6 text-capitalize">
+					<div class="right-side-pro-detail p-3">
 						<div class="row">
-							<div class="col-lg-12">
-								<span>{{ $product->model }}</span>
-								<p class=" p-0">{{ $product->product_name }}</p>
+							<div class="model col-lg-12 font-italic">
+								<h2> {{ $product->model }} &nbsp; {{ $product->product_name }}</h2>
 							</div>
 							<div class="col-lg-12">
-								<p class=" p-0 price-pro">{{ $product->regular_price }}</p>
+								<p class=" p-0 price-pro">Price: {{ $product->regular_price }}</p>
 								<hr class="p-0 ">
 							</div>
 							<div class="col-lg-12 pt-2">
@@ -53,33 +47,41 @@
 							</div>
 						</div>
 					</div>
+					<div class="payment m-3">
+						<h3>Payment Options:</h3>
+					</div>
 				</div>
 			</div>
+			<!-- nav-menu -->
 			<div class="row">
 				<div class="col-lg-12 text-center pt-3">
-					<h4>More Product</h4>
+					<h4> Specifications</h4>
 				</div>
 			</div>
 			<div class="row mt-3 p-0 text-center pro-box-section">
-				<div class="col-lg-3 pb-2">
-					<div class="pro-box border p-0 ">
-						<img src="http://nicesnippets.com/demo/pd-b-image1.jpg">
-					</div>
-				</div>
-				<div class="col-lg-3 pb-2">
-					<div class="pro-box border p-0 ">
-						<img src="http://nicesnippets.com/demo/pd-b-images2.jpg">
-					</div>
-				</div>
-				<div class="col-lg-3 pb-2">
-					<div class="pro-box border p-0 ">
-						<img src="http://nicesnippets.com/demo/pd-b-images3.jpg">
-					</div>
-				</div>
-				<div class="col-lg-3 pb-2">
-					<div class="pro-box border p-0 ">
-						<img src="http://nicesnippets.com/demo/pd-b-images4.jpg">
-					</div>
+				<!-- table -->
+				<div class="my-table col-lg-12">
+					<table class="table table-borderless table-hover">
+						<thead>
+							<tr>
+								<th>Basic Information</th>
+							</tr>
+						</thead>
+						<tbody>
+							<tr>
+								<td>processor</td>
+								<td>mark</td>
+							</tr>
+							<tr>
+								<td>display</td>
+								<td>mark</td>
+							</tr>
+							<tr>
+								<td>memory</td>
+								<td>mark</td>
+							</tr>
+						</tbody>
+					</table>
 				</div>
 			</div>
 		</div>
