@@ -336,6 +336,11 @@
     height: auto;
   }
 }
+/* product-table */
+.product-table{
+  margin-left:13%;
+  margin-right:10%;
+}
 
 /* footer */
 .companyDescripton {
