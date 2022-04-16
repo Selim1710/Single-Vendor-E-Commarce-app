@@ -33,16 +33,60 @@ class HomeController extends Controller
 
     public function laptopDeals()
     {
-        $laptopDeals=LaptopDeal::where('type','laptop')->get();
-        $tabletDeals=LaptopDeal::where('type','tablet')->get();
-        return view('website.layouts.laptop_deals',compact('laptopDeals','tabletDeals'));
+        $laptopDeals = LaptopDeal::where('type', 'laptop')->get();
+        $tabletDeals = LaptopDeal::where('type', 'tablet')->get();
+        return view('website.layouts.laptop_deals', compact('laptopDeals', 'tabletDeals'));
     }
     public function productDetails($id)
     {
         $product = Product::find($id);
         return view('website.layouts.product_details', compact('product'));
     }
+    public function cart($id)
+    {
+        $product = Product::find($id);
+        if (!$product) {
+            return redirect()->route('website.home')->with('error', 'there is no product into the cart');
+        }
+        $cartExist = session()->get('cart');
+        // case-1:no cart
+        if (!$cartExist) {
+            $cartData = [$id => [
+                'product_id' => $product->id,
+                'product_model' => $product->model,
+                'product_name' => $product->product_name,
+                'product_image' => $product->product_image,
+                'regular_price' => $product->regular_price,
+                'product_offer' => $product->product_offer,
+                'product_quantity' => 1,
+            ]];
+            session()->put('cart', $cartData);
+            return redirect()->back()->with('message', 'Product added into the cart');
+        }
+        // case-2:already one cart exist
+        if (!isset($cartExist[$id])) {
+            $cartExist[$id] = [
+                'product_id' => $product->id,
+                'product_model' => $product->model,
+                'product_name' => $product->product_name,
+                'product_image' => $product->product_image,
+                'regular_price' => $product->regular_price,
+                'product_offer' => $product->product_offer,
+                'product_quantity' => 1,
+            ];
+            session()->put('cart', $cartExist);
+            return redirect()->back()->with('message','Product added into the cart');
+        }
+        // case-3: same product adding into the cart
+        $cartExist[$id]['product_quantity'] = $cartExist[$id]['product_quantity']+1;
+        session()->put('cart', $cartExist);
+        return redirect()->back()->with('message','Product added into the cart');
+    }
 
+    public function clearCart(){
+        session()->forget('cart');
+        return redirect()->back()->with('error', 'Cart Cleared');
+    }
 
     public function compareProduct(Request $request)
     {
@@ -65,6 +109,4 @@ class HomeController extends Controller
     {
         return view('website.layouts.terms_condition');
     }
-
-
 }

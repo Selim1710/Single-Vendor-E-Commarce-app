@@ -42,17 +42,17 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                            User Details
+                            <h4>User Details</h4>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                            Product Order
+                            <h5>Order-List</h5>
                         </a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                            Mycart
+                            <h5>Mycart<span class="badge badge-secondary">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span></h5>
                         </a>
                     </li>
                 </ul>
@@ -86,26 +86,7 @@
                                     <td>15620000</td>
                                     <td>15620000</td>
                                 </tr>
-                                <tr>
-                                    <td>0</td>
-                                    <td>1010</td>
-                                    <td>Due to the widespread use of tables across third-party</td>
-                                    <td>computer</td>
-                                    <td>35000</td>
-                                    <td>15</td>
-                                    <td>15620000</td>
-                                    <td>15620000</td>
-                                </tr>
-                                <tr>
-                                    <td>0</td>
-                                    <td>1010</td>
-                                    <td>Due to the widespread use of tables across third-party</td>
-                                    <td>computer</td>
-                                    <td>35000</td>
-                                    <td>15</td>
-                                    <td>15620000</td>
-                                    <td>15620000</td>
-                                </tr>
+
                             </tbody>
                         </table>
                     </div>
@@ -113,35 +94,45 @@
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="button-group mt-2 mb-2">
                             <a href="#" class="btn btn-success">Checkout</a>
-                            <a href="#" class="btn btn-danger">Clear All</a>
+                            <a href="{{ route('clear.cart') }}" class="btn btn-danger">Clear All</a>
                         </div>
                         <table class="table border table-responsive">
                             <thead>
-                                <th>SL</th>
                                 <th>Product-id</th>
                                 <th>Model</th>
                                 <th>Name</th>
+                                <th>Image</th>
                                 <th>Unit-Price</th>
+                                <th>Offers</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
                                 <th>Sub-total</th>
                                 <th>Action</th>
                             </thead>
+
                             <tbody>
+                                @if(!empty($carts)){
+                                @foreach($carts as $cart)
                                 <tr>
-                                    <td>0</td>
-                                    <td>1010</td>
-                                    <td>Due to the widespread use of tables across third-party</td>
-                                    <td>computer</td>
-                                    <td>35000</td>
-                                    <td>15</td>
-                                    <td>15620000</td>
-                                    <td>15620000</td>
+                                    <td>{{ $cart['product_id']}}</td>
+                                    <td>{{ $cart['product_model'] }}</td>
+                                    <td>{{ $cart['product_name'] }}</td>
+                                    <td>{{ $cart ['product_image'] }}</td>
+                                    <td>{{ $cart['regular_price'] }}</td>
+                                    <td>{{ $cart['product_offer'] }} %</td>
+                                    <td>{{ $cart['product_quantity'] }}</td>
+                                    <td>{{ $cart['regular_price'] * $cart['product_quantity'] }}</td>
+                                    <td>{{ $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100) }}</td>
                                     <td>
                                         <a href="#" class="btn btn-success">Order</a>
                                         <a href="#" class="btn btn-danger">Cancel</a>
                                     </td>
                                 </tr>
+                                @endforeach
+                                }@else
+                                    <p class="text-danger">There is no product into the cart</p>
+                                
+                                @endif
                             </tbody>
                         </table>
                     </div>

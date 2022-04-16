@@ -21,9 +21,6 @@ use Illuminate\Support\Facades\Route;
 // Website Part
 Route::get('/', [HomeController::class, 'home'])->name('website.home');
 
-
-
-
 Route::group(['prefix' => 'website'], function () {
 
     // offers
@@ -32,7 +29,6 @@ Route::group(['prefix' => 'website'], function () {
 
     // laptop deals
     Route::get('/laptop/deals', [HomeController::class, 'laptopDeals'])->name('website.laptop.deals');
-
 
     // login
     Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
@@ -46,15 +42,20 @@ Route::group(['prefix' => 'website'], function () {
     Route::get('/user/edit/profile/{id}', [UserController::class, 'edit'])->name('user.edit.profile');
     Route::post('/user/update/profile/{id}', [UserController::class, 'updateProfile'])->name('user.update.profile');
 
-    
     // product details
     Route::get('/product/details/{id}', [HomeController::class, 'productDetails'])->name('website.product.details');
     Route::get('/user/compare/product', [HomeController::class, 'compareProduct'])->name('user.compare.product');
 
+    Route::group(['middleware' => 'check_customer'], function () {
+        // add to cart
+        Route::get('/add/to/cart/{id}', [HomeController::class, 'cart'])->name('add.to.cart');
+        Route::get('/clear/cart', [HomeController::class, 'clearCart'])->name('clear.cart');
+
+    });
+
     // footer
     Route::get('/user/refund/policy', [HomeController::class, 'refundPolicy'])->name('user.refund.policy');
     Route::get('/user/terms/and/conditions', [HomeController::class, 'termsConditions'])->name('user.terms.&.conditions');
-
 });
 
 

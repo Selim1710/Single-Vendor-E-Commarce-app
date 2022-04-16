@@ -14,18 +14,18 @@ class UserController extends Controller
     {
         return view('website.pages.login');
     }
-    public function doLogin(Request $request){
+    public function doLogin(Request $request)
+    {
         $request->validate([
             "email" => 'required',
             "password" => 'required',
-            
+
         ]);
         $userData = $request->except('_token');
-        if(Auth::attempt($userData)){
-            return redirect()->route('website.home')->with('message','Login Successful');
-        }else{
-            return redirect()->route('users.login.form')->with('error','Invalid username or password');
-
+        if (Auth::attempt($userData)) {
+            return redirect()->route('website.home')->with('message', 'Login Successful. Now View Profile');
+        } else {
+            return redirect()->route('users.login.form')->with('error', 'Invalid username or password');
         }
     }
 
@@ -61,17 +61,20 @@ class UserController extends Controller
 
     public function profile($id)
     {
-        $user=User::find($id);
-        return view('website.pages.profile',compact('user'));
+        $user = User::find($id);
+        $carts = session()->get('cart');
+        // dd($carts);
+        return view('website.pages.profile', compact('user', 'carts'));
     }
 
 
     public function edit($id)
     {
-        $user=User::find($id);
-        return view('website.pages.edit_profile',compact('user'));
+        $user = User::find($id);
+        return view('website.pages.edit_profile', compact('user'));
     }
-    public function updateProfile(Request $request,$id){
+    public function updateProfile(Request $request, $id)
+    {
         $user = User::find($id);
         $user->update([
             "name" => $request->name,
@@ -79,7 +82,6 @@ class UserController extends Controller
             "address" => $request->address,
             "phone" => $request->phone,
         ]);
-        return redirect()->route('user.profile',$user->id)->with('message', 'Profile Updated');
-
+        return redirect()->route('user.profile', $user->id)->with('message', 'Profile Updated');
     }
 }

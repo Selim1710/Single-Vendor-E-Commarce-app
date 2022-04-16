@@ -38,12 +38,16 @@
 								<div class="row ">
 									<div class="col-lg-6 ">
 										<form action="" method="">
-											<input type="number" class="form-control text-center w-100" value="">
-											<button type="submit" class="btn btn-success w-100 text-center mt-2">Order Now</button>
+											<input type="number" class="form-control text-center w-100" value="1">
+											<button type="submit" class="btn btn-success w-100 text-center mt-2">
+												Order Now
+											</button>
 										</form>
 									</div>
 									<div class="col-lg-6 pb-2 mt-5 ">
-										<a href="#" class="btn btn-info w-100">Add To Cart</a>
+										<a href="{{ route('add.to.cart',$product->id) }}" class="btn btn-info w-100">
+											Add To Cart
+										</a>
 									</div>
 								</div>
 							</div>
@@ -196,7 +200,6 @@
 				</tr>
 			</tbody>
 		</table>
-
 	</div>
 </section>
 @endsection
