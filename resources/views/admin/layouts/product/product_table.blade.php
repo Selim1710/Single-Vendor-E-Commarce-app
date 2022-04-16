@@ -15,15 +15,39 @@
     <table class="table table-borderless table-hover">
         <thead class="table-primary">
             <tr class="text-center">
-                <th scope="col">SL</th>
-                <th scope="col">Model</th>
-                <th scope="col">Name</th>
-                <th scope="col">Regular Price</th>
-                <th scope="col">Image</th>
-                <th scope="col">Offer</th>
-                <th scope="col">Product Description</th>
-                <th scope="col">subCategory_id</th>
-                <th scope="col">Action</th>
+                <th>SL</th>
+                <th>Model</th>
+                <th>Name</th>
+                <th>Regular Price</th>
+                <th>Image</th>
+                <th>Offer</th>
+                <th>Product Description</th>
+                <!-- specification -->
+                <th>processor</th>
+                <th>display</th>
+                <th>memory</th>
+                <th>storage</th>
+                <th>graphics</th>
+                <th>operating_system</th>
+                <th>battery</th>
+                <th>adapter</th>
+                <th>audio</th>
+                <th>keyboard</th>
+                <th>optical_drive</th>
+                <th>webcam</th>
+                <th>wifi</th>
+                <th>bluetooth</th>
+                <th>USB</th>
+                <th>HDMI</th>
+                <th>VGA</th>
+                <th>audio_jack_combo</th>
+                <th>dimensions</th>
+                <th>weight</th>
+                <th>colors</th>
+                <th>manufacturing_warranty</th>
+
+                <th>subCategory_id</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -33,15 +57,41 @@
                 <td>{{ $product->model }}</td>
                 <td>{{ $product->product_name }}</td>
                 <td>{{ $product->regular_price }}</td>
-                <td> <img src="{{ asset('/uploads/products/'.$product->product_image ) }}" style="width:80px;height:80px;"alt=""> </td>
+                <td> <img src="{{ asset('/uploads/products/'.$product->product_image ) }}" style="width:80px;height:80px;" alt=""> </td>
                 <td>{{ $product->product_offer }} %</td>
                 <td>{{ $product->product_description }}</td>
+                <!-- specification -->
+                <td>{{ $product->processor }}</td>
+                <td>{{ $product->display }}</td>
+                <td>{{ $product->memory }}</td>
+                <td>{{ $product->storage }}</td>
+                <td>{{ $product->graphics }}</td>
+                <td>{{ $product->operating_system }}</td>
+                <td>{{ $product->battery }}</td>
+                <td>{{ $product->adapter }}</td>
+                <td>{{ $product->audio }}</td>
+                <td>{{ $product->keyboard }}</td>
+                <td>{{ $product->optical_drive }}</td>
+                <td>{{ $product->webcam }}</td>
+                <td>{{ $product->wifi }}</td>
+                <td>{{ $product->bluetooth }}</td>
+                <td>{{ $product->USB }}</td>
+                <td>{{ $product->HDMI }}</td>
+                <td>{{ $product->VGA }}</td>
+                <td>{{ $product->audio_jack_combo }}</td>
+                <td>{{ $product->dimensions }}</td>
+                <td>{{ $product->weight }}</td>
+                <td>{{ $product->colors }}</td>
+                <td>{{ $product->manufacturing_warranty }}</td>
+
+
+
                 <td>{{ $product->subCategory_id }}</td>
                 <td>
                     <a href="{{ route('admin.view.product',$product->id) }}" class="btn btn-success">View</a>
                     <a href="{{ route('admin.edit.product',$product->id) }}" class="btn btn-primary">Edit</a>
                     <a href="{{ route('admin.delete.product',$product->id) }}" class="btn btn-danger">Delete</a>
-                </td>               
+                </td>
             </tr>
             @endforeach
         </tbody>

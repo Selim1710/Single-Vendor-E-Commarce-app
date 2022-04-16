@@ -6,11 +6,7 @@ use Illuminate\Support\Facades\Schema;
 
 class CreateProductsTable extends Migration
 {
-    /**
-     * Run the migrations.
-     *
-     * @return void
-     */
+ 
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
@@ -21,6 +17,35 @@ class CreateProductsTable extends Migration
             $table->string('product_image');
             $table->double('product_offer');
             $table->string('product_description');
+
+            // specifications
+            $table->string('processor');
+            $table->string('display');
+            $table->string('memory');
+            $table->string('storage');
+            $table->string('graphics');
+            $table->string('operating_system');
+            $table->string('battery');
+            $table->string('adapter');
+            $table->string('audio');
+            // input device
+            $table->string('keyboard');
+            $table->string('optical_drive');
+            $table->string('webcam');
+            // Network and wireless connectivity
+            $table->string('wifi');
+            $table->string('bluetooth');
+            // Port connector and slot
+            $table->string('USB');
+            $table->string('HDMI');
+            $table->string('VGA');
+            $table->string('audio_jack_combo');
+            // Physical specification
+            $table->string('dimensions');
+            $table->string('weight');
+            $table->string('colors');
+            // warranty
+            $table->string('manufacturing_warranty');
 
             $table->unsignedBigInteger('subCategory_id')->default();
             $table->foreign('subCategory_id')

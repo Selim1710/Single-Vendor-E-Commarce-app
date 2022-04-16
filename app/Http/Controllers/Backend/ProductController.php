@@ -29,18 +29,31 @@ class ProductController extends Controller
             'product_offer' => 'required',
             'subCategory_id' => 'required',
             'product_description' => 'required',
+            // specifications
+            'processor' => 'required',
+            'display' => 'required',
+            'memory' => 'required',
+            'storage' => 'required',
+            'graphics' => 'required',
+            'operating_system' => 'required',
+            'battery' => 'required',
+            'adapter' => 'required',
+            'audio' => 'required',
+            'keyboard' => 'required',
+            'optical_drive' => 'required',
+            'webcam' => 'required',
+            'wifi' => 'required',
+            'bluetooth' => 'required',
+            'USB' => 'required',
+            'HDMI' => 'required',
+            'VGA' => 'required',
+            'audio_jack_combo' => 'required',
+            'dimensions' => 'required',
+            'weight' => 'required',
+            'colors' => 'required',
+            'manufacturing_warranty' => 'required',
 
         ]);
-        
-        //method we can use on request
-        //guessExtension()
-        //getMimeType()
-        //there have different store method:store(),asStore(),storePublic()
-        //move()
-        //getClientOriginalName()
-        //getSize()
-        //getError()
-        //isValid()
 
         $filename = '';
         if ($request->hasfile('product_image')) {
@@ -55,6 +68,29 @@ class ProductController extends Controller
             'product_image' => $filename,
             'product_offer' => $request->product_offer,
             'product_description' => $request->product_description,
+            // specifications
+            'processor' => $request->processor,
+            'display' => $request->display,
+            'memory' => $request->memory,
+            'storage' => $request->storage,
+            'graphics' => $request->graphics,
+            'operating_system' => $request->operating_system,
+            'battery' => $request->battery,
+            'adapter' => $request->adapter,
+            'audio' => $request->audio,
+            'keyboard' => $request->keyboard,
+            'optical_drive' => $request->optical_drive,
+            'webcam' => $request->webcam,
+            'wifi' => $request->wifi,
+            'bluetooth' => $request->bluetooth,
+            'USB' => $request->USB,
+            'HDMI' => $request->HDMI,
+            'VGA' => $request->VGA,
+            'audio_jack_combo' => $request->audio_jack_combo,
+            'dimensions' => $request->dimensions,
+            'weight' => $request->weight,
+            'colors' => $request->colors,
+            'manufacturing_warranty' => $request->manufacturing_warranty,
         ]);
         return redirect()->route('admin.manage.product')->with('message', 'Product added successfully');
     }
@@ -72,13 +108,36 @@ class ProductController extends Controller
             'regular_price' => $request->regular_price,
             'product_offer' => $request->product_offer,
             'product_description' => $request->product_description,
+            // specifications
+            'processor' => $request->processor,
+            'display' => $request->display,
+            'memory' => $request->memory,
+            'storage' => $request->storage,
+            'graphics' => $request->graphics,
+            'operating_system' => $request->operating_system,
+            'battery' => $request->battery,
+            'adapter' => $request->adapter,
+            'audio' => $request->audio,
+            'keyboard' => $request->keyboard,
+            'optical_drive' => $request->optical_drive,
+            'webcam' => $request->webcam,
+            'wifi' => $request->wifi,
+            'bluetooth' => $request->bluetooth,
+            'USB' => $request->USB,
+            'HDMI' => $request->HDMI,
+            'VGA' => $request->VGA,
+            'audio_jack_combo' => $request->audio_jack_combo,
+            'dimensions' => $request->dimensions,
+            'weight' => $request->weight,
+            'colors' => $request->colors,
+            'manufacturing_warranty' => $request->manufacturing_warranty,
         ]);
         return redirect()->route('admin.manage.product')->with('message', 'Product updated');
     }
     public function delete($id)
     {
         $product = Product::find($id);
-        $image = str_replace('\\','/',public_path('uploads/products/' . $product->product_image));
+        $image = str_replace('\\', '/', public_path('uploads/products/' . $product->product_image));
         if (is_file($image)) {
             unlink($image);
             $product->delete();
@@ -93,8 +152,9 @@ class ProductController extends Controller
         $product = Product::find($id);
         return view('admin.layouts.product.view_product', compact('product'));
     }
-    public function change(Request $request,$id){
-        $product=Product::find($id);
+    public function change(Request $request, $id)
+    {
+        $product = Product::find($id);
         $filename = '';
         if ($request->hasfile('product_image')) {
             $file = $request->file('product_image');
@@ -102,9 +162,8 @@ class ProductController extends Controller
             $file->move(public_path('/uploads/products'), $filename);
         }
         $product->update([
-            'product_image'=>$filename,
+            'product_image' => $filename,
         ]);
         return redirect()->route('admin.manage.product')->with('message', 'Product Image Updated');
-
     }
 }
