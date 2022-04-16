@@ -67,43 +67,40 @@
 				<tr>
 					<td>Processor</td>
 					<td>
-						Backlit Magic Keyboard with:
-						78 (ANSI) or 79 (ISO) keys including 12 function keys and 4 arrow keys in an inverted-T arrangement
-						Ambient light sensor
-						Force Touch trackpad for precise cursor control and pressure-sensing capabilities; enables Force clicks, accelerators, pressure-sensitive drawing, and Multi-Touch gestures
+						{{ $product->processor }}
 					</td>
 				</tr>
 				<tr>
 					<td>Display</td>
-					<td>2</td>
+					<td>{{ $product->display }}</td>
 				</tr>
 				<tr>
 					<td>Memory</td>
-					<td>2</td>
+					<td>{{ $product->memory }}</td>
 				</tr>
 				<tr>
 					<td>Storage</td>
-					<td>2</td>
+					<td>{{ $product->storage }}</td>
 				</tr>
 				<tr>
 					<td>Graphics</td>
-					<td>2</td>
+					<td>{{ $product->graphics }}</td>
 				</tr>
 				<tr>
 					<td>Operating System</td>
-					<td>2</td>
+					<td>{{ $product->operating_system }}</td>
 				</tr>
 				<tr>
 					<td>Battery</td>
-					<td>2</td>
+					<td>{{ $product->battery }}</td>
 				</tr>
 				<tr>
 					<td>Adapter</td>
-					<td>2</td>
+					<td>{{ $product->adapter }}</td>
 				</tr>
 				<tr>
 					<td>Audio</td>
-					<td>2</td>
+					<td>{{ $product->audio }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -115,15 +112,15 @@
 			<tbody>
 				<tr>
 					<td>Keyboard</td>
-					<td>2</td>
+					<td>{{ $product->keyboard }}</td>
 				</tr>
 				<tr>
 					<td>Optical drive</td>
-					<td>2</td>
+					<td>{{ $product->optical_drive }}</td>
 				</tr>
 				<tr>
 					<td>WebCam</td>
-					<td>2</td>
+					<td>{{ $product->webcam }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -135,11 +132,11 @@
 			<tbody>
 				<tr>
 					<td>Wi-fi</td>
-					<td>2</td>
+					<td>{{ $product->wifi }}</td>
 				</tr>
 				<tr>
 					<td>Bluetooth</td>
-					<td>2</td>
+					<td>{{ $product->bluetooth }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -151,19 +148,19 @@
 			<tbody>
 				<tr>
 					<td>USB</td>
-					<td>2</td>
+					<td>{{ $product->USB }}</td>
 				</tr>
 				<tr>
 					<td>HDMI</td>
-					<td>2</td>
+					<td>{{ $product->HDMI }}</td>
 				</tr>
 				<tr>
 					<td>VGA</td>
-					<td>2</td>
+					<td>{{ $product->VGA }}</td>
 				</tr>
 				<tr>
 					<td>Audio Jack Combo</td>
-					<td>2</td>
+					<td>{{ $product->audio_jack_combo }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -175,15 +172,15 @@
 			<tbody>
 				<tr>
 					<td>Dimensions (W x D x H)</td>
-					<td>2</td>
+					<td>{{ $product->dimensions }}</td>
 				</tr>
 				<tr>
 					<td>weights</td>
-					<td>2</td>
+					<td>{{ $product->weight }}</td>
 				</tr>
 				<tr>
 					<td>color</td>
-					<td>2</td>
+					<td>{{ $product->colors }}</td>
 				</tr>
 			</tbody>
 		</table>
@@ -195,7 +192,7 @@
 			<tbody>
 				<tr>
 					<td>Manufacturing Warranty</td>
-					<td>2</td>
+					<td>{{ $product->manufacturing_warranty }}</td>
 				</tr>
 			</tbody>
 		</table>
