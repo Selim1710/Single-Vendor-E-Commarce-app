@@ -52,7 +52,7 @@
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                            <h5>Mycart<span class="badge badge-secondary">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span></h5>
+                            <h5>Mycart <span class="badge badge-secondary">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span></h5>
                         </a>
                     </li>
                 </ul>
@@ -93,15 +93,18 @@
                     <!-- mycart -->
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="button-group mt-2 mb-2">
-                            <a href="#" class="btn btn-success">Checkout</a>
-                            <a href="{{ route('clear.cart') }}" class="btn btn-danger">Clear All</a>
+                            <a href="#" class="btn btn-success">
+                                Checkout
+                            </a>
+                            <a href="{{ route('clear.cart') }}" class="btn btn-danger">
+                                Clear All
+                            </a>
                         </div>
                         <table class="table border table-responsive">
                             <thead>
                                 <th>Product-id</th>
                                 <th>Model</th>
                                 <th>Name</th>
-                                <th>Image</th>
                                 <th>Unit-Price</th>
                                 <th>Offers</th>
                                 <th>Quantity</th>
@@ -109,29 +112,30 @@
                                 <th>Sub-total</th>
                                 <th>Action</th>
                             </thead>
-
                             <tbody>
-                                @if(!empty($carts)){
-                                @foreach($carts as $cart)
+                                @if(!empty($carts))
+                                @foreach($carts as $key=>$cart)
                                 <tr>
                                     <td>{{ $cart['product_id']}}</td>
                                     <td>{{ $cart['product_model'] }}</td>
                                     <td>{{ $cart['product_name'] }}</td>
-                                    <td>{{ $cart ['product_image'] }}</td>
                                     <td>{{ $cart['regular_price'] }}</td>
                                     <td>{{ $cart['product_offer'] }} %</td>
                                     <td>{{ $cart['product_quantity'] }}</td>
                                     <td>{{ $cart['regular_price'] * $cart['product_quantity'] }}</td>
                                     <td>{{ $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100) }}</td>
                                     <td>
-                                        <a href="#" class="btn btn-success">Order</a>
-                                        <a href="#" class="btn btn-danger">Cancel</a>
+                                        <a href="{{ route('user.place.order',$key) }}" class="btn btn-info">
+                                            Order
+                                        </a>
+                                        <a href="{{ route('user.remove.cart',$key) }}" class="btn btn-danger">
+                                            Remove
+                                        </a>
                                     </td>
                                 </tr>
                                 @endforeach
-                                }@else
-                                    <p class="text-danger">There is no product into the cart</p>
-                                
+                                @else
+                                <p class="text-danger">There is no product into the cart</p>
                                 @endif
                             </tbody>
                         </table>

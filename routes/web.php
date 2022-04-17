@@ -7,9 +7,10 @@ use App\Http\Controllers\Backend\LaptopDealsController;
 use App\Http\Controllers\Backend\ProductController;
 use App\Http\Controllers\Backend\StockController;
 use App\Http\Controllers\Backend\SubCategoryController;
-use App\Http\Controllers\Backend\OrderController;
+use App\Http\Controllers\Backend\ManageOrderController;
 use App\Http\Controllers\Backend\ReportController;
 use App\Http\Controllers\Backend\OfferController;
+use App\Http\Controllers\Website\CartController;
 use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\UserController;
 use Illuminate\Support\Facades\Route;
@@ -47,9 +48,13 @@ Route::group(['prefix' => 'website'], function () {
     Route::get('/user/compare/product', [HomeController::class, 'compareProduct'])->name('user.compare.product');
 
     Route::group(['middleware' => 'check_customer'], function () {
+
         // add to cart
-        Route::get('/add/to/cart/{id}', [HomeController::class, 'cart'])->name('add.to.cart');
-        Route::get('/clear/cart', [HomeController::class, 'clearCart'])->name('clear.cart');
+        Route::get('/add/to/cart/{id}', [CartController::class, 'cart'])->name('add.to.cart');
+        Route::get('/clear/cart', [CartController::class, 'clearCart'])->name('clear.cart');
+        // Order
+        Route::get('/user/place/order/{id}', [CartController::class, 'order'])->name('user.place.order');
+        Route::get('/user/remove/cart/{id}', [CartController::class, 'remove'])->name('user.remove.cart');
 
     });
 
@@ -122,7 +127,7 @@ Route::group(['prefix' => 'admin'], function () {
 
 
     // Order List
-    Route::get('/manage/order', [OrderController::class, 'manageOrder'])->name('admin.manage.order');
+    Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');
 
     // Customer List
     Route::get('/manage/customer', [CustomerController::class, 'manageCustomer'])->name('admin.manage.customer');

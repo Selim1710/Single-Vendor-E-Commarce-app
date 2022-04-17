@@ -63,6 +63,7 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $carts = session()->get('cart');
+        // session()->forget('cart');
         // dd($carts);
         return view('website.pages.profile', compact('user', 'carts'));
     }
