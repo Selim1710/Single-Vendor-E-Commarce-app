@@ -55,6 +55,7 @@ Route::group(['prefix' => 'website'], function () {
         // Order
         Route::get('/user/place/order/{id}', [CartController::class, 'order'])->name('user.place.order');
         Route::get('/user/remove/cart/{id}', [CartController::class, 'remove'])->name('user.remove.cart');
+        Route::get('/user/checkout', [CartController::class, 'checkout'])->name('user.checkout');
 
     });
 

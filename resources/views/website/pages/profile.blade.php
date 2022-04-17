@@ -93,7 +93,7 @@
                     <!-- mycart -->
                     <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
                         <div class="button-group mt-2 mb-2">
-                            <a href="#" class="btn btn-success">
+                            <a href="{{ route('user.checkout') }}" class="btn btn-success">
                                 Checkout
                             </a>
                             <a href="{{ route('clear.cart') }}" class="btn btn-danger">

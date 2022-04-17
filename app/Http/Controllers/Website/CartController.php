@@ -56,33 +56,56 @@ class CartController extends Controller
     public function order($id)
     {
         $cart = session()->get('cart');
-        $cart=$cart[$id];
-        $cart= Order::create([
-            'customer_id'=> auth()->user()->id,
-            'name'=> auth()->user()->name,
-            'g-mail'=> auth()->user()->email,
-            'phone'=> auth()->user()->phone,
-            'product_id'=> $cart['product_id'],
-            'product_name'=> $cart['product_name'],
-            'model'=> $cart['product_model'],
-            'price'=> $cart['regular_price'],
-            'offer'=> $cart['product_offer'],
-            'quantity'=> $cart['product_quantity'],
-            'total'=> $cart['regular_price'] * $cart['product_quantity'],
-            'sub_total'=> $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100),
+        $cart = $cart[$id];
+        $cart = Order::create([
+            'customer_id' => auth()->user()->id,
+            'name' => auth()->user()->name,
+            'g-mail' => auth()->user()->email,
+            'phone' => auth()->user()->phone,
+            'product_id' => $cart['product_id'],
+            'product_name' => $cart['product_name'],
+            'model' => $cart['product_model'],
+            'price' => $cart['regular_price'],
+            'offer' => $cart['product_offer'],
+            'quantity' => $cart['product_quantity'],
+            'total' => $cart['regular_price'] * $cart['product_quantity'],
+            'sub_total' => $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer'] / 100),
         ]);
         return redirect()->back()->with('message', 'Order place successful');
     }
 
     public function remove($id)
     {
-        dd($id);
+        $cart = session()->get('cart');
+        unset($cart[$id]);
+        session()->put('cart', $cart);
+        return redirect()->back()->with('error', 'Product deleted from cart');
     }
 
 
-    public function create()
+    public function checkout()
     {
-        //
+        $carts = session()->get('cart');
+        if ($carts) {
+            foreach ($carts as $cart)
+                Order::create([
+                    'customer_id' => auth()->user()->id,
+                    'name' => auth()->user()->name,
+                    'g-mail' => auth()->user()->email,
+                    'phone' => auth()->user()->phone,
+                    'product_id' => $cart['product_id'],
+                    'product_name' => $cart['product_name'],
+                    'model' => $cart['product_model'],
+                    'price' => $cart['regular_price'],
+                    'offer' => $cart['product_offer'],
+                    'quantity' => $cart['product_quantity'],
+                    'total' => $cart['regular_price'] * $cart['product_quantity'],
+                    'sub_total' => $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer'] / 100),
+                ]);
+            session()->forget('cart');
+            return redirect()->back()->with('message', 'Order place successfully');
+        }
+        return redirect()->back()->with('error', 'No data found into the cart');
     }
 
 
