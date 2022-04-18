@@ -71,6 +71,9 @@ class CartController extends Controller
             'total' =>($cart['regular_price'] * $cart['product_quantity']) - (($cart['regular_price'] * $cart['product_quantity']) * ($cart['product_offer'] / 100)),
             // savings(discount * price) then substract with original price
         ]);
+        $cart = session()->get('cart');
+        unset($cart[$id]);
+        session()->put('cart', $cart);
         return redirect()->back()->with('message', 'Order place successful');
     }
 
