@@ -27,7 +27,6 @@ class CreateOrdersTable extends Migration
             $table->string('offer');
             $table->string('quantity');
             $table->string('total');
-            $table->string('sub_total');
             $table->timestamps();
         });
     }

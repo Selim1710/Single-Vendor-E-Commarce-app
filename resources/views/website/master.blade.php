@@ -25,7 +25,6 @@
 
 
     @include('website.partials.header')
-
     <!-- Error message -->
     @if(session()->has('error'))
     <p class="alert alert-danger">{{ session()->get('error') }}</p>
@@ -34,9 +33,7 @@
     <p class="alert alert-success">{{ session()->get('message') }}</p>
     @endif
     <!-- end error message -->
-
     @yield('contents')
-
     @include('website.partials.footer')
 
     <!-- js file -->

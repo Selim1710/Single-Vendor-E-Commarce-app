@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
+use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
@@ -19,7 +20,6 @@ class UserController extends Controller
         $request->validate([
             "email" => 'required',
             "password" => 'required',
-
         ]);
         $userData = $request->except('_token');
         if (Auth::attempt($userData)) {
@@ -58,16 +58,13 @@ class UserController extends Controller
         return redirect()->route('website.home')->with('error', 'Logout successful');
     }
 
-
     public function profile($id)
     {
         $user = User::find($id);
         $carts = session()->get('cart');
-        // session()->forget('cart');
-        // dd($carts);
-        return view('website.pages.profile', compact('user', 'carts'));
+        $orders = Order::where('customer_id','=',$id)->get();
+        return view('website.pages.profile', compact('user', 'carts','orders'));
     }
-
 
     public function edit($id)
     {

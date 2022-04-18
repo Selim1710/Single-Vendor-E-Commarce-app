@@ -62,30 +62,30 @@
                         E-mail: {{ $user->email }}<br>
                         Address: {{ $user->address }}<br>
                     </div>
-                    <!-- product order -->
+                    <!-- order-list -->
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
                         <table class="table border table-responsive">
                             <thead>
-                                <th>SL</th>
                                 <th>Product-id</th>
                                 <th>Model</th>
                                 <th>Name</th>
                                 <th>Unit-Price</th>
+                                <th>Offer</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
-                                <th>Sub-total</th>
                             </thead>
                             <tbody>
+                                @foreach($orders as $order)
                                 <tr>
-                                    <td>0</td>
-                                    <td>1010</td>
-                                    <td>Due to the widespread use of tables across third-party</td>
-                                    <td>computer</td>
-                                    <td>35000</td>
-                                    <td>15</td>
-                                    <td>15620000</td>
-                                    <td>15620000</td>
+                                    <td>{{ $order->product_id }}</td>
+                                    <td>{{ $order->model }}</td>
+                                    <td>{{ $order->product_name }}</td>
+                                    <td>{{ $order->price }}</td>
+                                    <td>{{ $order->offer }} %</td>
+                                    <td>{{ $order->quantity }}</td>
+                                    <td>{{ $order->total }}</td>
                                 </tr>
+                                @endforeach
 
                             </tbody>
                         </table>
@@ -109,7 +109,6 @@
                                 <th>Offers</th>
                                 <th>Quantity</th>
                                 <th>Total</th>
-                                <th>Sub-total</th>
                                 <th>Action</th>
                             </thead>
                             <tbody>
@@ -122,8 +121,7 @@
                                     <td>{{ $cart['regular_price'] }}</td>
                                     <td>{{ $cart['product_offer'] }} %</td>
                                     <td>{{ $cart['product_quantity'] }}</td>
-                                    <td>{{ $cart['regular_price'] * $cart['product_quantity'] }}</td>
-                                    <td>{{ $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100) }}</td>
+                                    <td>{{ $cart['regular_price'] * $cart['product_quantity'] - ($cart['product_offer']/100) }}</td>
                                     <td>
                                         <a href="{{ route('user.place.order',$key) }}" class="btn btn-info">
                                             Order

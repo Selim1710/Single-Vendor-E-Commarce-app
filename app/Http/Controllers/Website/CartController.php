@@ -68,8 +68,7 @@ class CartController extends Controller
             'price' => $cart['regular_price'],
             'offer' => $cart['product_offer'],
             'quantity' => $cart['product_quantity'],
-            'total' => $cart['regular_price'] * $cart['product_quantity'],
-            'sub_total' => $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer'] / 100),
+            'total' => ($cart['regular_price'] * $cart['product_quantity']) - ($cart['product_offer']/100),
         ]);
         return redirect()->back()->with('message', 'Order place successful');
     }
@@ -99,8 +98,7 @@ class CartController extends Controller
                     'price' => $cart['regular_price'],
                     'offer' => $cart['product_offer'],
                     'quantity' => $cart['product_quantity'],
-                    'total' => $cart['regular_price'] * $cart['product_quantity'],
-                    'sub_total' => $cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer'] / 100),
+                    'total' => $cart['regular_price'] * $cart['product_quantity'] - ($cart['product_offer'] / 100),
                 ]);
             session()->forget('cart');
             return redirect()->back()->with('message', 'Order place successfully');

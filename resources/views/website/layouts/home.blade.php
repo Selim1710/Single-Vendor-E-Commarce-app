@@ -1,8 +1,6 @@
 @extends('website.master')
 @section('contents')
-
 <!-- See All Categories Button -->
-
 <section class="all-categories">
     <button class="btn w-100 text-white" style="background:#16a085;" type="button" data-toggle="collapse" data-target="#category" aria-expanded="false" aria-controls="collapseExample">
         See All Categories &rarr;
@@ -24,9 +22,7 @@
         @endforeach
     </div>
 </section>
-
 <!-- Carousel  -->
-
 <section class="product-slider">
         <div class="slider">
             <div class="col-lg-8">

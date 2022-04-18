@@ -28,7 +28,7 @@
                 <input type="text" name="address" value="{{ $user->address }}" class="form-control" id="inputAddress">
             </div>
             <div class="form-group">
-                <label for="phone">Name</label>
+                <label for="phone">Phone</label>
                 <input type="number" name="phone" value="{{ $user->phone }}" class="form-control" id="phone">
             </div>
             <button type="submit" class="btn btn-info w-100 text-uppercase">Save Changes</button>
