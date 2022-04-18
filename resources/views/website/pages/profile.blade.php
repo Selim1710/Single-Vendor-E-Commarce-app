@@ -121,7 +121,7 @@
                                     <td>{{ $cart['regular_price'] }}</td>
                                     <td>{{ $cart['product_offer'] }} %</td>
                                     <td>{{ $cart['product_quantity'] }}</td>
-                                    <td>{{ $cart['regular_price'] * $cart['product_quantity'] - ($cart['product_offer']/100) }}</td>
+                                    <td>{{ ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100)) }}</td>
                                     <td>
                                         <a href="{{ route('user.place.order',$key) }}" class="btn btn-info">
                                             Order
