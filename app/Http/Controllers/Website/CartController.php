@@ -60,7 +60,7 @@ class CartController extends Controller
         $cart = Order::create([
             'customer_id' => auth()->user()->id,
             'name' => auth()->user()->name,
-            'g-mail' => auth()->user()->email,
+            'email' => auth()->user()->email,
             'phone' => auth()->user()->phone,
             'product_id' => $cart['product_id'],
             'product_name' => $cart['product_name'],
@@ -94,7 +94,7 @@ class CartController extends Controller
                 Order::create([
                     'customer_id' => auth()->user()->id,
                     'name' => auth()->user()->name,
-                    'g-mail' => auth()->user()->email,
+                    'email' => auth()->user()->email,
                     'phone' => auth()->user()->phone,
                     'product_id' => $cart['product_id'],
                     'product_name' => $cart['product_name'],

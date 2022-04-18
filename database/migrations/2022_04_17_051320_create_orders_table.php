@@ -17,7 +17,7 @@ class CreateOrdersTable extends Migration
             $table->id();
             $table->string('customer_id');
             $table->string('name');
-            $table->string('g-mail');
+            $table->string('email');
             $table->string('phone');
 
             $table->string('product_id');

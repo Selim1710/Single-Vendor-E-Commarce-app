@@ -7,6 +7,7 @@ use App\Models\Category;
 use App\Models\LaptopDeal;
 use App\Models\Product;
 use App\Models\Offer;
+use App\Models\Stock;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -40,7 +41,8 @@ class HomeController extends Controller
     public function productDetails($id)
     {
         $product = Product::find($id);
-        return view('website.layouts.product_details', compact('product'));
+        $stocks = Stock::where('product_id','=',$id)->get();
+        return view('website.layouts.product_details', compact('product','stocks'));
     }
 
     public function compareProduct(Request $request)

@@ -28,8 +28,15 @@
 								</span>
 								<hr class=" pt-2 mt-2">
 							</div>
+							<!-- stock -->
 							<div class="col-lg-12">
-								<p class="tag-section"><strong>Availability : </strong><span>Out Of Stock</span></p>
+								@foreach($stocks as $stock)
+								@if($stock->total_produce==0)
+								<p class="tag-section"><strong>Availability : </strong><span class="bg-danger text-white p-1 rounded">Out of Stock </span></p>
+								@else
+								<p class="tag-section"><strong>Availability : </strong><span class="bg-secondary text-white p-1 rounded">Total-In-Stock : {{ $stock->total_produce }}</span></p>
+								@endif
+								@endforeach
 							</div>
 							<div class="col-lg-12">
 								<h6>Quantity :</h6>

@@ -1,42 +1,43 @@
 @extends('admin.master')
 @section('contents')
-
-<div class="table_button">
-    <a href="#" class="btn btn-primary">Add Category</a>
-</div>
 <div class="manage_table">
     <table class="table table-borderless table-hover">
         <thead class="table-primary">
             <tr class="text-center">
-                <th scope="col">SL</th>
-                <th scope="col">customer_id</th>
-                <th scope="col">Name</th>          
-                <th scope="col">email</th>
-
-                <th scope="col">product_id</th>
-                <th scope="col">Name</th>
-                <th scope="col">Quantity</th>
-                <th scope="col">Total Price</th>
-                <th scope="col">Action</th>
+                <th>customer_id</th>
+                <th>Name</th>          
+                <th>Email</th>
+                <th>Phone</th>
+                <th>Product id</th>
+                <th>Name</th>
+                <th>Model</th>
+                <th>Price</th>
+                <th>Offer</th>
+                <th>Quantity</th>
+                <th>Total Price</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
-
+            @foreach($orders as $order)
             <tr class="text-center">
-                <td>1</td>
-                <td>Desktop</td>
-                <td>1</td>
-                <td>Desktop</td>
-                <td>1</td>
-                <td>Desktop</td>
-                <td>1</td>
-                <td>Desktop</td>
+                <td>{{ $order->customer_id }}</td>
+                <td>{{ $order->name }}</td>
+                <td>{{ $order->email }}</td>
+                <td>{{ $order->phone }}</td>
+                <td>{{ $order->product_id }}</td>
+                <td>{{ $order->product_name }}</td>
+                <td>{{ $order->model }}</td>
+                <td>{{ $order->price }}</td>
+                <td>{{ $order->offer }}</td>
+                <td>{{ $order->quantity }}</td>
+                <td>{{ $order->total }}</td>
                 <td>
                     <a href="#" class="btn btn-success">Accept</a>
                     <a href="#" class="btn btn-danger">Reject</a>
                 </td>               
             </tr>
-            
+            @endforeach
         </tbody>
     </table>
 </div>
