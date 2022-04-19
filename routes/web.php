@@ -43,20 +43,21 @@ Route::group(['prefix' => 'website'], function () {
     Route::get('/user/edit/profile/{id}', [UserController::class, 'edit'])->name('user.edit.profile');
     Route::post('/user/update/profile/{id}', [UserController::class, 'updateProfile'])->name('user.update.profile');
 
+    // download pdf
+    Route::get('/user/download/pdf/{id}', [UserController::class, 'downloadPDF'])->name('user.download.pdf');
+
+
     // product details
     Route::get('/product/details/{id}', [HomeController::class, 'productDetails'])->name('website.product.details');
     Route::get('/user/compare/product', [HomeController::class, 'compareProduct'])->name('user.compare.product');
 
     Route::group(['middleware' => 'check_customer'], function () {
-
         // add to cart
         Route::get('/add/to/cart/{id}', [CartController::class, 'cart'])->name('add.to.cart');
         Route::get('/clear/cart', [CartController::class, 'clearCart'])->name('clear.cart');
-        // Order
         Route::get('/user/place/order/{id}', [CartController::class, 'order'])->name('user.place.order');
         Route::get('/user/remove/cart/{id}', [CartController::class, 'remove'])->name('user.remove.cart');
         Route::get('/user/checkout', [CartController::class, 'checkout'])->name('user.checkout');
-
     });
 
     // footer

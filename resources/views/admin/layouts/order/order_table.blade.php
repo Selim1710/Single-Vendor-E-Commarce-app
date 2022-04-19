@@ -2,9 +2,9 @@
 @section('contents')
 <div class="manage_table">
     <table class="table table-borderless table-hover">
-        <thead class="table-primary">
+        <thead class="table-primary text-capitalize">
             <tr class="text-center">
-                <th>customer_id</th>
+                <th>customer id</th>
                 <th>Name</th>          
                 <th>Email</th>
                 <th>Phone</th>

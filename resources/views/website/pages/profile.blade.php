@@ -42,7 +42,7 @@
                 <ul class="nav nav-tabs" id="myTab" role="tablist">
                     <li class="nav-item">
                         <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                            <h4>User Details</h4>
+                            <h5>User Details</h5>
                         </a>
                     </li>
                     <li class="nav-item">
@@ -64,6 +64,11 @@
                     </div>
                     <!-- order-list -->
                     <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                        <div class="button-group mt-2 mb-2">
+                            <a href="{{ route('user.download.pdf',$user->id) }}" class="btn btn-success">
+                                Download PDF
+                            </a>
+                        </div>
                         <table class="table border table-responsive">
                             <thead>
                                 <th>Product-id</th>
@@ -133,7 +138,7 @@
                                 </tr>
                                 @endforeach
                                 @else
-                                <p class="text-danger">There is no product into the cart</p>
+                                <p class="text-danger">No product into the cart</p>
                                 @endif
                             </tbody>
                         </table>

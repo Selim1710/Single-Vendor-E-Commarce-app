@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\User;
 use Illuminate\Http\Request;
+use PDF;
 use Illuminate\Support\Facades\Auth;
 
 class UserController extends Controller
@@ -62,7 +63,6 @@ class UserController extends Controller
     {
         $user = User::find($id);
         $carts = session()->get('cart');
-        // session()->forget('cart');
         $orders = Order::where('customer_id','=',$id)->get();
         return view('website.pages.profile', compact('user', 'carts','orders'));
     }
@@ -82,5 +82,15 @@ class UserController extends Controller
             "phone" => $request->phone,
         ]);
         return redirect()->route('user.profile', $user->id)->with('message', 'Profile Updated');
+    }
+
+    public function downloadPDF($id){
+        $user = User::find($id);
+        $orders = Order::where('customer_id', '=', $id)->get();
+        $sub_total=Order::where('customer_id', '=', $id)->sum('total');
+        return view('website.layouts.download_pdf',compact('user','orders','sub_total'));
+
+        // $pdf = PDF::loadView('website.layouts.download_pdf');
+        // return $pdf->download('MyOrderList.pdf');
     }
 }
