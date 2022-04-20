@@ -24,6 +24,10 @@ Route::get('/', [HomeController::class, 'home'])->name('website.home');
 
 Route::group(['prefix' => 'website'], function () {
 
+    // see all categories
+    Route::get('/show/sub/category/product/{id}', [HomeController::class, 'subCategoryProduct'])->name('show.sub.category.product');
+
+
     // offers
     Route::get('/offers', [HomeController::class, 'offers'])->name('website.offers');
     Route::get('/offer/details/{id}', [HomeController::class, 'offerDetails'])->name('website.offer.details');

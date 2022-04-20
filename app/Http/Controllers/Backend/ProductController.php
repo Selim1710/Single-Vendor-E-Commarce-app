@@ -91,6 +91,8 @@ class ProductController extends Controller
             'weight' => $request->weight,
             'colors' => $request->colors,
             'manufacturing_warranty' => $request->manufacturing_warranty,
+
+            'subCategory_id' => $request->subCategory_id,
         ]);
         return redirect()->route('admin.manage.product')->with('message', 'Product added successfully');
     }

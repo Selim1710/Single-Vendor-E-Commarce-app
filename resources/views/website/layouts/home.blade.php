@@ -14,7 +14,7 @@
             @if(!empty($category->subCategories))
             <div class="dropdown-menu">
                 @foreach($category->subCategories as $subCategory)
-                <a class="dropdown-item" href="#">{{ $subCategory->sub_category_name }}</a>
+                <a class="dropdown-item" href="{{ route('show.sub.category.product',$subCategory->id) }}">{{ $subCategory->sub_category_name }}</a>
                 @endforeach
             </div>
             @endif

@@ -88,9 +88,9 @@ class UserController extends Controller
         $user = User::find($id);
         $orders = Order::where('customer_id', '=', $id)->get();
         $sub_total=Order::where('customer_id', '=', $id)->sum('total');
-        return view('website.layouts.download_pdf',compact('user','orders','sub_total'));
+        // return view('website.layouts.download_pdf',compact('user','orders','sub_total'));
 
-        // $pdf = PDF::loadView('website.layouts.download_pdf');
-        // return $pdf->download('MyOrderList.pdf');
+        $pdf = PDF::loadView('website.layouts.download_pdf',compact('user','orders','sub_total'));
+        return $pdf->download('MyOrderList.pdf');
     }
 }

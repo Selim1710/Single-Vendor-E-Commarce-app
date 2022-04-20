@@ -8,6 +8,7 @@ use App\Models\LaptopDeal;
 use App\Models\Product;
 use App\Models\Offer;
 use App\Models\Stock;
+use App\Models\Subcategory;
 use App\Models\User;
 use Illuminate\Http\Request;
 
@@ -19,6 +20,13 @@ class HomeController extends Controller
         $categories = Category::with('subCategories')->get();
         $products = Product::with('subCategory')->get();
         return view('website.layouts.home', compact('categories', 'products'));
+    }
+
+    public function subCategoryProduct($id)
+    {
+        $subCategory = Subcategory::find($id);
+        $products = Product::where('subCategory_id','=',$id)->get();
+        return view('website.layouts.sub_category_product', compact('products'));
     }
 
     public function offers()
