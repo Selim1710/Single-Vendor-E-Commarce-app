@@ -18,6 +18,7 @@ class HomeController extends Controller
     public function home()
     {
         $categories = Category::with('subCategories')->get();
+        // return $categories;
         $products = Product::with('subCategory')->get();
         return view('website.layouts.home', compact('categories', 'products'));
     }
@@ -27,6 +28,15 @@ class HomeController extends Controller
         $subCategory = Subcategory::find($id);
         $products = Product::where('subCategory_id','=',$id)->get();
         return view('website.layouts.sub_category_product', compact('products'));
+    }
+    public function categoryProduct($id)
+    {
+        $category = Category::find($id);
+        $subCategory = Subcategory::where('category_id','=',$id)->get();
+        foreach($subCategory as $sub){
+            $products = Product::where('subCategory_id','=',$sub->id)->get();
+        }
+        return view('website.layouts.category_product', compact('products'));
     }
 
     public function offers()

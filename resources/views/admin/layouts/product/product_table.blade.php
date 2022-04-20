@@ -87,6 +87,8 @@
 
 
                 <td>{{ $product->subCategory_id }}</td>
+                <td>{{ $product->category_id }}</td>
+
                 <td>
                     <a href="{{ route('admin.view.product',$product->id) }}" class="btn btn-success">View</a>
                     <a href="{{ route('admin.edit.product',$product->id) }}" class="btn btn-primary">Edit</a>

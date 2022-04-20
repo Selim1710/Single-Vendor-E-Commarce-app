@@ -74,7 +74,7 @@
             @foreach($categories as $category)
             <div class="col-4 col-lg-2 rounded">
                 <div class="card">
-                    <a href="#">
+                    <a href="{{ route('show.category.product',$category->id) }}">
                         <div class="cart-img img-fluid">
                             <img src="{{ asset('website/images/c1.jpg') }}" alt="" class="img-fluid">
                             <br>
