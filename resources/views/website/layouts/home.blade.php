@@ -64,7 +64,7 @@
         </div>
 </section>
 <!-- Feature Category -->
-<section class="featured-Category">
+<section class="featured-Category border">
     <div class="categoryHeader">
         <h1>Featured Category</h1>
         <p>Get Your Desired Product from Featured Category!</p>
@@ -75,8 +75,8 @@
             <div class="col-4 col-lg-2 rounded">
                 <div class="card">
                     <a href="{{ route('show.category.product',$category->id) }}">
-                        <div class="cart-img img-fluid">
-                            <img src="{{ asset('website/images/c1.jpg') }}" alt="" class="img-fluid">
+                        <div class="cart-img img-fluid text-center m-2">
+                            <img src="{{ asset('/uploads/category/'.$category->image ) }}" alt="" class="img-fluid">
                             <br>
                             <p class="text-center">{{ $category->category_name }}</p>
                         </div>
@@ -86,11 +86,10 @@
             @endforeach
         </div>
     </div>
+    <br><br><br><br><br><br>
 </section>
-
 <!-- featured product -->
-
-<section class="featured-Product">
+<section class="featured-Product border">
     <div class="productHeader">
         <h1>Featured Product</h1>
         <p>Check & Get Your Desired Product !</p>
@@ -113,6 +112,7 @@
             @endforeach
         </div>
     </div>
+    <br><br><br><br><br><br>
 </section>
 
 <!-- Description -->

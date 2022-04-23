@@ -3,7 +3,7 @@
 
 <!-- sub-category product -->
 
-<section class="featured-Product">
+<section class="featured-Product border">
     <div class="productHeader">
         <h1>Sub-Category Product</h1>
         <p>Check & Get Your Desired Product !</p>
@@ -26,5 +26,6 @@
             @endforeach
         </div>
     </div>
+    <br><br><br><br><br><br>
 </section>
 @endsection

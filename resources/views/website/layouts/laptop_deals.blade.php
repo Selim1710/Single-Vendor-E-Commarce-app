@@ -28,7 +28,7 @@
                         <p class="p-1 text-white rounded" style="background:#40739e;">
                             Save: {{ $deal->save_money }} ৳
                         </p>
-                        <a href="" style="color:black;">
+                        <a href="{{ route('website.laptop.deals.details',$deal->id) }}" style="color:black;">
                             <img src="{{ asset('uploads/laptop_deals/'.$deal->image) }}" alt="" class="img-fluid"><br><br>
                             <p>Model: {{ $deal->model }}</p>
                             <span class="text-danger">Price: {{ $deal->base_price }} ৳</span>

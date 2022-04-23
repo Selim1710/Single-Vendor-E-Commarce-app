@@ -52,9 +52,13 @@ class HomeController extends Controller
 
     public function laptopDeals()
     {
-        $laptopDeals = LaptopDeal::where('type', 'laptop')->get();
-        $tabletDeals = LaptopDeal::where('type', 'tablet')->get();
-        return view('website.layouts.laptop_deals', compact('laptopDeals', 'tabletDeals'));
+        $laptopDeals = Product::where('product_name','LIKE', 'laptop')->get();
+        $tabletDeals = Product::where('product_name','LIKE', 'tablet')->get();
+        return view('website.layouts.laptop_deals', compact('laptopDeals','tabletDeals'));
+    }
+    public function laptopDealsDetails()
+    {
+        return view('website.layouts.laptop_deals_details');
     }
     public function productDetails($id)
     {

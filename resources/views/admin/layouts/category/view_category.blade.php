@@ -3,10 +3,10 @@
 
 <div class="view m-4">
     <div class="image">
-        <img src="{{ asset('/uploads/laptop_deals/'.$deal->image ) }}" alt="" class="w-50 h-50">
+        <img src="{{ asset('/uploads/category/'.$category->image ) }}" alt="" class="w-50 h-50">
     </div>
     <div class="image_desc">
-        <form action="{{ route('admin.change.deals.image',$deal->id) }}" method="post" enctype="multipart/form-data">
+        <form action="{{ route('admin.change.category.image',$category->id) }}" method="post" enctype="multipart/form-data">
             @csrf
             <input type="file" name="image" class="w-25 mt-2 form-control" required>
             <button type="submit" class="btn btn-primary mt-2">Change</button>

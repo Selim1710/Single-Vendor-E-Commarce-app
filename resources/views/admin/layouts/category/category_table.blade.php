@@ -17,9 +17,10 @@
     <table class="table table-borderless table-hover">
         <thead class="table-primary">
             <tr class="text-center">
-                <th scope="col">SL</th>
-                <th scope="col">Name</th>
-                <th scope="col">Action</th>
+                <th>SL</th>
+                <th>Name</th>
+                <th>Image</th>
+                <th>Action</th>
             </tr>
         </thead>
         <tbody>
@@ -27,7 +28,9 @@
             <tr class="text-center">
                 <td>{{ $key+1 }}</td>
                 <td>{{ $cat->category_name }}</td>
+                <td><img src="{{ asset('/uploads/category/'.$cat->image ) }}" style="width:80px;height:80px;" alt=""></td>
                 <td>
+                    <a href="{{ route('admin.view.category',$cat->id) }}" class="btn btn-info">View</a>
                     <a href="{{ route('admin.edit.category',$cat->id) }}" class="btn btn-primary">Edit</a>
                     <a href="{{ route('admin.delete.category',$cat->id) }}" class="btn btn-danger">Delete</a>
                 </td>

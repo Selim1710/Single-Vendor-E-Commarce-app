@@ -36,6 +36,7 @@ Route::group(['prefix' => 'website'], function () {
 
     // laptop deals
     Route::get('/laptop/deals', [HomeController::class, 'laptopDeals'])->name('website.laptop.deals');
+    Route::get('/laptop/deals/details/{id}', [HomeController::class, 'laptopDealsDetails'])->name('website.laptop.deals.details');
 
     // login
     Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
@@ -85,6 +86,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('admin.edit.category');
     Route::post('/update/category/{id}', [CategoryController::class, 'update'])->name('admin.update.category');
     Route::get('/delete/category/{id}', [CategoryController::class, 'delete'])->name('admin.delete.category');
+    Route::get('/view/category/image/{id}', [CategoryController::class, 'view'])->name('admin.view.category');
+    Route::post('/change/category/image/{id}', [CategoryController::class, 'change'])->name('admin.change.category.image');
 
     // Sub-Category
     Route::get('/manage/subCategory', [SubCategoryController::class, 'manageSubCategory'])->name('admin.manage.subCategory');
@@ -121,18 +124,6 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/edit/offer/{id}', [OfferController::class, 'edit'])->name('admin.edit.offer');
     Route::post('/update/offer/{id}', [OfferController::class, 'update'])->name('admin.update.offer');
     Route::get('/delete/offer/{id}', [OfferController::class, 'delete'])->name('admin.delete.offer');
-
-    // laptop deals
-    Route::get('/manage/laptop/deals', [LaptopDealsController::class, 'manageLaptopDeal'])->name('admin.manage.laptop.deals');
-    Route::get('/add/laptop/deals', [LaptopDealsController::class, 'add'])->name('admin.add.deals');
-    Route::post('/store/deals', [LaptopDealsController::class, 'store'])->name('admin.store.deals');
-    Route::get('/edit/deals/{id}', [LaptopDealsController::class, 'edit'])->name('admin.edit.deals');
-    Route::post('/update/deals/{id}', [LaptopDealsController::class, 'update'])->name('admin.update.deals');
-    Route::get('/delete/deals/{id}', [LaptopDealsController::class, 'delete'])->name('admin.delete.deals');
-    Route::get('/view/deals/image/{id}', [LaptopDealsController::class, 'view'])->name('admin.view.deals.image');
-    Route::post('/change/deals/image/{id}', [LaptopDealsController::class, 'change'])->name('admin.change.deals.image');
-
-
 
     // Order List
     Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');

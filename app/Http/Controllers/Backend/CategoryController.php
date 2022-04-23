@@ -19,17 +19,20 @@ class CategoryController extends Controller
     }
     public function store(Request $request){
         $request->validate([
-            'category_name'=>'required|unique:categories|max:255'
+            'category_name'=>'required|unique:categories',
+            'image'=>'required',
         ]);
-        try {
+            $filename = '';
+            if ($request->hasfile('image')) {
+                $file = $request->file('image');
+                $filename = date('Ymdmhs') . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('/uploads/category'), $filename);
+            }
             Category::create([
                 'category_name'=>$request->category_name,
+                'image'=>$filename,
             ]);
             return redirect()->route('admin.manage.category')->with('message','Category Added Successfully');
-        }catch(\Throwable $throw){
-            return redirect()->route('admin.manage.category')->with('message','Invalid Category Name');
-        }
-
     }
     public function editCategory($id)
     {
@@ -46,7 +49,27 @@ class CategoryController extends Controller
     public function delete($id)
     {
         $category=Category::find($id);
+        $image = str_replace('\\','/',public_path('uploads/category/'.$category->image));
+        unlink($image);
         $category->delete();
         return redirect()->route('admin.manage.category')->with('error','Category deleted');
+    }
+    public function view($id)
+    {
+        $category=Category::find($id);
+        return view('admin.layouts.category.view_category',compact('category'));
+    }
+    public function change(Request $request,$id){
+        $category=Category::find($id);
+        $filename = '';
+            if ($request->hasfile('image')) {
+                $file = $request->file('image');
+                $filename = date('Ymdmhs') . '.' . $file->getClientOriginalExtension();
+                $file->move(public_path('/uploads/category'), $filename);
+            }
+        $category->update([
+            'image'=>$filename,
+        ]);
+        return redirect()->route('admin.manage.category')->with('message','Category Image Updated');
     }
 }

@@ -17,6 +17,14 @@
     <form action="{{ route('admin.store.product') }}" method="POST" enctype="multipart/form-data" class="text-capitalize">
         @csrf
         <div class="form-group">
+            <label for="sc1">Sub-Category</label>
+            <select class="form-control" id="sc1" name="subCategory_id">
+                @foreach($products as $product)
+                <option value="{{ $product->id }}">{{ $product->sub_category_name }}</option>
+                @endforeach
+            </select>
+        </div>
+        <div class="form-group">
             <label for="m1">Model</label>
             <input type="text" name="model" class="form-control" id="m1" required>
         </div>
@@ -35,14 +43,6 @@
         <div class="form-group">
             <label for="o1">Offer</label>
             <input type="number" name="product_offer" class="form-control" id="o1" required>
-        </div>
-        <div class="form-group">
-            <label for="sc1">Sub-Category</label>
-            <select class="form-control" id="sc1" name="subCategory_id">
-                @foreach($products as $product)
-                <option value="{{ $product->id }}">{{ $product->sub_category_name }}</option>
-                @endforeach
-            </select>
         </div>
         <div class="form-group">
             <label for="pd1">Product Description</label>

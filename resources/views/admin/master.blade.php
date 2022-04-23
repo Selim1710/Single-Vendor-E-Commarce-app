@@ -44,8 +44,6 @@
                                 <a class="nav-link" href="{{ route('admin.manage.product') }}">Product</a>
                                 <a class="nav-link" href="{{ route('admin.manage.stock') }}">Stock</a>
                                 <a class="nav-link" href="{{ route('admin.manage.offer') }}">Offer</a>
-                                <a class="nav-link" href="{{ route('admin.manage.laptop.deals') }}">Laptop Deals</a>
-
                             </nav>
                         </div>
                         <!-- table -->
