@@ -26,15 +26,15 @@ class HomeController extends Controller
     public function subCategoryProduct($id)
     {
         $subCategory = Subcategory::find($id);
-        $products = Product::where('subCategory_id','=',$id)->get();
+        $products = Product::where('subCategory_id', '=', $id)->get();
         return view('website.layouts.sub_category_product', compact('products'));
     }
     public function categoryProduct($id)
     {
         $category = Category::find($id);
-        $subCategory = Subcategory::where('category_id','=',$id)->get();
-        foreach($subCategory as $sub){
-            $products = Product::where('subCategory_id','=',$sub->id)->get();
+        $subCategory = Subcategory::where('category_id', '=', $id)->get();
+        foreach ($subCategory as $sub) {
+            $products = Product::where('subCategory_id', '=', $sub->id)->get();
         }
         return view('website.layouts.category_product', compact('products'));
     }
@@ -52,19 +52,38 @@ class HomeController extends Controller
 
     public function laptopDeals()
     {
-        $laptopDeals = Product::where('product_name','LIKE', 'laptop')->get();
-        $tabletDeals = Product::where('product_name','LIKE', 'tablet')->get();
-        return view('website.layouts.laptop_deals', compact('laptopDeals','tabletDeals'));
+        // laravel query for laptop deals
+        $category = Category::where('category_name', 'LIKE', 'laptop')->get();
+        foreach ($category as $cat) {
+            $sub_cat = Subcategory::where('category_id', '=', $cat->id)->get();
+            foreach ($sub_cat as $sub) {
+                $product = Product::where('subCategory_id', '=', $sub->id)->get();
+            }
+        }
+        $laptopDeals = $product;
+        // laravel query for tablet deals
+        $category = Category::where('category_name', 'LIKE', 'tablet')->get();
+        foreach ($category as $cat) {
+            $sub_cat = Subcategory::where('category_id', '=', $cat->id)->get();
+            foreach ($sub_cat as $sub) {
+                $product = Product::where('subCategory_id', '=', $sub->id)->get();
+            }
+        }
+        $tabletDeals = $product;
+        // return $tabletDeals;
+        return view('website.layouts.laptop_deals', compact('laptopDeals', 'tabletDeals'));
     }
-    public function laptopDealsDetails()
+    public function laptopDealsDetails($id)
     {
-        return view('website.layouts.laptop_deals_details');
+        $product = Product::find($id);
+        $stocks = Stock::where('product_id', '=', $id)->get();
+        return view('website.layouts.laptop_deals_details', compact('product', 'stocks'));
     }
     public function productDetails($id)
     {
         $product = Product::find($id);
-        $stocks = Stock::where('product_id','=',$id)->get();
-        return view('website.layouts.product_details', compact('product','stocks'));
+        $stocks = Stock::where('product_id', '=', $id)->get();
+        return view('website.layouts.product_details', compact('product', 'stocks'));
     }
 
     public function compareProduct(Request $request)

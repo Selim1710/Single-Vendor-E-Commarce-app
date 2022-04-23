@@ -26,12 +26,12 @@
                 <div class="card">
                     <div class="card-body font-weight-bold">
                         <p class="p-1 text-white rounded" style="background:#40739e;">
-                            Save: {{ $deal->save_money }} ৳
+                            Save: {{ $deal['regular_price']-($deal['product_offer']/100) }} ৳
                         </p>
-                        <a href="{{ route('website.laptop.deals.details',$deal->id) }}" style="color:black;">
-                            <img src="{{ asset('uploads/laptop_deals/'.$deal->image) }}" alt="" class="img-fluid"><br><br>
+                        <a href="{{ route('website.deals.details',$deal->id) }}" style="color:black;">
+                            <img src="{{ asset('uploads/products/'.$deal->product_image) }}" alt="" class="img-fluid"><br><br>
                             <p>Model: {{ $deal->model }}</p>
-                            <span class="text-danger">Price: {{ $deal->base_price }} ৳</span>
+                            <span class="text-danger">Price: {{ $deal->regular_price }} ৳</span>
                         </a>
                     </div>
                 </div>
@@ -54,12 +54,12 @@
                     <div class="card-body font-weight-bold">
                         <!-- save money -->
                         <p class="p-1 text-white rounded" style="background:#40739e;">
-                            Save: {{ $deal->save_money }} ৳
+                            Save: {{ $deal['regular_price']-($deal['product_offer']/100) }} ৳
                         </p>
-                        <a href="" style="color:black;">
-                            <img src="{{ asset('uploads/laptop_deals/'.$deal->image) }}" alt="" class="img-fluid"><br><br>
+                        <a href="{{ route('website.deals.details',$deal->id) }}" style="color:black;">
+                            <img src="{{ asset('uploads/products/'.$deal->product_image) }}" alt="" class="img-fluid"><br><br>
                             <p>Model: {{ $deal->model }}</p>
-                            <span class="text-danger">Price: {{ $deal->base_price }} ৳</span>
+                            <span class="text-danger">Price: {{ $deal->regular_price }} ৳</span>
                         </a>
                     </div>
                 </div>

@@ -36,7 +36,7 @@ Route::group(['prefix' => 'website'], function () {
 
     // laptop deals
     Route::get('/laptop/deals', [HomeController::class, 'laptopDeals'])->name('website.laptop.deals');
-    Route::get('/laptop/deals/details/{id}', [HomeController::class, 'laptopDealsDetails'])->name('website.laptop.deals.details');
+    Route::get('/laptop/deals/details/{id}', [HomeController::class, 'laptopDealsDetails'])->name('website.deals.details');
 
     // login
     Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
