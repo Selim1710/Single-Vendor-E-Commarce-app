@@ -235,22 +235,12 @@
   border-radius: 5px;
 }
 
-/* Offers */
-.time {
-  margin-left: 10%;
-}
-
-.title {
-  margin-right: 3%;
-}
-
 /* product-slider */
 .product-slider {
   background-color: #dfe6e9;
 }
-
-.slider {
-  display: flex;
+.product-slider .slider{
+  display:flex;
 }
 
 /* compare product */
@@ -336,10 +326,20 @@
     height: auto;
   }
 }
+/* end */
+
 /* product-table */
 .product-table{
   margin-left:13%;
   margin-right:10%;
+}
+
+/* company-descripiton */
+.company-descripiton{
+  background-color: #f1f2f6;
+}
+.company-descripiton .description{
+  font-size: 1.5rem;
 }
 
 /* footer */
@@ -366,14 +366,13 @@
   padding: 4%;
   width: 30%;
 }
-
-/* FOR IPAD DESIGN*/
-@media only screen and (max-width:820px) {
-
-  /* product slider */
-  .slider {
-    display: flex;
-  }
+/* FOR IPAD DESIGN */
+@media only screen and (max-width:880px) {
+  
+  /* product-slider */
+  .product-slider .slider{
+    display:block;
+    }
 }
 
 /* FOR MOBILE DESIGN */
@@ -395,9 +394,9 @@
     display: block;
   }
 
-  /* product slider */
-  .slider {
-    display: block;
+  /* product-slider */
+  .product-slider .slider{
+  display:block;
   }
 
   /* Category */

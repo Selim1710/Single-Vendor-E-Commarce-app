@@ -2,7 +2,7 @@
 @section('contents')
 <!-- featured product -->
 
-<section class="featured-Product">
+<section class="featured-Product border">
     <div class="productHeader">
         <h1> See Our Offers</h1>
         <p class="text-center">অফারের অফারগুলো দেখতে নিচে স্ক্রল করুন &nbsp;⬇️</p>

@@ -17,32 +17,22 @@
 
     <!-- Style Sheet -->
     <link rel="stylesheet" href="{{ asset('website/css/style.css') }}">
-
     <title>BGD Online Limited</title>
 </head>
-
 <body>
-
-
     @include('website.partials.header')
-    <!-- Error message -->
+    <!--  message -->
     @if(session()->has('error'))
     <p class="alert alert-danger">{{ session()->get('error') }}</p>
     @endif
     @if(session()->has('message'))
     <p class="alert alert-success">{{ session()->get('message') }}</p>
     @endif
-    <!-- end error message -->
+    <!-- end -->
     @yield('contents')
     @include('website.partials.footer')
 
     <!-- js file -->
     <script src="{{ asset('website/js/bootstrap.js') }}"></script>
-
-
-
-
-    
 </body>
-
 </html>

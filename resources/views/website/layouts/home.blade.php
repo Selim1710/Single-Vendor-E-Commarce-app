@@ -24,28 +24,37 @@
 </section>
 <!-- Carousel  -->
 <section class="product-slider">
-        <div class="slider">
-            <div class="col-lg-8">
-                <div class="carousel" data-ride="carousel" id="carouselExampleControls">
-                    <div class="carousel-inner">
-                        <div class="carousel-item active">
-                            <img class="d-block" src="{{ asset('website/images/t1.jpg') }}" alt="First slide">
-                        </div>
+    <div class="slider">
+        <div class="col-lg-8">
+            <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+                <ol class="carousel-indicators">
+                    @foreach($offers_image as $key=>$offer)
+                    <li data-target="#carouselExampleIndicators" data-slide-to="{{ $key }}"></li>
+                    @endforeach
+                </ol>
+                <div class="carousel-inner">
+                    <!-- <div class="carousel-item active">
+                        <img class="d-block" src="{{ asset('/website/images/t1.jpg' ) }}" alt="First slide">
+                    </div> -->
+                    @foreach($offers_image as $offer)
+                    @if($loop->first)
+                    <div class="carousel-item active">
+                        @else
                         <div class="carousel-item">
-                            <img class="d-block" src="{{ asset('website/images/t2.jpg') }}" alt="Second slide">
+                            @endif
+                            <img class="d-block w-100" src="{{ asset('/uploads/offer/'.$offer ) }}" alt="First slide">
                         </div>
-                        <div class="carousel-item">
-                            <img class="d-block" src="{{ asset('website/images/t3.png') }}" alt="Third slide">
-                        </div>
+                        @endforeach
                     </div>
-                    <a class="carousel-control-prev" href="#carouselExampleControls" role="button" data-slide="prev">
+                    <a class="carousel-control-prev" href="#carouselExampleIndicators" role="button" data-slide="prev">
                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                         <span class="sr-only">Previous</span>
                     </a>
-                    <a class="carousel-control-next" href="#carouselExampleControls" role="button" data-slide="next">
+                    <a class="carousel-control-next" href="#carouselExampleIndicators" role="button" data-slide="next">
                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                         <span class="sr-only">Next</span>
                     </a>
+
                 </div>
             </div>
             <!-- compare product  -->
@@ -89,7 +98,7 @@
     <br><br><br><br><br><br>
 </section>
 <!-- featured product -->
-<section class="featured-Product border">
+<section class="featured-Product">
     <div class="productHeader">
         <h1>Featured Product</h1>
         <p>Check & Get Your Desired Product !</p>
@@ -117,11 +126,47 @@
 
 <!-- Description -->
 
-<section class="descripiton">
+<section class="company-descripiton border">
     <div class="container">
-        <h4 class="p-1 mt-4">Leading Computer, Laptop & Gaming PC Retail & Online Shop in Bangladesh</h4>
-
-        <article>Technology has become a part of our daily lives and for a huge portion of our life, we are dependent on tech products daily. There is hardly a home in Bangladesh without a tech product. This is where we come in. Star Tech & Engineering Ltd had started as a Tech product shop way back in March 2007. We focused on giving the customers the best service possible. This is why Star Tech is one of The most trusted names in the tech industry of Bangladesh today.</article>
-    </div><br><br><br>
+        <div class="row mt-4">
+            <div class="col-lg-12 text-center font-weight-bold">
+                <h1>BGD Online Limited Services</h1>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-lg-12 p-2 text-left mt-4">
+                <h3 class="text-capitalize">web hosting</h3><br>
+                <div class="description">
+                    <article>
+                        BGD Online Limited make registration of web hosting fast, secure, affordable and secure manner. If you are looking to transfer hosting to shared, reseller , vps or dedicated server provider with superb customer support and have a 99.99% uptime.
+                    </article>
+                </div>
+            </div>
+            <div class="col-lg-12 p-2 text-left mt-4">
+                <h3 class="text-capitalize">web development</h3><br>
+                <div class="description">
+                    <article>
+                        BGD Online Limited expertise in web development. We do outsourcing web design and provide hosting services.We developcompany website , ecommerce solution, Content rich CMS web application for the business needs.You find all service in here
+                    </article>
+                </div>
+            </div>
+            <div class="col-lg-12 p-2 text-left mt-4">
+                <h3 class="text-capitalize">internet connectivity </h3><br>
+                <div class="description">
+                    <article>
+                        Internet access is the process that enables individuals and organisations to connect to the Internet using computer terminals, computers, mobile devices, sometimes via computer networks. Once connected to the Internet, users can access Internet services, such as email. </article>
+                </div>
+            </div>
+            <div class="col-lg-12 p-2 text-left mt-4">
+                <h3 class="text-capitalize">Domain Registration </h3><br>
+                <div class="description">
+                    <article>
+                        We provide Bangladeshi .bd or .bangla and the all the popular domain registration services. Our server uptime 99.99% compared to others. We ensure high server uptime with superb support.You find all service in here
+                </div>
+            </div>
+        </div>
+    </div>
+    <br><br><br><br>
 </section>
+
 @endsection

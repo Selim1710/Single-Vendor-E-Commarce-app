@@ -39,9 +39,10 @@
             @endforeach
         </div>
     </div>
+    <br><br><br><br>
 </section>
 <!-- tablet -->
-<section class="featured-Product">
+<section class="featured-Product border">
     <div class="productHeader">
         <h1>Ramadan Tablet Mega Deal</h1>
         <p>Get exciting discount on Tablets</p>
@@ -67,15 +68,24 @@
             @endforeach
         </div>
     </div>
+    <br><br><br><br>
 </section>
 
 <!-- Description -->
 
 <section class="descripiton">
     <div class="container">
-        <h4 class="p-1 mt-4">Leading Computer, Laptop & Gaming PC Retail & Online Shop in Bangladesh</h4>
+        <h4 class="text-danger p-1 mt-4">ডিল ক্যাম্পেইনের শর্তাবলী: </h4>
 
-        <article>Technology has become a part of our daily lives and for a huge portion of our life, we are dependent on tech products daily. There is hardly a home in Bangladesh without a tech product. This is where we come in. Star Tech & Engineering Ltd had started as a Tech product shop way back in March 2007. We focused on giving the customers the best service possible. This is why Star Tech is one of The most trusted names in the tech industry of Bangladesh today.</article>
+        <article>
+            Ramadan ডিল ক্যাম্পেইন এর কোনো পণ্যে অন্য কোনো অফার থাকলে তা প্রযোজ্য হবে না।
+            Ramadan ডিল ক্যাম্পেইন এর পণ্য অবশ্যই অনলাইনে অর্ডার করতে হবে।
+            বিকাশ পেমেন্টে একজন ক্রেতা ১ দিনে সর্বোচ্চ ২০০ টাকা এবং অফার চলাকালীন সময়ে সর্বোচ্চ ৩০০ টাকা পর্যন্ত ক্যাশব্যাক উপভোগ করতে পারবেন।
+            নগদ পেমেন্টে অফার চলাকালীন সময়ে একজন ক্রেতা সর্বোচ্চ ৪০০ টাকা পর্যন্ত ক্যাশব্যাক উপভোগ করতে পারবেন।
+            ক্যাশব্যাক অফারটি শুধুমাত্র বিকাশ / নগদ -এর গেটওয়ে পেমেন্টের ক্ষেত্রে প্রযোজ্য।
+            Ramadan ক্যাম্পেইনের পণ্যসমূহে ফ্রি ডেলিভারি অফার প্রযোজ্য নয়। অর্ডারের পর ক্রেতাকে কল করে ডেলিভারি সংক্রান্ত সকল তথ্য জানিয়ে দেয়া হবে।
+            কোন সঙ্গত কারনে এই ক্যাম্পেইনের পেমেন্ট রিফান্ড করা হলে তা সাধারণ রিফান্ড পলিসি প্রক্রিয়ায় সম্পন্ন হবে। এক্ষেত্রে ক্রেতা যে এমাউন্ট পেমেন্ট করেছে শুধুমাত্র তারই রিফান্ড প্রসেস করা হবে।
+        </article>
     </div><br><br><br>
 </section>
 @endsection
