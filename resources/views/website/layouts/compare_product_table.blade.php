@@ -10,37 +10,168 @@
             </tr>
         </thead>
         <tbody>
+            @foreach( $search_c1 as $product1)
+            @foreach( $search_c2 as $product2)
             <tr>
                 <td>Image</td>
 
-                <td><img src="#" alt="" srcset=""></td>
-                <td><img src="#" alt="" srcset=""></td>
+                <td><img src="{{ asset('/uploads/products/'.$product1->product_image) }}" style="width:90px;height:90px;" srcset=""></td>
+                <td><img src="{{ asset('/uploads/products/'.$product2->product_image) }}" style="width:90px;height:90px;" alt="" srcset=""></td>
             </tr>
             <tr>
                 <td>Name</td>
-
-                <td>Otto</td>
-                <td>Jacob</td>
+                <td>{{ $product1->product_name }}</td>
+                <td>{{ $product2->product_name }}</td>
+            </tr>
+            <!-- Basic Informations -->
+            <tr>
+                <td class="text-danger">
+                    <h3>Basic Informations</h3>
+                </td>
             </tr>
             <tr>
-                <td>Model</td>
-
-                <td>Jacob</td>
-                <td>Jacob</td>
+                <td>Processor</td>
+                <td>{{ $product1->processor }}</td>
+                <td>{{ $product2->processor }}</td>
             </tr>
             <tr>
-                <td>Stock Status</td>
+                <td>Display</td>
+                <td>{{ $product1->display }}</td>
+                <td>{{ $product2->display }}</td>
 
-                <td>In stock</td>
-                <td>Out Of Stock</td>
             </tr>
             <tr>
-                <td>Description</td>
-
-                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
-                <td>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset sheets containing Lorem Ipsum passages, and more recently with desktop publishing software like Aldus PageMaker including versions of Lorem Ipsum.</td>
+                <td>Memory</td>
+                <td>{{ $product1->memory }}</td>
+                <td>{{ $product2->memory }}</td>
             </tr>
-
+            <tr>
+                <td>Storage</td>
+                <td>{{ $product1->storage }}</td>
+                <td>{{ $product2->storage }}</td>
+            </tr>
+            <tr>
+                <td>Graphics</td>
+                <td>{{ $product1->graphics }}</td>
+                <td>{{ $product2->graphics }}</td>
+            </tr>
+            <tr>
+                <td>Operating System</td>
+                <td>{{ $product1->operating_system }}</td>
+                <td>{{ $product2->operating_system }}</td>
+            </tr>
+            <tr>
+                <td>Battery</td>
+                <td>{{ $product1->battery }}</td>
+                <td>{{ $product2->battery }}</td>
+            </tr>
+            <tr>
+                <td>Adapter</td>
+                <td>{{ $product1->adapter }}</td>
+                <td>{{ $product2->adapter }}</td>
+            </tr>
+            <tr>
+                <td>Audio</td>
+                <td>{{ $product1->audio }}</td>
+                <td>{{ $product2->audio }}</td>
+            </tr>
+            <!-- input device -->
+            <tr>
+                <td class="text-danger">
+                    <h3>input device</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Keyboard</td>
+                <td>{{ $product1->keyboard }}</td>
+                <td>{{ $product2->keyboard }}</td>
+            </tr>
+            <tr>
+                <td>Optical drive</td>
+                <td>{{ $product1->optical_drive }}</td>
+                <td>{{ $product2->optical_drive }}</td>
+            </tr>
+            <tr>
+                <td>WebCam</td>
+                <td>{{ $product1->webcam }}</td>
+                <td>{{ $product2->webcam }}</td>
+            </tr>
+            <!-- Network & Wireless Connectivity -->
+            <tr>
+                <td class="text-danger">
+                    <h3>Network & Wireless Connectivity</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Wi-fi</td>
+                <td>{{ $product1->wifi }}</td>
+                <td>{{ $product2->wifi }}</td>
+            </tr>
+            <tr>
+                <td>Bluetooth</td>
+                <td>{{ $product1->bluetooth }}</td>
+                <td>{{ $product2->bluetooth }}</td>
+            </tr>
+            <!-- Ports, Connectors & Slots -->
+            <tr>
+                <td class="text-danger">
+                    <h3>Ports, Connectors & Slots</h3>
+                </td>
+            </tr>
+            <tr>
+                <td>USB</td>
+                <td>{{ $product1->USB }}</td>
+                <td>{{ $product2->USB }}</td>
+            </tr>
+            <tr>
+                <td>HDMI</td>
+                <td>{{ $product1->HDMI }}</td>
+                <td>{{ $product2->HDMI }}</td>
+            </tr>
+            <tr>
+                <td>VGA</td>
+                <td>{{ $product1->VGA }}</td>
+                <td>{{ $product2->VGA }}</td>
+            </tr>
+            <tr>
+                <td>Audio Jack Combo</td>
+                <td>{{ $product1->audio_jack_combo }}</td>
+                <td>{{ $product2->audio_jack_combo }}</td>
+            </tr>
+            <!-- Physical Specification -->
+            <tr>
+                <td class="text-danger">
+                    <h3>Physical Specification </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Dimensions (W x D x H)</td>
+                <td>{{ $product1->dimensions }}</td>
+                <td>{{ $product2->dimensions }}</td>
+            </tr>
+            <tr>
+                <td>weights</td>
+                <td>{{ $product1->weight }}</td>
+                <td>{{ $product2->weight }}</td>
+            </tr>
+            <tr>
+                <td>color</td>
+                <td>{{ $product1->colors }}</td>
+                <td>{{ $product2->colors }}</td>
+            </tr>
+            <!--  Warranty -->
+            <tr>
+                <td class="text-danger">
+                    <h3>Warranty </h3>
+                </td>
+            </tr>
+            <tr>
+                <td>Manufacturing Warranty</td>
+                <td>{{ $product1->manufacturing_warranty }}</td>
+                <td>{{ $product2->manufacturing_warranty }}</td>
+            </tr>
+            @endforeach
+            @endforeach
         </tbody>
     </table>
 </div>

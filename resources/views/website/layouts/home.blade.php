@@ -133,7 +133,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-lg-12 p-2 text-left mt-4">
+            <div class="col-lg-12 p-2 text-center mt-4">
                 <h3 class="text-capitalize">web hosting</h3><br>
                 <div class="description">
                     <article>
@@ -141,7 +141,7 @@
                     </article>
                 </div>
             </div>
-            <div class="col-lg-12 p-2 text-left mt-4">
+            <div class="col-lg-12 p-2 text-center mt-4">
                 <h3 class="text-capitalize">web development</h3><br>
                 <div class="description">
                     <article>
@@ -149,14 +149,14 @@
                     </article>
                 </div>
             </div>
-            <div class="col-lg-12 p-2 text-left mt-4">
+            <div class="col-lg-12 p-2 text-center mt-4">
                 <h3 class="text-capitalize">internet connectivity </h3><br>
                 <div class="description">
                     <article>
                         Internet access is the process that enables individuals and organisations to connect to the Internet using computer terminals, computers, mobile devices, sometimes via computer networks. Once connected to the Internet, users can access Internet services, such as email. </article>
                 </div>
             </div>
-            <div class="col-lg-12 p-2 text-left mt-4">
+            <div class="col-lg-12 p-2 text-center mt-4">
                 <h3 class="text-capitalize">Domain Registration </h3><br>
                 <div class="description">
                     <article>
