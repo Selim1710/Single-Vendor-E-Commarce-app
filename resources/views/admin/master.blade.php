@@ -12,8 +12,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/js/all.min.js" crossorigin="anonymous"></script>
 
     <link href="{{ asset('admin/css/styles.css') }}" rel="stylesheet" />
-    
 
+    <!-- datatable css -->
+    <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
 </head>
 
 <body class="sb-nav-fixed">
@@ -34,7 +35,7 @@
                         <div class="sb-sidenav-menu-heading">Forms</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
-                                Add
+                            Add
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -79,11 +80,8 @@
             </nav>
         </div>
         <div id="layoutSidenav_content">
-            
             @yield('contents')
-
             @include('admin.partials.footer')
-
         </div>
     </div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" crossorigin="anonymous"></script>

@@ -84,8 +84,6 @@
                 <td>{{ $product->colors }}</td>
                 <td>{{ $product->manufacturing_warranty }}</td>
 
-
-
                 <td>{{ $product->subCategory_id }}</td>
                 <td>{{ $product->category_id }}</td>
 

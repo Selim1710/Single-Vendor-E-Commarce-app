@@ -13,7 +13,7 @@
     <a href="{{ route('admin.add.offer') }}" class="btn btn-primary">Add Offer</a>
 </div>
 <div class="manage_table">
-    <table class="table table-borderless table-hover ">
+    <table class="table table-borderless table-hover" id="myOfferTable">
         <thead class="table-primary">
             <tr class="text-center text-capitalize">
                 <th scope="col">SL</th>
@@ -48,3 +48,12 @@
     </table>
 </div>
 @endsection
+
+<!-- jquery -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js" integrity="sha512-894YE6QWD5I59HgZOGReFYm4dnWc1Qt5NtvYSaNcOP+u1T9qYdvdihz0PPSiiqn/+/3e7Jo4EaG7TubfWGUrMQ==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js" integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+<script>
+    $(document).ready(function() {
+        $('#myOfferTable').DataTable();
+    });
+</script>
