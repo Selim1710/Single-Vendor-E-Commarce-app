@@ -239,14 +239,9 @@
 .product-slider {
   background-color: #dfe6e9;
 }
-.product-slider .slider{
-  display:flex;
-}
 
 /* compare product */
 .compare-product {
-  padding: 4%;
-  margin: 2% 0;
   background-color: #F8EFBA;
 }
 
@@ -366,13 +361,12 @@
   padding: 4%;
   width: 30%;
 }
+
 /* FOR IPAD DESIGN */
 @media only screen and (max-width:880px) {
   
   /* product-slider */
-  .product-slider .slider{
-    display:block;
-    }
+ 
 }
 
 /* FOR MOBILE DESIGN */
@@ -395,9 +389,6 @@
   }
 
   /* product-slider */
-  .product-slider .slider{
-  display:block;
-  }
 
   /* Category */
   .cardCategory {
