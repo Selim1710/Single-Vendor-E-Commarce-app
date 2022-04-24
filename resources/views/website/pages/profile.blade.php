@@ -30,10 +30,10 @@
             </div>
             <!-- user image -->
             <div class="user-image mt-2">
-                <img src="{{ asset('website/images/emp.jpg') }}" alt="#" class="img-fluid" style="border:2px solid red;">
+                <img src="{{ asset('/uploads/users/'.$user->image ) }}" alt="#" class="img-fluid" style="border:2px solid red;">
             </div>
             <div class="change-image mt-2">
-                <a href="#" class="btn btn-primary">Change</a>
+                <a href="{{ route('user.change.profile.image',$user->id) }}" class="btn btn-primary">Change</a>
             </div>
 
 

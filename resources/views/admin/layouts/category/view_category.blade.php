@@ -1,6 +1,5 @@
 @extends('admin.master')
 @section('contents')
-
 <div class="view m-4">
     <div class="image">
         <img src="{{ asset('/uploads/category/'.$category->image ) }}" alt="" class="w-50 h-50">

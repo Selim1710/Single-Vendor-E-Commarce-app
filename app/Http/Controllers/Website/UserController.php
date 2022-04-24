@@ -66,6 +66,26 @@ class UserController extends Controller
         $orders = Order::where('customer_id','=',$id)->get();
         return view('website.pages.profile', compact('user', 'carts','orders'));
     }
+    
+    public function changeImage($id){
+        $user = User::find($id);
+        return view('website.pages.profile_image_form', compact('user'));
+
+    }
+    public function updateProfileImage(Request $request, $id)
+    {
+        $user = User::find($id);
+        $fileName="";
+        if ($request->hasfile('image')) {
+            $file = $request->file('image');
+            $filename = date('Ymdmhs') . '.' . $file->getClientOriginalExtension();
+            $file->move(public_path('/uploads/users'), $filename);
+        }
+        $user->update([
+            "image" => $filename,
+        ]);
+        return redirect()->route('user.profile', $user->id)->with('message', 'Profile Image Updated');
+    }
 
     public function edit($id)
     {

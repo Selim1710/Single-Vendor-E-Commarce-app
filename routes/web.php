@@ -47,8 +47,10 @@ Route::group(['prefix' => 'website'], function () {
 
     // user profile
     Route::get('/user/profile/{id}', [UserController::class, 'profile'])->name('user.profile');
+    Route::get('/user/change/profile/image/{id}', [UserController::class, 'changeImage'])->name('user.change.profile.image');
     Route::get('/user/edit/profile/{id}', [UserController::class, 'edit'])->name('user.edit.profile');
     Route::post('/user/update/profile/{id}', [UserController::class, 'updateProfile'])->name('user.update.profile');
+    Route::post('/user/update/profile/image/{id}', [UserController::class, 'updateProfileImage'])->name('user.update.profile.image');
 
     // download pdf
     Route::get('/user/download/pdf/{id}', [UserController::class, 'downloadPDF'])->name('user.download.pdf');
