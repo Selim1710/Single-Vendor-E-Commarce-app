@@ -96,31 +96,35 @@
     </div>
     <br><br><br><br><br><br>
 </section>
-<!-- featured product -->
 <section class="featured-Product">
     <div class="productHeader">
         <h1>Featured Product</h1>
         <p>Check & Get Your Desired Product !</p>
     </div>
-    <div class="container">
+    <div class="product">
         <div class="row">
             @foreach($products as $product)
-            <div class="col-6 col-lg-3">
-                <div class="card">
-                    <a href="{{ route('website.product.details',$product->id) }}" style="color:black;">
-                        <div class="card-body font-weight-bold">
-                            <img src="{{ asset('uploads/products/'.$product->product_image) }}" alt="" class="img-fluid"><br><br>
-                            <p>{{ $product->model }}</p>
-                            <span class="text-success">Price: {{ $product->regular_price }}</span>
-
+            <div class="column">
+                <div class="box">
+                    <a href="{{ route('website.product.details',$product->id) }}">
+                        <div class="img-box">
+                            <img src="{{ asset('uploads/products/'.$product->product_image) }}" class="img-fluid">
                         </div>
                     </a>
+                    <div class="detail-box">
+                        <h5>
+                            Model: {{ $product->model }}
+                        </h5>
+                        <h6>
+                            Price: {{ $product->regular_price }}
+                        </h6>
+                        <a href="" class="btn btn-primary">Add To Cart</a>
+                    </div>
                 </div>
             </div>
             @endforeach
         </div>
     </div>
-    <br><br><br><br><br><br>
 </section>
 
 <!-- Description -->

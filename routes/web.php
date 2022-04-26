@@ -79,6 +79,10 @@ Route::group(['prefix' => 'website'], function () {
 // Admin Part
 Route::group(['prefix' => 'admin'], function () {
 
+    // admin login
+
+    
+
     Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
 
     // Category
