@@ -24,8 +24,13 @@
                 </ul>
             </div>
             @endif
+            @if(session()->has('message'))
+            <p class="alert alert-danger">
+                {{ session()->get('message') }}
+            </p>
+            @endif
         </div>
-        <!-- end error message -->
+        <!-- error message -->
         <form action="{{ route('user.do.registration') }}" method="post">
             @csrf
             <div class="form-group">
@@ -40,6 +45,10 @@
                 <div class="form-group col-md-6">
                     <label for="inputPassword4">Password</label>
                     <input type="password" name="password" class="form-control" id="inputPassword4" placeholder="Password" required>
+                </div>
+                <div class="form-group col-md-6">
+                    <label for="inputPassword4">Confirm Password</label>
+                    <input type="password" name="confirm_password" class="form-control" id="inputPassword4" placeholder="Password" required>
                 </div>
             </div>
             <div class="form-group">

@@ -118,7 +118,7 @@
                         <h6>
                             Price: {{ $product->regular_price }}
                         </h6>
-                        <a href="" class="btn btn-primary">Add To Cart</a>
+                        <a href="{{ route('add.to.cart',$product->id) }}" class="btn btn-primary">Add To Cart</a>
                     </div>
                 </div>
             </div>
