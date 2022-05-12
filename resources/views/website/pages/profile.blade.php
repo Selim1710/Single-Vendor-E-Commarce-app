@@ -12,8 +12,8 @@
     <title>user profile</title>
 </head>
 
-<body class="bg-dark">
-    <section class="user-profile text-white">
+<body class="">
+    <section class="user-profile">
         <div class="container">
             <h1 class="text-center pt-3 text-capitalize">{{ $user->name }}<br></h1>
             <!-- Message -->
@@ -35,41 +35,30 @@
             <div class="change-image mt-2">
                 <a href="{{ route('user.change.profile.image',$user->id) }}" class="btn btn-primary">Change</a>
             </div>
-
-
+            <br><br>
             <!-- user detalis -->
             <div class="user-details mt-4">
-                <ul class="nav nav-tabs" id="myTab" role="tablist">
-                    <li class="nav-item">
-                        <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true">
-                            <h5>User Details</h5>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false">
-                            <h5>Order-List</h5>
-                        </a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false">
-                            <h5>Mycart <span class="badge badge-secondary">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span></h5>
-                        </a>
-                    </li>
-                </ul>
+                <nav>
+                    <div class="nav nav-tabs nav-fill" id="nav-tab" role="tablist">
+                        <a class="nav-item nav-link active" id="user_details-tab" data-toggle="tab" href="#user_details" role="tab" aria-controls="user_details" aria-selected="true">User-details</a>
+                        <a class="nav-item nav-link" id="order_list-tab" data-toggle="tab" href="#order_list" role="tab" aria-controls="order_list" aria-selected="false">Order-list</a>
+                        <a class="nav-item nav-link" id="my_cart-tab" data-toggle="tab" href="#my_cart" role="tab" aria-controls="my_cart" aria-selected="false">Mycart</a>
+                    </div>
+                </nav>
                 <!-- User details -->
                 <div class="tab-content" id="myTabContent">
-                    <div class="tab-pane fade show active mt-2" id="home" role="tabpanel" aria-labelledby="home-tab">
+                    <div class="tab-pane fade show active mt-2" id="user_details" role="tabpanel" aria-labelledby="user_details-tab">
                         E-mail: {{ $user->email }}<br>
                         Address: {{ $user->address }}<br>
                     </div>
                     <!-- order-list -->
-                    <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
-                        <div class="button-group mt-2 mb-2">
+                    <div class="tab-pane fade" id="order_list" role="tabpanel" aria-labelledby="order_list-tab">
+                        <div class="button-group">
                             <a href="{{ route('user.download.pdf',$user->id) }}" class="btn btn-success">
                                 Download PDF
                             </a>
                         </div>
-                        <table class="table border table-responsive">
+                        <table class="table border table-responsive w-75">
                             <thead>
                                 <th>Product-id</th>
                                 <th>Model</th>
@@ -91,12 +80,11 @@
                                     <td>{{ $order->total }}</td>
                                 </tr>
                                 @endforeach
-
                             </tbody>
                         </table>
                     </div>
                     <!-- mycart -->
-                    <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">
+                    <div class="tab-pane fade" id="my_cart" role="tabpanel" aria-labelledby="my_cart-tab">
                         <div class="button-group mt-2 mb-2">
                             <a href="{{ route('user.checkout') }}" class="btn btn-success">
                                 Checkout
@@ -105,47 +93,52 @@
                                 Clear All
                             </a>
                         </div>
-                        <table class="table border table-responsive">
-                            <thead>
-                                <th>Product-id</th>
-                                <th>Model</th>
-                                <th>Name</th>
-                                <th>Unit-Price</th>
-                                <th>Offers</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Action</th>
-                            </thead>
-                            <tbody>
-                                @if(!empty($carts))
-                                @foreach($carts as $key=>$cart)
-                                <tr>
-                                    <td>{{ $cart['product_id']}}</td>
-                                    <td>{{ $cart['product_model'] }}</td>
-                                    <td>{{ $cart['product_name'] }}</td>
-                                    <td>{{ $cart['regular_price'] }}</td>
-                                    <td>{{ $cart['product_offer'] }} %</td>
-                                    <td>{{ $cart['product_quantity'] }}</td>
-                                    <td>{{ ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100)) }}</td>
-                                    <td>
-                                        <a href="{{ route('user.place.order',$key) }}" class="btn btn-info">
-                                            Order
-                                        </a>
-                                        <a href="{{ route('user.remove.cart',$key) }}" class="btn btn-danger">
-                                            Remove
-                                        </a>
-                                    </td>
-                                </tr>
-                                @endforeach
-                                @else
-                                <p class="text-danger">No product into the cart</p>
-                                @endif
-                            </tbody>
-                        </table>
+                        <div class="d-flex">
+                            <table class="table border table-responsive">
+                                <thead>
+                                    <th>Product-id</th>
+                                    <th>Model</th>
+                                    <th>Name</th>
+                                    <th>Unit-Price</th>
+                                    <th>Offers</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Action</th>
+                                </thead>
+                                <tbody>
+                                    @if(!empty($carts))
+                                    @foreach($carts as $key=>$cart)
+                                    <tr>
+                                        <td>{{ $cart['product_id']}}</td>
+                                        <td>{{ $cart['product_model'] }}</td>
+                                        <td>{{ $cart['product_name'] }}</td>
+                                        <td>{{ $cart['regular_price'] }}</td>
+                                        <td>{{ $cart['product_offer'] }} %</td>
+                                        <td>{{ $cart['product_quantity'] }}</td>
+                                        <td>{{ ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100)) }}</td>
+                                        <td>
+                                            <a href="{{ route('user.remove.cart',$key) }}" class="btn btn-danger">
+                                                Remove
+                                            </a>
+                                        </td>
+                                    </tr>
+                                    @endforeach
+                                    @else
+                                    <p class="text-danger">No product into the cart</p>
+                                    @endif
+                                </tbody>
+                            </table>
+                            <div class="sub_total ml-2 p-2 text-center border">
+                                <h4>Order Summary:</h4>
+                                <h5>Sub-Total: 100000</h5>
+                                <h5>Shipping Fee: 50</h5>
+                                <h5>Total: 100050 </h5>
+                                <a href="{{ route('user.payment') }}" class="btn btn-info w-100">PROCESS TO PAY</a>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
-
         </div>
     </section>
 

@@ -53,29 +53,6 @@ class CartController extends Controller
         session()->forget('cart');
         return redirect()->back()->with('error', 'Cart Cleared');
     }
-    public function order($id)
-    {
-        $cart = session()->get('cart');
-        $cart = $cart[$id];
-        $cart = Order::create([
-            'customer_id' => auth()->user()->id,
-            'name' => auth()->user()->name,
-            'email' => auth()->user()->email,
-            'phone' => auth()->user()->phone,
-            'product_id' => $cart['product_id'],
-            'product_name' => $cart['product_name'],
-            'model' => $cart['product_model'],
-            'price' => $cart['regular_price'],
-            'offer' => $cart['product_offer'],
-            'quantity' => $cart['product_quantity'],
-            'total' =>($cart['regular_price'] * $cart['product_quantity']) - (($cart['regular_price'] * $cart['product_quantity']) * ($cart['product_offer'] / 100)),
-            // savings(discount * price) then substract with original price
-        ]);
-        $cart = session()->get('cart');
-        unset($cart[$id]);
-        session()->put('cart', $cart);
-        return redirect()->back()->with('message', 'Order place successful');
-    }
 
     public function remove($id)
     {
