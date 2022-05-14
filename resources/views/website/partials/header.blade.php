@@ -22,8 +22,9 @@
 					<span>Laptop Deals</span>
 				</a>
 				@if(auth()->user())
-				<a href="{{ route('user.profile',auth()->user()->id) }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-user"></i>
-					<span>Profile</span>
+				<a href="{{ route('user.profile',auth()->user()->id) }}" class="nav-item nav-link" style="padding-left: 3.5rem;">
+					<i class="fa fa-user"></i>
+					<span>Profile </span><span class="badge badge-danger">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span>
 				</a>
 				@else
 				<a href="{{ route('users.login.form') }}" class="nav-item nav-link" style="padding-left: 3.5rem;"><i class="fa fa-users"></i>
