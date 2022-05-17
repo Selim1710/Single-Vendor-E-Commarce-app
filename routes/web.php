@@ -144,7 +144,8 @@ Route::group(['prefix' => 'admin'], function () {
 
 
 // SSLCOMMERZ Start
-Route::get('/user/payment/info/{id}', [SslCommerzPaymentController::class, 'paymentInfo'])->name('user.payment.info');
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout'])->name('user.easy.checkout');
+Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
 Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);

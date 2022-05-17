@@ -147,7 +147,7 @@
                                 <h5 class="border p-2">Sub-Total: {{ (int)$sub_total }}</h5>
                                 <h5 class="border p-2">Shipping Fee: 0</h5>
                                 <h5 class="border p-2">Total: {{ (int)$sub_total }} </h5>
-                                <a href="{{ route('user.payment.info',$user->id) }}" class="btn btn-info w-100">
+                                <a href="{{ route('user.easy.checkout') }}" class="btn btn-info w-100">
                                     PROCESS TO PAY
                                 </a>
                             </div>

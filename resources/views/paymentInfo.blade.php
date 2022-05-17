@@ -73,12 +73,12 @@
         </div>
         <div class="col-md-8 order-md-1">
             <h4 class="mb-3">Billing address</h4>
-            <!-- form -->
             <form method="POST" class="needs-validation" novalidate>
                 <div class="row">
                     <div class="col-md-12 mb-3">
                         <label for="firstName">Full name</label>
-                        <input type="text" name="customer_name" value="{{ $user->name }}" class="form-control" id="customer_name" required>
+                        <input type="text" name="customer_name" class="form-control" id="customer_name" placeholder=""
+                               value="John Doe" required>
                         <div class="invalid-feedback">
                             Valid customer name is required.
                         </div>
@@ -91,7 +91,8 @@
                         <div class="input-group-prepend">
                             <span class="input-group-text">+88</span>
                         </div>
-                        <input type="text" name="customer_mobile"  value="{{ $user->phone }}"class="form-control" id="mobile" required>
+                        <input type="text" name="customer_mobile" class="form-control" id="mobile" placeholder="Mobile"
+                               value="01711xxxxxx" required>
                         <div class="invalid-feedback" style="width: 100%;">
                             Your Mobile number is required.
                         </div>
@@ -100,7 +101,8 @@
 
                 <div class="mb-3">
                     <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                    <input type="email" name="customer_email"  value="{{ $user->email }}" class="form-control" id="email" required>
+                    <input type="email" name="customer_email" class="form-control" id="email"
+                           placeholder="you@example.com" value="you@example.com" required>
                     <div class="invalid-feedback">
                         Please enter a valid email address for shipping updates.
                     </div>
@@ -108,12 +110,19 @@
 
                 <div class="mb-3">
                     <label for="address">Address</label>
-                    <input type="text" name="address" value="{{ $user->address }}" class="form-control" id="address" placeholder="1234 Main St"required>
+                    <input type="text" class="form-control" id="address" placeholder="1234 Main St"
+                           value="93 B, New Eskaton Road" required>
                     <div class="invalid-feedback">
                         Please enter your shipping address.
                     </div>
                 </div>
-                <!-- <div class="row">
+
+                <div class="mb-3">
+                    <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
+                    <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
+                </div>
+
+                <div class="row">
                     <div class="col-md-5 mb-3">
                         <label for="country">Country</label>
                         <select class="custom-select d-block w-100" id="country" required>
@@ -141,7 +150,7 @@
                             Zip code required.
                         </div>
                     </div>
-                </div> -->
+                </div>
                 <hr class="mb-4">
                 <div class="custom-control custom-checkbox">
                     <input type="checkbox" class="custom-control-input" id="same-address">
@@ -165,7 +174,7 @@
     </div>
 
     <footer class="my-5 pt-5 text-muted text-center text-small">
-        <p class="mb-1">&copy; 2019 BGD Online Limited</p>
+        <p class="mb-1">&copy; 2019 Company Name</p>
         <ul class="list-inline">
             <li class="list-inline-item"><a href="#">Privacy</a></li>
             <li class="list-inline-item"><a href="#">Terms</a></li>
