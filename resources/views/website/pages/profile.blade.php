@@ -58,8 +58,8 @@
                                 Download PDF
                             </a>
                         </div>
-                        @php 
-                             $sub_total= 0;
+                        @php
+                        $sub_total= 0;
                         @endphp
                         <table class="table border table-responsive w-75">
                             <thead>
@@ -82,12 +82,8 @@
                                     <td>{{ $order->offer }} %</td>
                                     <td>{{ $order->quantity }}</td>
                                     <td>{{ $order->total }}</td>
-                                    @if( $order->payment_status = 'none'){
-                                        <td class="bg-danger text-white text-uppercase">{{ $order->payment_status }}</td>
-                                    }@else{
-                                        <td class="bg-info">{{ $order->payment_status }}</td>
-                                    }
-                                    @endif
+                                    <td>{{ $order->payment_status }}</td>
+
                                 </tr>
                                 @endforeach
                             </tbody>
@@ -123,7 +119,7 @@
                                         <td>{{ $cart['product_model'] }}</td>
                                         <td>{{ $cart['product_name'] }}</td>
                                         <td>{{ $cart['regular_price'] }}</td>
-                                        @php 
+                                        @php
                                         (int)$sub_total += ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100));
                                         @endphp
                                         <td>{{ $cart['product_offer'] }} %</td>
@@ -131,7 +127,7 @@
                                         <td>{{ ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100)) }}</td>
                                         <td>
                                             <a href="{{ route('user.remove.cart',$key) }}" class="btn btn-danger">
-                                                <i class="fa fa-trash"></i> 
+                                                <i class="fa fa-trash"></i>
                                             </a>
                                         </td>
                                     </tr>
@@ -147,7 +143,7 @@
                                 <h5 class="border p-2">Sub-Total: {{ (int)$sub_total }}</h5>
                                 <h5 class="border p-2">Shipping Fee: 0</h5>
                                 <h5 class="border p-2">Total: {{ (int)$sub_total }} </h5>
-                                <a href="{{ route('user.easy.checkout') }}" class="btn btn-info w-100">
+                                <a href="{{ route('user.process.to.pay') }}" class="btn btn-info w-100">
                                     PROCESS TO PAY
                                 </a>
                             </div>

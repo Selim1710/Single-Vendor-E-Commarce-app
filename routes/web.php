@@ -141,10 +141,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/view/report', [ReportController::class, 'viewReport'])->name('admin.view.report');
 });
 
-
-
 // SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout'])->name('user.easy.checkout');
+Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout'])->name('user.process.to.pay');
 Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
 
 Route::post('/pay', [SslCommerzPaymentController::class, 'index']);

@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use DB;
+use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
 
@@ -11,7 +11,8 @@ class SslCommerzPaymentController extends Controller
 
     public function exampleEasyCheckout()
     {
-        return view('paymentInfo');
+        $carts = session()->get('cart');
+        return view('paymentInfo',compact('carts'));
     }
 
     public function exampleHostedCheckout()
