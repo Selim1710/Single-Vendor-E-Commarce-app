@@ -81,7 +81,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     // admin login
 
-    
+
 
     Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
 
@@ -141,16 +141,15 @@ Route::group(['prefix' => 'admin'], function () {
     Route::get('/view/report', [ReportController::class, 'viewReport'])->name('admin.view.report');
 });
 
-// SSLCOMMERZ Start
-Route::get('/example1', [SslCommerzPaymentController::class, 'exampleEasyCheckout'])->name('user.process.to.pay');
-Route::get('/example2', [SslCommerzPaymentController::class, 'exampleHostedCheckout']);
+ // SSLCOMMERZ Start
+ Route::get('/user/payment/info/{id}', [SslCommerzPaymentController::class, 'paymentInfo'])->name('user.process.to.pay');
 
-Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
-Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+ Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+ Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 
-Route::post('/success', [SslCommerzPaymentController::class, 'success']);
-Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
-Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+ Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+ Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+ Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
-Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
-//SSLCOMMERZ END
+ Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+ //SSLCOMMERZ END

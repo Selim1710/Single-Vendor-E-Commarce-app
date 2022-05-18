@@ -5,14 +5,16 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\User;
 
 class SslCommerzPaymentController extends Controller
 {
 
-    public function exampleEasyCheckout()
+    public function paymentInfo($id)
     {
+        $user = User::find($id);
         $carts = session()->get('cart');
-        return view('paymentInfo',compact('carts'));
+        return view('paymentInfo',compact('carts','user'));
     }
 
     public function payViaAjax(Request $request)
@@ -27,15 +29,15 @@ class SslCommerzPaymentController extends Controller
         $post_data['tran_id'] = uniqid(); // tran_id must be unique
 
         # DELIVERY INFORMATION
-        $post_data['cus_name'] = 'Customer Name';
-        $post_data['cus_email'] = 'customer@mail.com';
-        $post_data['cus_add1'] = 'Customer Address';
+        $post_data['cus_name'] = $requestData['cus_name'];
+        $post_data['cus_email'] = $requestData['cus_email'];
+        $post_data['cus_add1'] = $requestData['cus_addr'];
         $post_data['cus_add2'] = "";
         $post_data['cus_city'] = "";
         $post_data['cus_state'] = "";
         $post_data['cus_postcode'] = "";
         $post_data['cus_country'] = "Bangladesh";
-        $post_data['cus_phone'] = '8801XXXXXXXXX';
+        $post_data['cus_phone'] = $requestData['cus_phone'];
         $post_data['cus_fax'] = "";
 
         # SHIPMENT INFORMATION

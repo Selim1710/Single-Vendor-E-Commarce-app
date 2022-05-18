@@ -63,13 +63,13 @@
                 </ul>
             </div>
             <div class="col-md-8 order-md-1">
-                <h4 class="mb-3">Delivery address</h4>
+                <h4 class="mb-3">Delivery Information</h4>
                 <!-- form -->
                 <form method="POST" class="needs-validation">
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Full name</label>
-                            <input type="text" name="customer_name" class="form-control" id="customer_name" placeholder="" value="John Doe" required>
+                            <input type="text" name="customer_name" class="form-control" id="customer_name" placeholder="" value="{{ $user->name }}" required>
                             <div class="invalid-feedback">
                                 Valid customer name is required.
                             </div>
@@ -82,7 +82,7 @@
                             <div class="input-group-prepend">
                                 <span class="input-group-text">+88</span>
                             </div>
-                            <input type="text" name="customer_mobile" class="form-control" id="mobile" placeholder="Mobile" value="01711xxxxxx" required>
+                            <input type="text" name="customer_mobile" class="form-control" id="mobile" placeholder="Mobile" value="{{ $user->phone }}" required>
                             <div class="invalid-feedback" style="width: 100%;">
                                 Your Mobile number is required.
                             </div>
@@ -90,8 +90,8 @@
                     </div>
 
                     <div class="mb-3">
-                        <label for="email">Email <span class="text-muted">(Optional)</span></label>
-                        <input type="email" name="customer_email" class="form-control" id="email" placeholder="you@example.com" value="you@example.com" required>
+                        <label for="email">Email</label>
+                        <input type="email" name="customer_email" class="form-control" id="email" placeholder="you@example.com" value="{{ $user->email }}" required>
                         <div class="invalid-feedback">
                             Please enter a valid email address for shipping updates.
                         </div>
@@ -99,15 +99,10 @@
 
                     <div class="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="93 B, New Eskaton Road" required>
+                        <input type="text" class="form-control" id="address" placeholder="1234 Main St" value="{{ $user->address }}" required>
                         <div class="invalid-feedback">
                             Please enter your shipping address.
                         </div>
-                    </div>
-
-                    <div class="mb-3">
-                        <label for="address2">Address 2 <span class="text-muted">(Optional)</span></label>
-                        <input type="text" class="form-control" id="address2" placeholder="Apartment or suite">
                     </div>
 
                     <div class="row">
@@ -149,7 +144,7 @@
                         <label class="custom-control-label" for="save-info">Save this information for next time</label>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" id="sslczPayBtn" token="if you have any token validation" postdata="" order="If you already have the transaction generated for current order" endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
+                    <button class="btn btn-primary btn-lg btn-block w-100" id="sslczPayBtn" token="if you have any token validation" postdata="" order="If you already have the transaction generated for current order" endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
                     </button>
                 </form>
             </div>
@@ -175,8 +170,12 @@
         obj.cus_name = $('#customer_name').val();
         obj.cus_phone = $('#mobile').val();
         obj.cus_email = $('#email').val();
-        obj.cus_addr1 = $('#address').val();
+        obj.cus_addr = $('#address').val();
         obj.amount = $('#total_amount').val();
+
+        $('#address').change(function(){
+            obj.cus_addr = $('#address').val();
+        });
 
         $('#sslczPayBtn').prop('postdata', obj);
 
