@@ -81,8 +81,6 @@ Route::group(['prefix' => 'admin'], function () {
 
     // admin login
 
-
-
     Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
 
     // Category
@@ -133,6 +131,7 @@ Route::group(['prefix' => 'admin'], function () {
 
     // Order List
     Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');
+    Route::get('/accept/order/{id}', [ManageOrderController::class, 'acceptOrder'])->name('admin.accept.order');
 
     // Customer List
     Route::get('/manage/customer', [CustomerController::class, 'manageCustomer'])->name('admin.manage.customer');

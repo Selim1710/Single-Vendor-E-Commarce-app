@@ -12,4 +12,11 @@ class ManageOrderController extends Controller
         $orders = Order::all();
         return view('admin.layouts.order.order_table',compact('orders'));
     }
+    public function acceptOrder($id){
+        $order = Order::find($id);
+        $order->update([
+            'order_status'=>'accepted',
+        ]);
+        return redirect()->back()->with('message','Order accepted');
+    }
 }

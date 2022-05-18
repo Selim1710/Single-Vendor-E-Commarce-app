@@ -1,11 +1,19 @@
 @extends('admin.master')
 @section('contents')
+<!-- Message -->
+@if(session()->has('error'))
+<p class="alert alert-danger">{{ session()->get('error') }}</p>
+@endif
+@if(session()->has('message'))
+<p class="alert alert-success">{{ session()->get('message') }}</p>
+@endif
+<!-- end -->
 <div class="manage_table">
     <table class="table table-borderless table-hover">
         <thead class="table-primary text-capitalize">
             <tr class="text-center">
                 <th>customer id</th>
-                <th>Name</th>          
+                <th>Name</th>
                 <th>Email</th>
                 <th>Phone</th>
                 <th>Product id</th>
@@ -15,6 +23,8 @@
                 <th>Offer</th>
                 <th>Quantity</th>
                 <th>Total Price</th>
+                <th>Order Status</th>
+                <th>Payment Status</th>
                 <th>Action</th>
             </tr>
         </thead>
@@ -32,10 +42,17 @@
                 <td>{{ $order->offer }}</td>
                 <td>{{ $order->quantity }}</td>
                 <td>{{ $order->total }}</td>
+                <td>{{ $order->order_status }}</td>
+                <td>{{ $order->payment_status }}</td>
+
                 <td>
-                    <a href="#" class="btn btn-success">Accept</a>
+                    @if($order->order_status != 'accepted')
+                    <a href="{{ route('admin.accept.order',$order->id) }}" class="btn btn-success">Accept</a>
                     <a href="#" class="btn btn-danger">Reject</a>
-                </td>               
+                    @else
+                    <p class="bg-secondary text-warning p-2">Accepted</p>
+                    @endif
+                </td>
             </tr>
             @endforeach
         </tbody>
