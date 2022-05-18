@@ -48,7 +48,7 @@
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
                             <h6 class="my-0">{{ $cart['product_name'] }}</h6>
-                            <small class="text-muted">Brief description: {{ $cart['regular_price'] }}</small>
+                            <small class="text-muted">price without offer: {{ $cart['regular_price'] }} TK</small>
                         </div>
                         @php
                         $totl_amount += ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100));
@@ -58,13 +58,14 @@
                     @endforeach
                     <li class="list-group-item d-flex justify-content-between">
                         <span>Total (BDT)</span>
-                        <strong>{{ (int)$totl_amount }} TK</strong>
+                        <strong >{{ (int)$totl_amount }} TK</strong>
                     </li>
                 </ul>
             </div>
             <div class="col-md-8 order-md-1">
                 <h4 class="mb-3">Delivery address</h4>
-                <form method="POST" class="needs-validation" novalidate>
+                <!-- form -->
+                <form method="POST" class="needs-validation">
                     <div class="row">
                         <div class="col-md-12 mb-3">
                             <label for="firstName">Full name</label>
@@ -139,18 +140,16 @@
                         </div>
                     </div>
                     <hr class="mb-4">
-                    <div class="custom-control custom-checkbox">
-                        <input type="checkbox" class="custom-control-input" id="same-address">
-                        <input type="hidden" value="1200" name="amount" id="total_amount" required />
-                        <label class="custom-control-label" for="same-address">Shipping address is the same as my billing
-                            address</label>
+                    <!-- hidden total amount -->
+                    <div >
+                        <input type="hidden" value="{{ (int)$totl_amount }}" name="amount" id="total_amount" required />
                     </div>
                     <div class="custom-control custom-checkbox">
                         <input type="checkbox" class="custom-control-input" id="save-info">
                         <label class="custom-control-label" for="save-info">Save this information for next time</label>
                     </div>
                     <hr class="mb-4">
-                    <button class="btn btn-primary btn-lg btn-block" id="sslczPayBtn" token="if you have any token validation" postdata="your javascript arrays or objects which requires in backend" order="If you already have the transaction generated for current order" endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
+                    <button class="btn btn-primary btn-lg btn-block" id="sslczPayBtn" token="if you have any token validation" postdata="" order="If you already have the transaction generated for current order" endpoint="{{ url('/pay-via-ajax') }}"> Pay Now
                     </button>
                 </form>
             </div>
