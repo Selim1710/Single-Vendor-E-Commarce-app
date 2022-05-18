@@ -61,48 +61,62 @@
                                 Message
                             </a>
                         </div>
-                        @php
-                        $sub_total= 0;
-                        @endphp
-                        <table class="table border table-responsive w-75">
-                            <thead>
-                                <th>Product-id</th>
-                                <th>Model</th>
-                                <th>Name</th>
-                                <th>Unit-Price</th>
-                                <th>Offer</th>
-                                <th>Quantity</th>
-                                <th>Total</th>
-                                <th>Payment</th>
-                            </thead>
-                            <tbody>
-                                @foreach($orders as $order)
-                                <tr>
-                                    <td>{{ $order->product_id }}</td>
-                                    <td>{{ $order->model }}</td>
-                                    <td>{{ $order->product_name }}</td>
-                                    <td>{{ $order->price }}</td>
-                                    <td>{{ $order->offer }} %</td>
-                                    <td>{{ $order->quantity }}</td>
-                                    <td>{{ $order->total }}</td>
-                                    <td>{{ $order->payment_status }}</td>
-
-                                </tr>
-                                @endforeach
-                            </tbody>
-                        </table>
+                        <div class="d-flex">
+                            @php
+                            $grand_total= 0;
+                            @endphp
+                            <table class="table border table-responsive w-75">
+                                <thead>
+                                    <th>Product-id</th>
+                                    <th>Model</th>
+                                    <th>Name</th>
+                                    <th>Unit-Price</th>
+                                    <th>Offer</th>
+                                    <th>Quantity</th>
+                                    <th>Total</th>
+                                    <th>Payment</th>
+                                </thead>
+                                <tbody>
+                                    @foreach($orders as $order)
+                                    <tr>
+                                        <td>{{ $order->product_id }}</td>
+                                        <td>{{ $order->model }}</td>
+                                        <td>{{ $order->product_name }}</td>
+                                        <td>{{ $order->price }}</td>
+                                        <td>{{ $order->offer }} %</td>
+                                        <td>{{ $order->quantity }}</td>
+                                        <td>{{ $order->total }}</td>
+                                        @php
+                                        (int)$grand_total += ($order->price * $order->quantity) - ($order->price * $order->quantity * ($order->offer/100));
+                                        @endphp
+                                        <td>{{ $order->payment_status }}</td>
+                                    </tr>
+                                    @endforeach
+                                </tbody>
+                            </table>
+                            <div class="sub_total ml-2 p-2 text-center border">
+                                <h4 class="border p-2">Payment Summary:</h4>
+                                <h5 class="border p-2">Total-Product: {{ $total_product  }}</h5>
+                                <h5 class="border p-2">Sub-Total: {{ (int)$grand_total }}</h5>
+                                <h5 class="border p-2">Shipping Fee: 0</h5>
+                                <h5 class="border p-2">Total: {{ (int)$grand_total }} </h5>
+                                <a href="{{ route('user.process.to.pay',$user->id) }}" class="btn btn-info w-100">
+                                    PROCESS TO PAY
+                                </a>
+                            </div>
+                        </div>
                     </div>
                     <!-- mycart -->
                     <div class="tab-pane fade" id="my_cart" role="tabpanel" aria-labelledby="my_cart-tab">
                         <div class="button-group mt-2 mb-2">
-                            <a href="{{ route('user.checkout') }}" class="btn btn-success">
-                                Checkout
-                            </a>
                             <a href="{{ route('clear.cart') }}" class="btn btn-danger">
                                 Clear All
                             </a>
                         </div>
                         <div class="d-flex">
+                            @php
+                            $sub_total= 0;
+                            @endphp
                             <table class="table table-hover border table-responsive w-75">
                                 <thead>
                                     <th>Product-id</th>
@@ -146,8 +160,8 @@
                                 <h5 class="border p-2">Sub-Total: {{ (int)$sub_total }}</h5>
                                 <h5 class="border p-2">Shipping Fee: 0</h5>
                                 <h5 class="border p-2">Total: {{ (int)$sub_total }} </h5>
-                                <a href="{{ route('user.process.to.pay',$user->id) }}" class="btn btn-info w-100">
-                                    PROCESS TO PAY
+                                <a href="{{ route('user.checkout') }}" class="btn btn-success w-100">
+                                    CheckOut
                                 </a>
                             </div>
                         </div>

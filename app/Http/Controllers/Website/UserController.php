@@ -70,7 +70,8 @@ class UserController extends Controller
         $user = User::find($id);
         $carts = session()->get('cart');
         $orders = Order::where('customer_id', '=', $id)->get();
-        return view('website.pages.profile', compact('user', 'carts', 'orders'));
+        $total_product = Order::where('customer_id', $id)->count();
+        return view('website.pages.profile', compact('user', 'carts', 'orders','total_product'));
     }
 
     public function changeImage($id)
