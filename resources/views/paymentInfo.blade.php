@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="">
     <meta name="author" content="SSLCommerz">
-    <title>Example - EasyCheckout (Popup) | SSLCommerz</title>
+    <title> EasyCheckout | SSLCommerz</title>
 
     <!-- Bootstrap core CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -31,8 +31,8 @@
 
 <body class="bg-light">
     <div class="container">
-        <div class="py-5 text-center">
-            <h2>EasyCheckout (Popup) - SSLCommerz</h2>
+        <div class="p-2 m-4 text-center bg-info text-warning rounded">
+            <h2>EasyCheckout - SSLCommerz</h2>
         </div>
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
@@ -127,7 +127,7 @@
                             </div>
                         </div>
                         <div class="col-md-3 mb-3">
-                            <label for="zip">Zip</label>
+                            <label for="zip">Post Code</label>
                             <input type="text" class="form-control" id="zip" placeholder="" required>
                             <div class="invalid-feedback">
                                 Zip code required.
