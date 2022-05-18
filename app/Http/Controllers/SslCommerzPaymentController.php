@@ -5,6 +5,7 @@ namespace App\Http\Controllers;
 use Illuminate\Support\Facades\DB;
 use Illuminate\Http\Request;
 use App\Library\SslCommerz\SslCommerzNotification;
+use App\Models\Order;
 use App\Models\User;
 
 class SslCommerzPaymentController extends Controller
@@ -13,8 +14,9 @@ class SslCommerzPaymentController extends Controller
     public function paymentInfo($id)
     {
         $user = User::find($id);
-        $carts = session()->get('cart');
-        return view('paymentInfo',compact('carts','user'));
+        $orders = Order::where('customer_id',$id)->get();
+        $total_product = Order::where('customer_id', $id)->count();
+        return view('paymentInfo',compact('user','orders','total_product'));
     }
 
     public function payViaAjax(Request $request)

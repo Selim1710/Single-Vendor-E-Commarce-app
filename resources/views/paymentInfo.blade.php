@@ -37,23 +37,23 @@
         <div class="row">
             <div class="col-md-4 order-md-2 mb-4">
                 <h4 class="d-flex justify-content-between align-items-center mb-3">
-                    <span class="text-muted">Your cart</span>
-                    <span class="badge badge-secondary badge-pill">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span>
+                    <span class="text-muted">Your order</span>
+                    <span class="badge badge-secondary badge-pill"> {{ $total_product }} </span>
                 </h4>
                 @php
                 $totl_amount = 0;
                 @endphp
                 <ul class="list-group mb-3">
-                    @foreach($carts as $cart)
+                    @foreach($orders as $order)
                     <li class="list-group-item d-flex justify-content-between lh-condensed">
                         <div>
-                            <h6 class="my-0">{{ $cart['product_name'] }}</h6>
-                            <small class="text-muted">price without offer: {{ $cart['regular_price'] }} TK</small>
+                            <h6 class="my-0">{{ $order->product_name }}</h6>
+                            <small class="text-muted">price without offer: {{ $order->price }} TK</small>
                         </div>
                         @php
-                        $totl_amount += ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100));
+                        $totl_amount += ($order->price * $order->quantity) - ($order->price * $order->quantity * ($order->offer/100));
                         @endphp
-                        <span class="text-muted">{{ ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer']/100)) }}</span>
+                        <span class="text-muted">{{ ($order->price * $order->quantity) - (($order->price * $order->quantity) * ($order->offer/100)) }}</span>
                     </li>
                     @endforeach
                     <li class="list-group-item d-flex justify-content-between">
