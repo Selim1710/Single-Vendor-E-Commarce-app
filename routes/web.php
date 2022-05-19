@@ -22,8 +22,11 @@ use App\Http\Controllers\SslCommerzPaymentController;
 
 // Website Part
 Route::get('/', [HomeController::class, 'home'])->name('website.home');
+Route::get('/product/paginate', [HomeController::class, 'allProduct'])->name('website.all.product');
+
 
 Route::group(['prefix' => 'website'], function () {
+    Route::get('/view/all/product', [HomeController::class, 'allProduct'])->name('website.all.product');
 
     // see all categories
     Route::get('/show/sub/category/product/{id}', [HomeController::class, 'subCategoryProduct'])->name('show.sub.category.product');

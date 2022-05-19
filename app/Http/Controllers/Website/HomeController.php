@@ -18,9 +18,15 @@ class HomeController extends Controller
     public function home()
     {
         $categories = Category::with('subCategories')->get();
-        $products = Product::with('subCategory')->get();
+        $products = Product::with('subCategory')->paginate(8);
         $offers_image = Offer::pluck('image');
         return view('website.layouts.home', compact('categories', 'products','offers_image'));
+    }
+    public function allProduct()
+    {
+        $products = Product::with('subCategory')->paginate(4);
+        return view('website.layouts.all_product', compact('products'));
+        
     }
 
     public function subCategoryProduct($id)

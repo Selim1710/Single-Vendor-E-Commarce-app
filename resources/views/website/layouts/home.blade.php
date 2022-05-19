@@ -96,7 +96,7 @@
     </div>
     <br><br><br><br><br><br>
 </section>
-<section class="featured-Product">
+<section class="featured-Product border">
     <div class="productHeader">
         <h1>Featured Product</h1>
         <p>Check & Get Your Desired Product !</p>
@@ -124,15 +124,14 @@
             </div>
             @endforeach
         </div>
+        <div class="text-center mb-4"><a href="{{ route('website.all.product') }}" class="btn text-white w-25" style="background-color: #e84393;">View All Product</a></div>
     </div>
 </section>
-
 <!-- Description -->
-
 <section class="company-descripiton border">
     <div class="container">
-        <div class="row mt-4">
-            <div class="col-lg-12 text-center font-weight-bold">
+        <div class="row">
+            <div class="col-lg-12 text-center font-weight-bold mt-4">
                 <h1>BGD Online Limited Services</h1>
             </div>
         </div>
@@ -171,5 +170,4 @@
     </div>
     <br><br><br><br>
 </section>
-
 @endsection

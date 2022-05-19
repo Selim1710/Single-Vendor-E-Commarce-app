@@ -5,6 +5,7 @@
 			<span class="navbar-toggler-icon"></span>
 		</button>
 		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
+			<!-- search -->
 			<form class="navbar-form form-inline">
 				<div class="input-group search-box">
 					<input type="text" id="search" class="form-control" placeholder="Search here...">
