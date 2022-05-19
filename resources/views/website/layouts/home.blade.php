@@ -80,7 +80,7 @@
     <div class="container">
         <div class="row">
             @foreach($categories as $category)
-            <div class="col-4 col-lg-2 rounded">
+            <div class="col-4 col-lg-2 rounded d-flex align-items-stretch">
                 <div class="card">
                     <a href="{{ route('show.category.product',$category->id) }}">
                         <div class="cart-img img-fluid text-center m-2">
@@ -104,7 +104,7 @@
     <div class="product">
         <div class="row">
             @foreach($products as $product)
-            <div class="column">
+            <div class="column d-flex align-items-stretch">
                 <div class="box">
                     <a href="{{ route('website.product.details',$product->id) }}">
                         <div class="img-box">

@@ -22,7 +22,7 @@
     <div class="container">
         <div class="row">
             @foreach($laptopDeals as $deal)
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body font-weight-bold">
                         <p class="p-1 text-white rounded" style="background:#40739e;">
@@ -50,7 +50,7 @@
     <div class="container">
         <div class="row">
             @foreach($tabletDeals as $deal)
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card">
                     <div class="card-body font-weight-bold">
                         <!-- save money -->

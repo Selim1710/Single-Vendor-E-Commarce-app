@@ -11,7 +11,7 @@
     <div class="container">
         <div class="row">
             @foreach($products as $product)
-            <div class="col-6 col-lg-3">
+            <div class="col-6 col-lg-3 d-flex align-items-stretch">
                 <div class="card">
                     <a href="{{ route('website.product.details',$product->id) }}" style="color:black;">
                         <div class="card-body font-weight-bold">

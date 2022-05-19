@@ -8,7 +8,7 @@
     <div class="product">
         <div class="row">
             @foreach($products as $product)
-            <div class="column">
+            <div class="column d-flex align-items-stretch">
                 <div class="box">
                     <a href="{{ route('website.product.details',$product->id) }}">
                         <div class="img-box">
