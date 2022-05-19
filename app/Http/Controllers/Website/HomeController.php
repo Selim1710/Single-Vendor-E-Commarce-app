@@ -22,9 +22,22 @@ class HomeController extends Controller
         $offers_image = Offer::pluck('image');
         return view('website.layouts.home', compact('categories', 'products','offers_image'));
     }
+    public function search(Request $request)
+    {
+        $search = $request['search'] ?? "";
+        if($search != ""){
+            $products = Product::where('model','LIKE',"%$search%")
+            ->orwhere('product_name','LIKE',"%$search%")
+            ->get();
+        }else{
+            $products = Product::with('subCategory')->get();
+        }
+        return view('website.layouts.search', compact('products','search'));
+        
+    }
     public function allProduct()
     {
-        $products = Product::with('subCategory')->paginate(4);
+        $products = Product::with('subCategory')->paginate(8);
         return view('website.layouts.all_product', compact('products'));
         
     }

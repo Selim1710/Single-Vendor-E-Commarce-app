@@ -6,9 +6,14 @@
 		</button>
 		<div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
 			<!-- search -->
-			<form class="navbar-form form-inline">
+			<form action="{{ route('website.search') }}" method="POST" class="navbar-form form-inline">
+				@csrf
 				<div class="input-group search-box">
-					<input type="text" id="search" class="form-control" placeholder="Search here...">
+					@if(!empty($search))
+					<input type="text" name="search" value="{{ $search }}" class="form-control" placeholder="Search here...">
+					@else
+					<input type="text" name="search" value="" class="form-control" placeholder="Search here...">
+					@endif
 					<span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
 				</div>
 			</form>
