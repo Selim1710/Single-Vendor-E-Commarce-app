@@ -24,9 +24,19 @@ class UserController extends Controller
         ]);
         $userData = $request->except('_token');
         if (Auth::attempt($userData)) {
-            return redirect()->route('website.home')->with('message', 'Login Successful. Now View Profile');
+            return redirect()->route('website.check.banned');
         } else {
             return redirect()->route('users.login.form')->with('error', 'Invalid username or password');
+        }
+    }
+
+    public function checkBanned()
+    {
+        if(auth()->user()->status != 'active'){
+            Auth::logout();
+            return redirect()->route('users.login.form')->with('error', 'you have banned');
+        }else{
+            return redirect()->route('website.home')->with('message', 'Login Successful');
         }
     }
 

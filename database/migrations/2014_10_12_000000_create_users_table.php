@@ -24,6 +24,7 @@ class CreateUsersTable extends Migration
             $table->string('address');
             $table->string('image')->nullable();
             $table->string('role')->default('user');
+            $table->string('status')->default('active');
             $table->timestamps();
         });
     }

@@ -47,6 +47,8 @@ Route::group(['prefix' => 'website'], function () {
     // login
     Route::get('/login/form', [UserController::class, 'loginForm'])->name('users.login.form');
     Route::post('/user/do/login', [UserController::class, 'doLogin'])->name('user.do.login');
+    Route::get('/check/banned', [UserController::class, 'checkBanned'])->name('website.check.banned');
+
     Route::get('/registration/form', [UserController::class, 'registrationForm'])->name('user.registration.form');
     Route::post('/user/do/registration', [UserController::class, 'doRegistration'])->name('user.do.registration');
     Route::get('/user/logout', [UserController::class, 'logout'])->name('user.logout');
@@ -140,6 +142,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     // Customer List
     Route::get('/manage/customer', [CustomerController::class, 'manageCustomer'])->name('admin.manage.customer');
+    Route::get('/ban/customer/{id}', [CustomerController::class, 'banCustomer'])->name('admin.ban.customer');
+    Route::get('/un-ban/customer/{id}', [CustomerController::class, 'unBanCustomer'])->name('admin.un.ban.customer');
 
     // Company Report
     Route::get('/view/report', [ReportController::class, 'viewReport'])->name('admin.view.report');
