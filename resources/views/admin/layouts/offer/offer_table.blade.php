@@ -37,9 +37,9 @@
                 <td>{{ $offer->details }}</td>
                 <td>{{ $offer->condition }}</td>
                 <td>
-                    <a href="{{ route('admin.view.offer',$offer->id) }}" class="btn btn-success">View</a>
-                    <a href="{{ route('admin.edit.offer',$offer->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.delete.offer',$offer->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.view.offer',$offer->id) }}" class="btn btn-success"><i class="fa fa-eye"></i></a>
+                    <a href="{{ route('admin.edit.offer',$offer->id) }}" class="btn btn-primary"><i class="fa fa-th-list"></i></a>
+                    <a href="{{ route('admin.delete.offer',$offer->id) }}" class="btn btn-danger mt-1"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
             @endforeach

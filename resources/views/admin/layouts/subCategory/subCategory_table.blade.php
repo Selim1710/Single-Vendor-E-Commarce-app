@@ -28,8 +28,8 @@
                 <td>{{ $sc->sub_category_name }}</td>
                 <td>{{ $sc->category_id }}</td>
                 <td>
-                    <a href="{{ route('admin.edit.subCategory',$sc->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.delete.subCategory',$sc->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.edit.subCategory',$sc->id) }}" class="btn btn-primary"><i class="fa fa-th-list"></i></a>
+                    <a href="{{ route('admin.delete.subCategory',$sc->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
             @endforeach

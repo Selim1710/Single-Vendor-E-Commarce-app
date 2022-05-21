@@ -30,8 +30,8 @@
                 <td>{{ $product->total_produce }}</td>
                 <td>1</td>
                 <td>
-                    <a href="{{ route('admin.edit.stock',$product->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.delete.stock',$product->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.edit.stock',$product->id) }}" class="btn btn-primary"><i class="fa fa-th-list"></i></a>
+                    <a href="{{ route('admin.delete.stock',$product->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
             @endforeach

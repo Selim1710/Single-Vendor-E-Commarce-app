@@ -30,9 +30,9 @@
                 <td>{{ $cat->category_name }}</td>
                 <td><img src="{{ asset('/uploads/category/'.$cat->image ) }}" style="width:80px;height:80px;" alt=""></td>
                 <td>
-                    <a href="{{ route('admin.view.category',$cat->id) }}" class="btn btn-info">View</a>
-                    <a href="{{ route('admin.edit.category',$cat->id) }}" class="btn btn-primary">Edit</a>
-                    <a href="{{ route('admin.delete.category',$cat->id) }}" class="btn btn-danger">Delete</a>
+                    <a href="{{ route('admin.view.category',$cat->id) }}" class="btn btn-info"><i class="fa fa-eye"></i></a>
+                    <a href="{{ route('admin.edit.category',$cat->id) }}" class="btn btn-primary"><i class="fa fa-th-list"></i></a>
+                    <a href="{{ route('admin.delete.category',$cat->id) }}" class="btn btn-danger"><i class="fa fa-trash"></i></a>
                 </td>
             </tr>
             @endforeach
