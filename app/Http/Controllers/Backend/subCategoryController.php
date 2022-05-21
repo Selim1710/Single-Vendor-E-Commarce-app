@@ -12,15 +12,13 @@ class SubCategoryController extends Controller
 {
     public function manageSubCategory()
     {
-        $subcategory = Subcategory::with('category')->get();
-        // dd($subcategory);
+        $subcategory = Subcategory::with('category')->orderBy('id','desc')->get();
         return view('admin.layouts.subCategory.subCategory_table', compact('subcategory'));
     }
 
     public function addSubCategory()
     {
         $categories = Category::select('id', 'category_name')->get();
-        // dd($subCategories);
         return view('admin.layouts.subCategory.add_subCategory', compact('categories'));
     }
 

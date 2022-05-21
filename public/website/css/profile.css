@@ -8,7 +8,9 @@
     width:25%;
 }
 /* tab */
-
+.nav{
+  line-height: 0.5rem;
+}
 
 nav > .nav.nav-tabs{
 

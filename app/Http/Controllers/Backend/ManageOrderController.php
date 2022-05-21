@@ -9,7 +9,7 @@ use Illuminate\Http\Request;
 class ManageOrderController extends Controller
 {
     public function manageOrder(){
-        $orders = Order::all();
+        $orders = Order::all()->sortByDesc('created_at')->values();
         return view('admin.layouts.order.order_table',compact('orders'));
     }
     public function acceptOrder($id){

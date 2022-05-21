@@ -8,7 +8,7 @@
     <div class=" collapse category p-lg-1" id="category">
         @foreach($categories as $category)
         <div class="btn-group">
-            <a href="#" class="btn dropdown-toggle m-1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+            <a href="#" class="btn btn-success dropdown-toggle m-1 text-uppercase" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                 {{ $category->category_name }}
             </a>
             @if(!empty($category->subCategories))

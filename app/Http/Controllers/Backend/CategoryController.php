@@ -10,7 +10,7 @@ class CategoryController extends Controller
 {
     public function manageCategory()
     {
-        $category=Category::all();
+        $category=Category::all()->sortByDesc('id')->values();
         return view('admin.layouts.category.category_table',compact('category'));
     }
     public function addCategory()

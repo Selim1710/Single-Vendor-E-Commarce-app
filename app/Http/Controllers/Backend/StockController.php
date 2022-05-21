@@ -10,7 +10,7 @@ use Illuminate\Http\Request;
 class StockController extends Controller
 {
     public function manageStock(){
-        $stock=Stock::with('product')->get();
+        $stock=Stock::with('product')->orderBy('id','desc')->get();
         return view('admin.layouts.stock.stock_table',compact('stock'));
     }
     public function add(){

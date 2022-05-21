@@ -12,8 +12,7 @@ class OfferController extends Controller
 
     public function manageOffer()
     {
-        $offers = Offer::all();
-        // dd($offers);
+        $offers = Offer::all()->sortByDesc('id')->values();
         return view('admin.layouts.offer.offer_table', compact('offers'));
     }
 

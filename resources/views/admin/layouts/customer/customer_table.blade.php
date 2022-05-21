@@ -2,7 +2,7 @@
 @section('contents')
 
 <div class="table_button">
-    <a href="#" class="btn btn-primary">Add Category</a>
+    <h1>All Customer</h1>
 </div>
 <div class="manage_table">
     <table class="table table-borderless table-hover">

@@ -11,7 +11,7 @@ class ProductController extends Controller
 {
     public function manageProduct()
     {
-        $products = Product::with('subCategory')->get();
+        $products = Product::with('subCategory')->orderBy('id','desc')->get();
         return view('admin.layouts.product.product_table', compact('products'));
     }
     public function add()
