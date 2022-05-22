@@ -2,7 +2,7 @@
 @section('contents')
 <!-- search -->
 <section class="Search-Report">
-    <h1 class="text-center m-4">Print Report</h1>
+    <h1 class="text-center m-4">Search to print report</h1>
     <form action="{{ route('admin.search.report') }}" method="POST">
         @csrf
         <div class="container">
@@ -23,6 +23,7 @@
     </form>
 </section>
 <!-- table -->
+@if(!empty($orders))
 <section class="manage_table">
     <div id="divToPrint">
         <div class="report_header p-2">
@@ -74,14 +75,21 @@
 <br><br>
 <!-- button -->
 <section class="print_button">
-    <button onclick="printOrder()" class="btn btn-warning text-white w-25 float-end">Print Now</button>
+    <button onclick="printReport()" class="btn btn-warning text-white w-25 float-end">Print Now</button>
 </section>
+<!-- No order -->
+@else
+<br>
+<h3 class="bg-danger text-center p-1 rounded text-white">
+    No orders
+</h3>
+@endif
 <br><br>
 @endsection
 
 <!-- script file -->
 <script type="text/javascript">
-    function printOrder() {
+    function printReport() {
         var divToPrint = document.getElementById('divToPrint');
         var popupwin = window.open('', '_blank', 'width=1100, height=700');
         popupwin.document.open();

@@ -147,6 +147,8 @@ Route::group(['prefix' => 'admin'], function () {
 
     // Company Report
     Route::get('/view/report', [ReportController::class, 'viewReport'])->name('admin.view.report');
+    Route::post('/search/report', [ReportController::class, 'searchReport'])->name('admin.search.report');
+
 });
 
  // SSLCOMMERZ Start
