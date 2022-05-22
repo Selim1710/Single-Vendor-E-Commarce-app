@@ -25,7 +25,7 @@ class ManageOrderController extends Controller
         $order = Order::find($id);
         Notification::send($order, new OrderCancelNotification($order->model,$order->product_name,$order->price,$order->quantity));
         $order->update([
-            'order_status'=>'cancelled',
+            'order_status'=>'canceled',
         ]);
         return redirect()->route('admin.manage.order')->with('error','Order Canceled');
     }
