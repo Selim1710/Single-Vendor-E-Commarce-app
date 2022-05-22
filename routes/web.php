@@ -139,6 +139,7 @@ Route::group(['prefix' => 'admin'], function () {
     // Order List
     Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');
     Route::get('/accept/order/{id}', [ManageOrderController::class, 'acceptOrder'])->name('admin.accept.order');
+    Route::get('/reject/order/{id}', [ManageOrderController::class, 'rejectOrder'])->name('admin.reject.order');
 
     // Customer List
     Route::get('/manage/customer', [CustomerController::class, 'manageCustomer'])->name('admin.manage.customer');

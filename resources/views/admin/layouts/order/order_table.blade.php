@@ -48,7 +48,7 @@
                 <td>
                     @if($order->order_status != 'accepted')
                     <a href="{{ route('admin.accept.order',$order->id) }}" class="btn btn-success"><i class="fa fa-check"></i></a>
-                    <a href="#" class="btn btn-danger mt-1"><i class="fa fa-times"></i></a>
+                    <a href="{{ route('admin.reject.order',$order->id) }}" class="btn btn-danger mt-1"><i class="fa fa-times"></i></a>
                     @else
                     <p class="bg-secondary text-warning p-2">Accepted</p>
                     @endif
