@@ -26,8 +26,8 @@ class HomeController extends Controller
     {
         $search = $request['search'] ?? "";
         if($search != ""){
-            $products = Product::where('model','LIKE',"%$search%")
-            ->orwhere('product_name','LIKE',"%$search%")
+            $products = Product::where('model','LIKE','%'.$search.'%')
+            ->orwhere('product_name','LIKE','%'.$search.'%')
             ->orderBy('id','DESC')
             ->get();
         }else{

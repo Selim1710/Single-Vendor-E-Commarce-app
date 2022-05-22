@@ -75,6 +75,7 @@
                                     <th>Quantity</th>
                                     <th>Total</th>
                                     <th>Payment</th>
+                                    <th>Order-Status</th>
                                 </thead>
                                 <tbody>
                                     @foreach($orders as $order)
@@ -90,6 +91,12 @@
                                         (int)$grand_total += ($order->price * $order->quantity) - ($order->price * $order->quantity * ($order->offer/100));
                                         @endphp
                                         <td>{{ $order->payment_status }}</td>
+
+                                        @if($order->order_status != 'accepted')
+                                        <td>pending</td>
+                                        @else
+                                        <td class="text-center text-success">Confirmed</td>
+                                        @endif
                                     </tr>
                                     @endforeach
                                 </tbody>

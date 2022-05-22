@@ -56,6 +56,7 @@
                     </a>
                 </div>
             </div>
+            <!-- compare product -->
             <div class="col-lg-4 mt-4">
                 <div class="compare-product text-center">
                     <h3 class="pt-1">Compare Product</h3>
