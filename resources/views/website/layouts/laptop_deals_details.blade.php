@@ -44,10 +44,10 @@
 							<div class="col-lg-12 mt-3">
 								<div class="row ">
 									<div class="col-lg-6 ">
-										<form action="" method="">
-											<input type="number" class="form-control text-center w-100" value="1">
+										<form action="{{ route('website.order.form',$product->id) }}" method="GET">
+											<input type="number" name="quantity" class="form-control text-center w-100">
 											<button type="submit" class="btn btn-success w-100 text-center mt-2">
-												Order Now
+												Buy Now
 											</button>
 										</form>
 									</div>

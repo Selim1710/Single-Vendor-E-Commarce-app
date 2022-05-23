@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\Backend\AdminLoginController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CustomerController;
 use App\Http\Controllers\Backend\DashBoardController;
@@ -90,7 +91,11 @@ Route::group(['prefix' => 'website'], function () {
 Route::group(['prefix' => 'admin'], function () {
 
     // admin login
+    Route::get('/login', [AdminLoginController::class, 'form'])->name('admin.login.form');
+    Route::post('/do/login', [AdminLoginController::class, 'doLogin'])->name('admin.do.login');
+    Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 
+    // dashboard
     Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
 
     // Category
