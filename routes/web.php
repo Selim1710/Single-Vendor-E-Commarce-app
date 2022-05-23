@@ -28,6 +28,7 @@ Route::group(['prefix' => 'website'], function () {
     // search
     Route::post('/user/search/product', [HomeController::class, 'search'])->name('website.search');
 
+    // all product
     Route::get('/view/all/product', [HomeController::class, 'allProduct'])->name('website.all.product');
 
     // see all categories
@@ -74,6 +75,8 @@ Route::group(['prefix' => 'website'], function () {
         Route::get('/clear/cart', [CartController::class, 'clearCart'])->name('clear.cart');
         Route::get('/user/remove/cart/{id}', [CartController::class, 'remove'])->name('user.remove.cart');
         Route::get('/user/checkout', [CartController::class, 'checkout'])->name('user.checkout');
+        // order form
+        Route::get('/order/form/{id}', [CartController::class, 'orderForm'])->name('website.order.form');
     });
 
     // footer
