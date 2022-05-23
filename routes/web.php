@@ -95,80 +95,82 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/do/login', [AdminLoginController::class, 'doLogin'])->name('admin.do.login');
     Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 
-    // dashboard
-    Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
+    Route::group(['middleware' => ['auth','check_admin']], function () {
 
-    // Category
-    Route::get('/manage/category', [CategoryController::class, 'manageCategory'])->name('admin.manage.category');
-    Route::get('/add/category', [CategoryController::class, 'addCategory'])->name('admin.add.category');
-    Route::post('/store/category', [CategoryController::class, 'store'])->name('admin.store.category');
-    Route::get('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('admin.edit.category');
-    Route::post('/update/category/{id}', [CategoryController::class, 'update'])->name('admin.update.category');
-    Route::get('/delete/category/{id}', [CategoryController::class, 'delete'])->name('admin.delete.category');
-    Route::get('/view/category/image/{id}', [CategoryController::class, 'view'])->name('admin.view.category');
-    Route::post('/change/category/image/{id}', [CategoryController::class, 'change'])->name('admin.change.category.image');
+        // dashboard
+        Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
 
-    // Sub-Category
-    Route::get('/manage/subCategory', [SubCategoryController::class, 'manageSubCategory'])->name('admin.manage.subCategory');
-    Route::get('/add/subCategory', [SubCategoryController::class, 'addSubCategory'])->name('admin.add.subCategory');
-    Route::post('/store/subCategory', [SubCategoryController::class, 'store'])->name('admin.store.subCategory');
-    Route::get('/edit/subCategory/{id}', [SubCategoryController::class, 'edit'])->name('admin.edit.subCategory');
-    Route::post('/update/subCategory/{id}', [SubCategoryController::class, 'update'])->name('admin.update.subCategory');
-    Route::get('/delete/subCategory/{id}', [SubCategoryController::class, 'delete'])->name('admin.delete.subCategory');
+        // Category
+        Route::get('/manage/category', [CategoryController::class, 'manageCategory'])->name('admin.manage.category');
+        Route::get('/add/category', [CategoryController::class, 'addCategory'])->name('admin.add.category');
+        Route::post('/store/category', [CategoryController::class, 'store'])->name('admin.store.category');
+        Route::get('/edit/category/{id}', [CategoryController::class, 'editCategory'])->name('admin.edit.category');
+        Route::post('/update/category/{id}', [CategoryController::class, 'update'])->name('admin.update.category');
+        Route::get('/delete/category/{id}', [CategoryController::class, 'delete'])->name('admin.delete.category');
+        Route::get('/view/category/image/{id}', [CategoryController::class, 'view'])->name('admin.view.category');
+        Route::post('/change/category/image/{id}', [CategoryController::class, 'change'])->name('admin.change.category.image');
 
-    // Product
-    Route::get('/manage/product', [ProductController::class, 'manageProduct'])->name('admin.manage.product');
-    Route::get('/add/product', [ProductController::class, 'add'])->name('admin.add.product');
-    Route::post('/store/product', [ProductController::class, 'store'])->name('admin.store.product');
-    Route::get('/edit/product/{id}', [ProductController::class, 'edit'])->name('admin.edit.product');
-    Route::post('/update/product/{id}', [ProductController::class, 'update'])->name('admin.update.product');
-    Route::get('/delete/product/{id}', [ProductController::class, 'delete'])->name('admin.delete.product');
-    Route::get('/view/product/image/{id}', [ProductController::class, 'view'])->name('admin.view.product');
-    Route::post('/change/product/image/{id}', [ProductController::class, 'change'])->name('admin.change.product.image');
+        // Sub-Category
+        Route::get('/manage/subCategory', [SubCategoryController::class, 'manageSubCategory'])->name('admin.manage.subCategory');
+        Route::get('/add/subCategory', [SubCategoryController::class, 'addSubCategory'])->name('admin.add.subCategory');
+        Route::post('/store/subCategory', [SubCategoryController::class, 'store'])->name('admin.store.subCategory');
+        Route::get('/edit/subCategory/{id}', [SubCategoryController::class, 'edit'])->name('admin.edit.subCategory');
+        Route::post('/update/subCategory/{id}', [SubCategoryController::class, 'update'])->name('admin.update.subCategory');
+        Route::get('/delete/subCategory/{id}', [SubCategoryController::class, 'delete'])->name('admin.delete.subCategory');
 
-    // Stock
-    Route::get('/manage/stock', [StockController::class, 'manageStock'])->name('admin.manage.stock');
-    Route::get('/add/stock', [StockController::class, 'add'])->name('admin.add.stock');
-    Route::post('/store/stock', [StockController::class, 'store'])->name('admin.store.stock');
-    Route::get('/edit/stock/{id}', [StockController::class, 'edit'])->name('admin.edit.stock');
-    Route::post('/update/stock/{id}', [StockController::class, 'update'])->name('admin.update.stock');
-    Route::get('/delete/stock/{id}', [StockController::class, 'delete'])->name('admin.delete.stock');
+        // Product
+        Route::get('/manage/product', [ProductController::class, 'manageProduct'])->name('admin.manage.product');
+        Route::get('/add/product', [ProductController::class, 'add'])->name('admin.add.product');
+        Route::post('/store/product', [ProductController::class, 'store'])->name('admin.store.product');
+        Route::get('/edit/product/{id}', [ProductController::class, 'edit'])->name('admin.edit.product');
+        Route::post('/update/product/{id}', [ProductController::class, 'update'])->name('admin.update.product');
+        Route::get('/delete/product/{id}', [ProductController::class, 'delete'])->name('admin.delete.product');
+        Route::get('/view/product/image/{id}', [ProductController::class, 'view'])->name('admin.view.product');
+        Route::post('/change/product/image/{id}', [ProductController::class, 'change'])->name('admin.change.product.image');
 
-    // Offer
-    Route::get('/manage/offer', [OfferController::class, 'manageOffer'])->name('admin.manage.offer');
-    Route::get('/add/offer', [OfferController::class, 'add'])->name('admin.add.offer');
-    Route::post('/store/offer', [OfferController::class, 'store'])->name('admin.store.offer');
-    Route::get('/view/offer/{id}', [OfferController::class, 'viewOffer'])->name('admin.view.offer');
-    Route::post('/change/offer/image/{id}', [OfferController::class, 'change'])->name('admin.change.offer.image');
-    Route::get('/edit/offer/{id}', [OfferController::class, 'edit'])->name('admin.edit.offer');
-    Route::post('/update/offer/{id}', [OfferController::class, 'update'])->name('admin.update.offer');
-    Route::get('/delete/offer/{id}', [OfferController::class, 'delete'])->name('admin.delete.offer');
+        // Stock
+        Route::get('/manage/stock', [StockController::class, 'manageStock'])->name('admin.manage.stock');
+        Route::get('/add/stock', [StockController::class, 'add'])->name('admin.add.stock');
+        Route::post('/store/stock', [StockController::class, 'store'])->name('admin.store.stock');
+        Route::get('/edit/stock/{id}', [StockController::class, 'edit'])->name('admin.edit.stock');
+        Route::post('/update/stock/{id}', [StockController::class, 'update'])->name('admin.update.stock');
+        Route::get('/delete/stock/{id}', [StockController::class, 'delete'])->name('admin.delete.stock');
 
-    // Order List
-    Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');
-    Route::get('/accept/order/{id}', [ManageOrderController::class, 'acceptOrder'])->name('admin.accept.order');
-    Route::get('/reject/order/{id}', [ManageOrderController::class, 'rejectOrder'])->name('admin.reject.order');
+        // Offer
+        Route::get('/manage/offer', [OfferController::class, 'manageOffer'])->name('admin.manage.offer');
+        Route::get('/add/offer', [OfferController::class, 'add'])->name('admin.add.offer');
+        Route::post('/store/offer', [OfferController::class, 'store'])->name('admin.store.offer');
+        Route::get('/view/offer/{id}', [OfferController::class, 'viewOffer'])->name('admin.view.offer');
+        Route::post('/change/offer/image/{id}', [OfferController::class, 'change'])->name('admin.change.offer.image');
+        Route::get('/edit/offer/{id}', [OfferController::class, 'edit'])->name('admin.edit.offer');
+        Route::post('/update/offer/{id}', [OfferController::class, 'update'])->name('admin.update.offer');
+        Route::get('/delete/offer/{id}', [OfferController::class, 'delete'])->name('admin.delete.offer');
 
-    // Customer List
-    Route::get('/manage/customer', [CustomerController::class, 'manageCustomer'])->name('admin.manage.customer');
-    Route::get('/ban/customer/{id}', [CustomerController::class, 'banCustomer'])->name('admin.ban.customer');
-    Route::get('/un-ban/customer/{id}', [CustomerController::class, 'unBanCustomer'])->name('admin.un.ban.customer');
+        // Order List
+        Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');
+        Route::get('/accept/order/{id}', [ManageOrderController::class, 'acceptOrder'])->name('admin.accept.order');
+        Route::get('/reject/order/{id}', [ManageOrderController::class, 'rejectOrder'])->name('admin.reject.order');
 
-    // Company Report
-    Route::get('/view/report', [ReportController::class, 'viewReport'])->name('admin.view.report');
-    Route::post('/search/report', [ReportController::class, 'searchReport'])->name('admin.search.report');
+        // Customer List
+        Route::get('/manage/customer', [CustomerController::class, 'manageCustomer'])->name('admin.manage.customer');
+        Route::get('/ban/customer/{id}', [CustomerController::class, 'banCustomer'])->name('admin.ban.customer');
+        Route::get('/un-ban/customer/{id}', [CustomerController::class, 'unBanCustomer'])->name('admin.un.ban.customer');
 
+        // Company Report
+        Route::get('/view/report', [ReportController::class, 'viewReport'])->name('admin.view.report');
+        Route::post('/search/report', [ReportController::class, 'searchReport'])->name('admin.search.report');
+    });
 });
 
- // SSLCOMMERZ Start
- Route::get('/user/payment/info/{id}', [SslCommerzPaymentController::class, 'paymentInfo'])->name('user.process.to.pay');
+// SSLCOMMERZ Start
+Route::get('/user/payment/info/{id}', [SslCommerzPaymentController::class, 'paymentInfo'])->name('user.process.to.pay');
 
- Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
- Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
+Route::post('/pay', [SslCommerzPaymentController::class, 'index']);
+Route::post('/pay-via-ajax', [SslCommerzPaymentController::class, 'payViaAjax']);
 
- Route::post('/success', [SslCommerzPaymentController::class, 'success']);
- Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
- Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
+Route::post('/success', [SslCommerzPaymentController::class, 'success']);
+Route::post('/fail', [SslCommerzPaymentController::class, 'fail']);
+Route::post('/cancel', [SslCommerzPaymentController::class, 'cancel']);
 
- Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
+Route::post('/ipn', [SslCommerzPaymentController::class, 'ipn']);
  //SSLCOMMERZ END
