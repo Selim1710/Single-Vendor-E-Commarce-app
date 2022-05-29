@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Website;
 use App\Http\Controllers\Controller;
 use App\Models\Order;
 use App\Models\Product;
+use App\Models\Stock;
 use Illuminate\Http\Request;
 
 class CartController extends Controller
@@ -40,18 +41,18 @@ class CartController extends Controller
                 'product_quantity' => 1,
             ];
             session()->put('cart', $cartExist);
-            return redirect()->back()->with('message', 'Product added into the cart');
+            return redirect()->route('website.home')->with('message', 'Product added into the cart');
         }
         // case-3: same product adding into the cart
         $cartExist[$id]['product_quantity'] = $cartExist[$id]['product_quantity'] + 1;
         session()->put('cart', $cartExist);
-        return redirect()->back()->with('message', 'Product added into the cart');
+        return redirect()->route('website.home')->with('message', 'Product added into the cart');
     }
 
     public function clearCart()
     {
         session()->forget('cart');
-        return redirect()->back()->with('error', 'Cart Cleared');
+        return redirect()->route('website.home')->with('error', 'Cart Cleared');
     }
 
     public function remove($id)
@@ -91,8 +92,12 @@ class CartController extends Controller
     public function orderForm(Request $request, $id)
     {
         $product = Product::find($id);
-        if (!$product) {
-            return redirect()->route('website.home')->with('error', 'there is no product into the cart');
+        $stock = Stock::where('id',$product->id)->get();
+        foreach($stock as $st_qty){
+            $st_qty->total_produce;
+        }
+        if ($st_qty->total_produce <= $request->quantity) {
+            return redirect()->route('website.home')->with('error', 'Out of stock');
         }
         $cartExist = session()->get('cart');
         // case-1:no cart

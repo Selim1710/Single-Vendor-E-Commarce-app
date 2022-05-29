@@ -30,11 +30,16 @@ class HomeController extends Controller
             ->orwhere('product_name','LIKE','%'.$search.'%')
             ->orderBy('id','DESC')
             ->get();
+            $result = Product::where('model','LIKE','%'.$search.'%')
+            ->orwhere('product_name','LIKE','%'.$search.'%')
+            ->get()
+            ->count();
+            return view('website.layouts.search', compact('products','search','result'));
         }else{
             $products = Product::with('subCategory')->orderBy('id','DESC')->get();
+            $result = '0';
+            return view('website.layouts.search', compact('products','search','result'));
         }
-        return view('website.layouts.search', compact('products','search'));
-        
     }
     public function allProduct()
     {

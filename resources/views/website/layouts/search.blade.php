@@ -5,6 +5,9 @@
         <h1>Our Products</h1>
         <p>Check & Get Your Desired Product !</p>
     </div>
+    <div class="product_found">
+        <h2 class="text-danger text-center py-4">Total searching result found: {{ $result }}</h2>
+    </div>
     <div class="product">
         <div class="row">
             @foreach($products as $product)
