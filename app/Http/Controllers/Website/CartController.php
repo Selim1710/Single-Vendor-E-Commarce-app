@@ -97,7 +97,7 @@ class CartController extends Controller
             $st_qty->total_produce;
         }
         if ($st_qty->total_produce <= $request->quantity) {
-            return redirect()->route('website.home')->with('error', 'Out of stock');
+            return redirect()->back()->with('error', 'Out of stock');
         }
         $cartExist = session()->get('cart');
         // case-1:no cart
