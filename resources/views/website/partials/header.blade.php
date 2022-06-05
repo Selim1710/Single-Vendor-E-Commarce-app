@@ -1,6 +1,20 @@
 <section class="header">
 	<nav class="navbar navbar-dark navbar-default navbar-expand-xl">
 		<a href="{{ route('website.home') }}" class="navbar-brand"><img src="{{ asset('website/images/bgdlogo.jpg') }}" alt="logo">Zoom Computer</a>
+		<!-- mobile shopping cart -->
+		<div class="mobile_shopping">
+			@if(auth()->user())
+			<a href="{{ route('user.profile',auth()->user()->id) }}">
+				<span class="badge badge-danger ml-4">{{ session()->has('cart') ? count(session()->get('cart')):0 }}</span>
+				<i class="fa fa-shopping-basket fa-lg"></i>
+			</a>
+			@else
+			<a href="{{ route('users.login.form') }}">
+				<i class="fa fa-shopping-basket fa-lg"></i>
+			</a>
+			@endif
+
+		</div>
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>
