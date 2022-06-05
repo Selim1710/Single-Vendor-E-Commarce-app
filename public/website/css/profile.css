@@ -11,7 +11,8 @@
 
 /*********************** profile image ***********************/
 .user_image {
-  margin-top: 2%;
+  margin-top: 14%;
+  width:25%;
 }
 
 .change_image a {

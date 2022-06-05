@@ -34,14 +34,14 @@
                 <img src="{{ asset('/uploads/users/'.$user->image ) }}">
             </div>
             <div class="change_image">
-                <a href="{{ route('user.change.profile.image',$user->id) }}" class="btn btn-primary">Change</a>
+                <a href="{{ route('user.change.profile.image',$user->id) }}" class="btn btn-primary">uploads</a>
             </div>
             <br><br>
             <!-- MOBILE -->
             <div class="mobile_design">
                 <!-- order -->
-                <h4 class="text-center bg-info text-white p-2 rounded ">
-                    Order
+                <h4 class="text-center bg-info text-white p-2 rounded">
+                    view Order List
                 </h4>
                 <div class="button-group">
                     <a href="{{ route('user.download.pdf',$user->id) }}" class="btn btn-success">
@@ -53,8 +53,6 @@
                 @endphp
                 <table class="table border table-responsive">
                     <thead>
-                        <th>Product-id</th>
-                        <th>Model</th>
                         <th>Name</th>
                         <th>Unit-Price</th>
                         <th>Offer</th>
@@ -66,8 +64,6 @@
                     <tbody>
                         @foreach($orders as $order)
                         <tr>
-                            <td>{{ $order->product_id }}</td>
-                            <td>{{ $order->model }}</td>
                             <td>{{ $order->product_name }}</td>
                             <td>{{ $order->price }}</td>
                             <td>{{ $order->offer }} %</td>
@@ -111,8 +107,6 @@
                 @endphp
                 <table class="table table-hover border table-responsive">
                     <thead>
-                        <th>Product-id</th>
-                        <th>Model</th>
                         <th>Name</th>
                         <th>Unit-Price</th>
                         <th>Offers</th>
@@ -124,8 +118,6 @@
                         @if(!empty($carts))
                         @foreach($carts as $key=>$cart)
                         <tr>
-                            <td>{{ $cart['product_id']}}</td>
-                            <td>{{ $cart['product_model'] }}</td>
                             <td>{{ $cart['product_name'] }}</td>
                             <td>{{ $cart['regular_price'] }}</td>
                             @php
