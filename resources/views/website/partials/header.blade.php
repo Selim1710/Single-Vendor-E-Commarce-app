@@ -1,6 +1,6 @@
 <section class="header">
 	<nav class="navbar navbar-dark navbar-default navbar-expand-xl">
-		<a href="{{ route('website.home') }}" class="navbar-brand"><img src="{{ asset('website/images/bgdlogo.jpg') }}" alt="logo">BGD</a>
+		<a href="{{ route('website.home') }}" class="navbar-brand"><img src="{{ asset('website/images/bgdlogo.jpg') }}" alt="logo">Zoom Computer</a>
 		<button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
 			<span class="navbar-toggler-icon"></span>
 		</button>

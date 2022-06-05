@@ -16,7 +16,7 @@
     <!-- Style Sheet -->
     <link rel="stylesheet" href="{{ asset('website/css/style.css') }}">
     
-    <title>BGD Online Limited</title>
+    <title>Zoom Computer Bd</title>
 </head>
 
 <body>

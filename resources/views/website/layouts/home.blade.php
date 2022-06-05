@@ -72,7 +72,7 @@
         </div>
     </div>
 </section>
-<!-- Feature Category -->
+<!-- Category -->
 <section class="featured-Category border">
     <div class="categoryHeader">
         <h1>Featured Category</h1>
@@ -97,6 +97,7 @@
     </div>
     <br><br><br><br><br><br>
 </section>
+<!-- product -->
 <section class="featured-Product border">
     <div class="productHeader">
         <h1>Featured Product</h1>
