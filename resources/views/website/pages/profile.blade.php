@@ -34,7 +34,7 @@
                 <img src="{{ asset('/uploads/users/'.$user->image ) }}">
             </div>
             <div class="change_image">
-                <a href="{{ route('user.change.profile.image',$user->id) }}" class="btn btn-primary">uploads</a>
+                <a href="{{ route('user.change.profile.image',$user->id) }}" class="btn btn-secondary mt-2">Uploads</a>
             </div>
             <br><br>
             <!-- MOBILE -->
