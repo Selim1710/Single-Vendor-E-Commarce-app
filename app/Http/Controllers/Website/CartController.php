@@ -83,7 +83,7 @@ class CartController extends Controller
                     'total' => ($cart['regular_price'] * $cart['product_quantity']) - ($cart['regular_price'] * $cart['product_quantity'] * ($cart['product_offer'] / 100)),
                 ]);
             session()->forget('cart');
-            return redirect()->back()->with('message', 'Order place successfully');
+            return redirect()->back()->with('message', 'Order place successfully. Now Click -- PROCESS TO PAY -- to confirm order');
         }
         return redirect()->back()->with('error', 'No data found into the cart');
     }
