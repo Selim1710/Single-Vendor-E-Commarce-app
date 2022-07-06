@@ -16,10 +16,7 @@ use App\Http\Controllers\Website\HomeController;
 use App\Http\Controllers\Website\UserController;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SslCommerzPaymentController;
-
-
-
-
+use App\Http\Controllers\Website\CustomizeController;
 
 // Website Part
 Route::get('/', [HomeController::class, 'home'])->name('website.home');
@@ -79,6 +76,11 @@ Route::group(['prefix' => 'website'], function () {
         // order form
         Route::get('/order/form/{id}', [CartController::class, 'orderForm'])->name('website.order.form');
     });
+
+    // customization
+    Route::get('/user/customize/product', [CustomizeController::class, 'customize'])->name('user.customize.product');
+    Route::post('/user/order/customize/product', [CustomizeController::class, 'order'])->name('user.order.customize.product');
+
 
     // footer
     Route::get('/user/refund/policy', [HomeController::class, 'refundPolicy'])->name('user.refund.policy');
