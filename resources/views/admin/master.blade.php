@@ -43,7 +43,7 @@
                         <div class="sb-sidenav-menu-heading">Forms</div>
                         <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseLayouts" aria-expanded="false" aria-controls="collapseLayouts">
                             <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
-                            Add
+                            Add Product
                             <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
                         </a>
                         <div class="collapse" id="collapseLayouts" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
@@ -53,6 +53,18 @@
                                 <a class="nav-link" href="{{ route('admin.manage.product') }}">Product</a>
                                 <a class="nav-link" href="{{ route('admin.manage.stock') }}">Stock</a>
                                 <a class="nav-link" href="{{ route('admin.manage.offer') }}">Offer</a>
+                            </nav>
+                        </div>
+                        <!-- customization -->
+                        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#customization" aria-expanded="false" aria-controls="collapseLayouts">
+                            <div class="sb-nav-link-icon"><i class="fas fa-plus"></i></div>
+                            Add customization
+                            <div class="sb-sidenav-collapse-arrow"><i class="fas fa-angle-down"></i></div>
+                        </a>
+                        <div class="collapse" id="customization" aria-labelledby="headingOne" data-bs-parent="#sidenavAccordion">
+                            <nav class="sb-sidenav-menu-nested nav">
+                                <a class="nav-link" href="{{ route('admin.manage.customize.category') }}"> Category</a>
+                                <a class="nav-link" href="{{ route('admin.manage.customize.product') }}"> Product</a>
                             </nav>
                         </div>
                         <!-- table -->

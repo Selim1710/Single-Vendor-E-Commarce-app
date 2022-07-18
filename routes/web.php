@@ -3,6 +3,8 @@
 use App\Http\Controllers\Backend\AdminLoginController;
 use App\Http\Controllers\Backend\CategoryController;
 use App\Http\Controllers\Backend\CustomerController;
+use App\Http\Controllers\Backend\CustomizeCategoryController;
+use App\Http\Controllers\Backend\CustomizeProductController;
 use App\Http\Controllers\Backend\DashBoardController;
 use App\Http\Controllers\Backend\LaptopDealsController;
 use App\Http\Controllers\Backend\ProductController;
@@ -97,11 +99,12 @@ Route::group(['prefix' => 'admin'], function () {
     Route::post('/do/login', [AdminLoginController::class, 'doLogin'])->name('admin.do.login');
     Route::get('/logout', [AdminLoginController::class, 'logout'])->name('admin.logout');
 
-    Route::group(['middleware' => ['auth','check_admin']], function () {
+    Route::group(['middleware' => ['auth', 'check_admin']], function () {
 
         // dashboard
         Route::get('/dashboard', [DashBoardController::class, 'dashboard'])->name('admin.dashboard');
 
+        /////////////////////////// Product Part ///////////////////////////
         // Category
         Route::get('/manage/category', [CategoryController::class, 'manageCategory'])->name('admin.manage.category');
         Route::get('/add/category', [CategoryController::class, 'addCategory'])->name('admin.add.category');
@@ -148,6 +151,28 @@ Route::group(['prefix' => 'admin'], function () {
         Route::post('/update/offer/{id}', [OfferController::class, 'update'])->name('admin.update.offer');
         Route::get('/delete/offer/{id}', [OfferController::class, 'delete'])->name('admin.delete.offer');
 
+        /////////////////////////// Customization part ///////////////////////////
+        // Category
+        Route::get('/manage/customize/category', [CustomizeCategoryController::class, 'manageCategory'])->name('admin.manage.customize.category');
+        Route::get('/add/customize/category', [CustomizeCategoryController::class, 'addCategory'])->name('admin.add.customize.category');
+        Route::post('/store/customize/category', [CustomizeCategoryController::class, 'store'])->name('admin.store.customize.category');
+        Route::get('/edit/customize/category/{id}', [CustomizeCategoryController::class, 'editCategory'])->name('admin.edit.customize.category');
+        Route::post('/update/customize/category/{id}', [CustomizeCategoryController::class, 'update'])->name('admin.update.customize.category');
+        Route::get('/delete/customize/category/{id}', [CustomizeCategoryController::class, 'delete'])->name('admin.delete.customize.category');
+        Route::get('/view/customize/category/image/{id}', [CustomizeCategoryController::class, 'view'])->name('admin.view.customize.category');
+        Route::post('/change/customize/category/image/{id}', [CustomizeCategoryController::class, 'change'])->name('admin.change.customize.category.image');
+
+        // Product
+        Route::get('/manage/customize/product', [CustomizeProductController::class, 'manageProduct'])->name('admin.manage.customize.product');
+        Route::get('/add/customize/product', [CustomizeProductController::class, 'add'])->name('admin.add.customize.product');
+        Route::post('/store/customize/product', [CustomizeProductController::class, 'store'])->name('admin.store.customize.product');
+        Route::get('/edit/customize/product/{id}', [CustomizeProductController::class, 'edit'])->name('admin.edit.customize.product');
+        Route::post('/update/customize/product/{id}', [CustomizeProductController::class, 'update'])->name('admin.update.customize.product');
+        Route::get('/delete/customize/product/{id}', [CustomizeProductController::class, 'delete'])->name('admin.delete.customize.product');
+        Route::get('/view/customize/product/image/{id}', [CustomizeProductController::class, 'view'])->name('admin.view.customize.product');
+        Route::post('/change/customize/product/image/{id}', [CustomizeProductController::class, 'change'])->name('admin.change.customize.product.image');
+
+        /////////////////////////// Table part ///////////////////////////
         // Order List
         Route::get('/manage/order', [ManageOrderController::class, 'manageOrder'])->name('admin.manage.order');
         Route::get('/accept/order/{id}', [ManageOrderController::class, 'acceptOrder'])->name('admin.accept.order');

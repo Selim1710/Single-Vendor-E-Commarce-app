@@ -16,6 +16,8 @@ class CreateCustomizationCategoriesTable extends Migration
         Schema::create('customization_categories', function (Blueprint $table) {
             $table->id();
             $table->string('customize_category_name');
+            $table->string('image');
+
             $table->timestamps();
         });
     }
