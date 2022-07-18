@@ -26,31 +26,34 @@
                             <div class="date">Total items: 000</div>
                         </div>
                     </div>
-                    <table border="0" class="text-center" cellspacing="0" cellpadding="0">
-                        <thead>
-                            <tr>
-                                <th>Image</th>
-                                <th>Name</th>
-                                <th></th>
-                                <th></th>
-                                <th>Select</th>
-                            </tr>
-                        </thead>
-                        {{-- form --}}
-                        <form action="{{ route('user.order.customize.product') }}" method="POST"
-                            enctype="multipart/form-data">
-                            @csrf
-                            <tbody>
+                    {{-- form --}}
+                    <form action="{{ route('user.order.customize.product') }}" method="POST"
+                        enctype="multipart/form-data">
+                        @csrf
+                        <table border="0" class="text-center" cellspacing="0" cellpadding="0">
+                            <thead>
                                 <tr>
-                                    <td class="no">
-                                        <img src="{{ asset('website/images/bgdlogo.jpg') }}"
-                                            style="height:50px;width:50px;">
-                                    </td>
-                                    <td>CPU</td>
-                                    <td></td>
-                                    <td></td>
-                                    <td class="total"><a href="#" class="btn btn-info">Choose</a></td>
+                                    <th>Image</th>
+                                    <th>Name</th>
+                                    <th></th>
+                                    <th></th>
+                                    <th>Select</th>
                                 </tr>
+                            </thead>
+
+                            <tbody>
+                                @foreach ($categories as $category)
+                                    <tr>
+                                        <td class="no">
+                                            <img src="{{ asset('/uploads/customization/category/'.$category->image) }}" alt="image">
+                                        </td>
+                                        <td>{{ $category->customize_category_name }}</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td class="total"><a href="#" class="btn btn-info">Choose</a></td>
+                                    </tr>
+                                @endforeach
+
                                 {{-- after choose product --}}
                                 {{-- here will be loop --}}
                                 <tr>
@@ -65,7 +68,7 @@
                             <tfoot>
                                 <tr>
                                     <td colspan="2"></td>
-                                    <td colspan="2"> 
+                                    <td colspan="2">
                                         <button type="submit" class="btn btn-info w-100">Order Now</button>
                                     </td>
                                 </tr>
@@ -75,8 +78,9 @@
                                     <td></td>
                                 </tr>
                             </tfoot>
-                        </form>
-                    </table>
+                        </table>
+                    </form>
+
                     <br>
                     <div class="thanks">Thank you!</div>
                     <div class="notices">

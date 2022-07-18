@@ -468,17 +468,19 @@
   font-size: 16px;
 }
 
-.invoice table .qty,.invoice table .total,.invoice table {
+.invoice form table .qty,.invoice table .total,.invoice table {
   font-size: 1.2em;
 }
 
-.invoice table .no {
-  color: #fff;
-  font-size: 1.6em;
+.invoice form table .no {
   background: #3989c6;
 }
+.invoice form table .no img{
+  height: 80px;
+  width:80px;
+}
 
-.invoice table tbody tr:last-child td {
+.invoice form table tbody tr:last-child td {
   border: none;
 }
 
