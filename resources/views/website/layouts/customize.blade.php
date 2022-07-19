@@ -26,62 +26,84 @@
                             <div class="date">Total items: 000</div>
                         </div>
                     </div>
-                    {{-- form --}}
-                    <form action="{{ route('user.order.customize.product') }}" method="POST"
-                        enctype="multipart/form-data">
-                        @csrf
-                        <table border="0" class="text-center" cellspacing="0" cellpadding="0">
-                            <thead>
-                                <tr>
-                                    <th>Image</th>
-                                    <th>Name</th>
-                                    <th></th>
-                                    <th></th>
-                                    <th>Select</th>
-                                </tr>
-                            </thead>
+                    <hr>
+                    <div class="my_customization text-center">
+                        @if (!$categories)
+                        <h3 class="text-danger font-weight-bold">My Customization</h3>
+                            {{-- form --}}
+                            <form action="{{ route('user.order.customize.product') }}" method="POST"
+                                enctype="multipart/form-data">
+                                @csrf
+                                <table border="0" cellspacing="0" cellpadding="0">
+                                    <thead>
+                                        <tr>
+                                            <th>Image</th>
+                                            <th>Name</th>
+                                            <th>price</th>
+                                            <th>description</th>
+                                            <th>Action</th>
+                                        </tr>
+                                    </thead>
 
-                            <tbody>
-                                @foreach ($categories as $category)
-                                    <tr>
-                                        <td class="no">
-                                            <img src="{{ asset('/uploads/customization/category/'.$category->image) }}" alt="image">
-                                        </td>
-                                        <td>{{ $category->customize_category_name }}</td>
-                                        <td></td>
-                                        <td></td>
-                                        <td class="total"><a href="#" class="btn btn-info">Choose</a></td>
-                                    </tr>
-                                @endforeach
+                                    <tbody>
+                                        @foreach ($categories as $category)
+                                            <tr>
+                                                <td><input type="image" name="image" alt="image" disabled></td>
+                                                <td><input type="text" name="name"
+                                                        value="{{ $category->customize_category_name }}" disabled></td>
+                                                <td><input type="text" value="100 tk" disabled></td>
+                                                <td><input type="text" value="here is details" disabled></td>
+                                                <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                            </tr>
+                                        @endforeach
+                                    </tbody>
+                                    <tfoot>
+                                        <tr>
+                                            <td colspan="5" class="border border-secondary">
+                                                <button type="submit" class="btn btn-warning text-white w-25">Order Now</button>
+                                            </td>
+                                        </tr>
+                                        
+                                    </tfoot>
+                                </table>
+                            </form>
+                        @else
+                            <div>
+                                <p class="bg-warning text-white p-2">Please! Select customization product from bellow &nbsp; <i class="fa fa-arrow-down"></i></p>
+                            </div>
+                        @endif
+                    </div>
+                    <hr>
+                    {{-- Category table --}}
+                    <h2 class="text-center text-info font-weight-bold">Select Customize Product</h2>
+                    <table border="0" class="text-center" cellspacing="0" cellpadding="0">
+                        <thead>
+                            <tr>
+                                <th>Image</th>
+                                <th>Name</th>
+                                <th></th>
+                                <th></th>
+                                <th>Select</th>
+                            </tr>
+                        </thead>
 
-                                {{-- after choose product --}}
-                                {{-- here will be loop --}}
+                        <tbody>
+                            @foreach ($categories as $category)
                                 <tr>
-                                    <td><input type="image" name="image" alt="image" disabled></td>
-                                    <td><input type="text" name="name" disabled></td>
-                                    <td></td>
-                                    <td></td>
-                                    <td><input type="number" name="price" disabled></td>
-                                </tr>
-                                {{-- endloop --}}
-                            </tbody>
-                            <tfoot>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td colspan="2">
-                                        <button type="submit" class="btn btn-info w-100">Order Now</button>
+                                    <td class="no">
+                                        <img src="{{ asset('/uploads/customization/category/' . $category->image) }}"
+                                            alt="image">
                                     </td>
-                                </tr>
-                                <tr>
-                                    <td colspan="2"></td>
-                                    <td colspan="2"></td>
+                                    <td>{{ $category->customize_category_name }}</td>
                                     <td></td>
+                                    <td></td>
+                                    <td class="total"><a href="#" class="btn btn-info">Choose</a></td>
                                 </tr>
-                            </tfoot>
-                        </table>
-                    </form>
-
-                    <br>
+                            @endforeach
+                        </tbody>
+                    </table>
+                    <hr>
+                    <br><br><br><br>
                     <div class="thanks">Thank you!</div>
                     <div class="notices">
                         <div>NOTICE:</div>

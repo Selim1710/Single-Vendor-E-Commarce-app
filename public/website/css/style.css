@@ -26,7 +26,8 @@
   font-size: 24px;
 }
 
-.navbar .navbar-brand:hover, .navbar .navbar-brand:focus {
+.navbar .navbar-brand:hover,
+.navbar .navbar-brand:focus {
   color: #fff;
 }
 
@@ -111,7 +112,8 @@
   font-size: 14px;
 }
 
-.navbar .navbar-nav>a:hover, .navbar .navbar-nav>a:focus {
+.navbar .navbar-nav>a:hover,
+.navbar .navbar-nav>a:focus {
   color: #e84118 !important;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.3);
 }
@@ -133,7 +135,9 @@
   margin-top: -2px;
 }
 
-.navbar .nav-item.open>a, .navbar .nav-item.open>a:hover, .navbar .nav-item.open>a:focus {
+.navbar .nav-item.open>a,
+.navbar .nav-item.open>a:hover,
+.navbar .nav-item.open>a:focus {
   color: #fff;
   background: none !important;
 }
@@ -151,12 +155,15 @@
   font-size: 15px;
 }
 
-.navbar .dropdown-menu a:hover, .navbar .dropdown-menu a:focus {
+.navbar .dropdown-menu a:hover,
+.navbar .dropdown-menu a:focus {
   color: #333 !important;
   background: transparent !important;
 }
 
-.navbar .navbar-nav .active a, .navbar .navbar-nav .active a:hover, .navbar .navbar-nav .active a:focus {
+.navbar .navbar-nav .active a,
+.navbar .navbar-nav .active a:hover,
+.navbar .navbar-nav .active a:focus {
   color: #fff;
   text-shadow: 0 0 4px rgba(255, 255, 255, 0.2);
   background: transparent !important;
@@ -175,7 +182,8 @@
   background: #fff;
 }
 
-.navbar .navbar-toggle:focus, .navbar .navbar-toggle:hover {
+.navbar .navbar-toggle:focus,
+.navbar .navbar-toggle:hover {
   background: transparent;
 }
 
@@ -397,7 +405,7 @@
 
 /*********************** Customization ***********************/
 
-#invoice{
+#invoice {
   padding: 30px;
 }
 
@@ -456,7 +464,8 @@
   margin-bottom: 20px;
 }
 
-.invoice table td,.invoice table th {
+.invoice table td,
+.invoice table th {
   padding: 15px;
   background: #eee;
   border-bottom: 1px solid #fff
@@ -468,16 +477,34 @@
   font-size: 16px;
 }
 
-.invoice form table .qty,.invoice table .total,.invoice table {
+.invoice form table .qty,
+.invoice table .total,
+.invoice table {
   font-size: 1.2em;
 }
 
-.invoice form table .no {
-  background: #3989c6;
+/* table */
+.invoice table .qty,
+.invoice table .total,
+.invoice table {
+  font-size: 1.2em;
 }
-.invoice form table .no img{
-  height: 80px;
-  width:80px;
+.invoice table .no {
+  background: #dfe6e9;
+}
+
+.invoice table .no img {
+  height: 40px;
+  width: 94px;
+}
+/* form */
+.invoice form table .no {
+  background: #dfe6e9;
+}
+
+.invoice form table .no img {
+  height: 40px;
+  width: 94px;
 }
 
 .invoice form table tbody tr:last-child td {
@@ -518,18 +545,18 @@
 
 @media print {
   .invoice {
-      font-size: 11px!important;
-      overflow: hidden!important;
+    font-size: 11px !important;
+    overflow: hidden !important;
   }
 
   .invoice footer {
-      position: absolute;
-      bottom: 10px;
-      page-break-after: always;
+    position: absolute;
+    bottom: 10px;
+    page-break-after: always;
   }
 
   .invoice>div:last-child {
-      page-break-before: always;
+    page-break-before: always;
   }
 }
 
