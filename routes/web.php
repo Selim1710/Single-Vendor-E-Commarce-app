@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\SslCommerzPaymentController;
 use App\Http\Controllers\Website\CustomizeController;
 
-// Website Part
+/////////////////////////// Website ///////////////////////////
 Route::get('/', [HomeController::class, 'home'])->name('website.home');
 
 Route::group(['prefix' => 'website'], function () {
@@ -82,6 +82,8 @@ Route::group(['prefix' => 'website'], function () {
     // customization
     Route::get('/user/customize/product', [CustomizeController::class, 'customize'])->name('user.customize.product');
     Route::post('/user/order/customize/product', [CustomizeController::class, 'order'])->name('user.order.customize.product');
+    Route::get('/user/choose/customize/category/product/{id}', [CustomizeController::class, 'categoryProduct'])->name('customize.category.product');
+    Route::get('/user/add/customize/product/{id}', [CustomizeController::class, 'addProduct'])->name('user.add.customize.product');
 
 
     // footer
@@ -91,7 +93,7 @@ Route::group(['prefix' => 'website'], function () {
 
 
 
-// Admin Part
+/////////////////////////// Admin part ///////////////////////////
 Route::group(['prefix' => 'admin'], function () {
 
     // admin login

@@ -29,7 +29,7 @@
                     <hr>
                     <div class="my_customization text-center">
                         @if (!$categories)
-                        <h3 class="text-danger font-weight-bold">My Customization</h3>
+                            <h3 class="text-danger font-weight-bold">My Customization</h3>
                             {{-- form --}}
                             <form action="{{ route('user.order.customize.product') }}" method="POST"
                                 enctype="multipart/form-data">
@@ -46,30 +46,30 @@
                                     </thead>
 
                                     <tbody>
-                                        @foreach ($categories as $category)
-                                            <tr>
-                                                <td><input type="image" name="image" alt="image" disabled></td>
-                                                <td><input type="text" name="name"
-                                                        value="{{ $category->customize_category_name }}" disabled></td>
-                                                <td><input type="text" value="100 tk" disabled></td>
-                                                <td><input type="text" value="here is details" disabled></td>
-                                                <td><a href="#"><i class="fa fa-trash"></i></a></td>
-                                            </tr>
-                                        @endforeach
+                                        <tr>
+                                            <td><input type="image" name="image" alt="image" disabled></td>
+                                            <td><input type="text" name="name" value=""
+                                                    disabled></td>
+                                            <td><input type="text" value="" disabled></td>
+                                            <td><input type="text" value="" disabled></td>
+                                            <td><a href="#"><i class="fa fa-trash"></i></a></td>
+                                        </tr>
                                     </tbody>
                                     <tfoot>
                                         <tr>
                                             <td colspan="5" class="border border-secondary">
-                                                <button type="submit" class="btn btn-warning text-white w-25">Order Now</button>
+                                                <button type="submit" class="btn btn-warning text-white w-25">Order
+                                                    Now</button>
                                             </td>
                                         </tr>
-                                        
+
                                     </tfoot>
                                 </table>
                             </form>
                         @else
                             <div>
-                                <p class="bg-warning text-white p-2">Please! Select customization product from bellow &nbsp; <i class="fa fa-arrow-down"></i></p>
+                                <p class="bg-warning text-white p-2">Please! Select customization product from bellow &nbsp;
+                                    <i class="fa fa-arrow-down"></i></p>
                             </div>
                         @endif
                     </div>
@@ -97,7 +97,8 @@
                                     <td>{{ $category->customize_category_name }}</td>
                                     <td></td>
                                     <td></td>
-                                    <td class="total"><a href="#" class="btn btn-info">Choose</a></td>
+                                    <td class="total"><a href="{{ route('customize.category.product', $category->id) }}"
+                                            class="btn btn-info">Choose</a></td>
                                 </tr>
                             @endforeach
                         </tbody>
