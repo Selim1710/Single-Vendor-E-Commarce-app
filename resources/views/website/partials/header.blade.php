@@ -51,9 +51,12 @@
                 @if (auth()->user())
                     <a href="{{ route('user.profile', auth()->user()->id) }}" class="nav-item nav-link"
                         style="padding-left: 2.5rem;">
-                        <i class="fa fa-user"></i>
-                        <span>Profile </span><span
-                            class="badge badge-danger">{{ session()->has('cart') ? count(session()->get('cart')) : 0 }}</span>
+                        <i class="fa fa-user">
+                            <span class="badge badge-danger">
+                                {{ session()->has('cart') ? count(session()->get('cart')) : 0 }}
+                            </span>
+                        </i>
+                        <span>Profile </span>
                     </a>
                 @else
                     <a href="{{ route('users.login.form') }}" class="nav-item nav-link"
@@ -61,7 +64,8 @@
                         <span>Accounts</span>
                     </a>
                 @endif
-                <a href="{{ route('user.customize.product') }}" class="nav-item nav-link" style="padding-left: 2.5rem;">
+                <a href="{{ route('user.customize.product') }}" class="nav-item nav-link"
+                    style="padding-left: 2.5rem;">
                     <button class="btn btn-info">Customization</button>
                 </a>
             </div>

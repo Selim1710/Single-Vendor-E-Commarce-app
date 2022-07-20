@@ -148,12 +148,12 @@
         <div class="container">
             <div class="row">
                 <div class="col-lg-12 text-center font-weight-bold mt-4">
-                    <h1>BGD Online Limited Services</h1>
+                    <h1>We provide more services <i class="fa fa-handshake-o" aria-hidden="true"></i> </h1>
                 </div>
             </div>
             <div class="row">
-                <div class="col-lg-12 p-2 text-center mt-4">
-                    <h3 class="text-capitalize">web hosting</h3><br>
+                <div class="col-lg-12 p-2 mt-4">
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> web hosting</h3><br>
                     <div class="description">
                         <article>
                             BGD Online Limited make registration of web hosting fast, secure, affordable and secure manner.
@@ -162,8 +162,8 @@
                         </article>
                     </div>
                 </div>
-                <div class="col-lg-12 p-2 text-center mt-4">
-                    <h3 class="text-capitalize">web development</h3><br>
+                <div class="col-lg-12 p-2 mt-4">
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> web development</h3><br>
                     <div class="description">
                         <article>
                             BGD Online Limited expertise in web development. We do outsourcing web design and provide
@@ -172,8 +172,8 @@
                         </article>
                     </div>
                 </div>
-                <div class="col-lg-12 p-2 text-center mt-4">
-                    <h3 class="text-capitalize">internet connectivity </h3><br>
+                <div class="col-lg-12 p-2 mt-4">
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> internet connectivity </h3><br>
                     <div class="description">
                         <article>
                             Internet access is the process that enables individuals and organisations to connect to the
@@ -181,8 +181,8 @@
                             Once connected to the Internet, users can access Internet services, such as email. </article>
                     </div>
                 </div>
-                <div class="col-lg-12 p-2 text-center mt-4">
-                    <h3 class="text-capitalize">Domain Registration </h3><br>
+                <div class="col-lg-12 p-2 mt-4">
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> Domain Registration </h3><br>
                     <div class="description">
                         <article>
                             We provide Bangladeshi .bd or .bangla and the all the popular domain registration services. Our
