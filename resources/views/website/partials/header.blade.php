@@ -45,8 +45,8 @@
                     <span>Offers</span>
                 </a>
                 <a href="{{ route('website.laptop.deals') }}" class="nav-item nav-link"
-                    style="padding-right: 2.5rem;padding-left: 2.5rem;"><i class="fa fa-briefcase"></i>
-                    <span>Laptop Deals</span>
+                    style="padding-right: 2.5rem;padding-left: 2.5rem;"><i class="fa fa-child" id="DealsId"></i>
+                    <span>Deals</span>
                 </a>
                 @if (auth()->user())
                     <a href="{{ route('user.profile', auth()->user()->id) }}" class="nav-item nav-link"
@@ -64,10 +64,16 @@
                         <span>Accounts</span>
                     </a>
                 @endif
-                <a href="{{ route('user.customize.product') }}" class="nav-item nav-link"
-                    style="padding-left: 2.5rem;">
-                    <button class="btn btn-info">Customization</button>
-                </a>
+
+                <div class="neon_light_button" class="nav-item nav-link" style="padding-left: 2.5rem; margin-top:10px;">
+                    <a href="{{ route('user.customize.product') }}">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        Customize
+                    </a>
+                </div>
             </div>
         </div>
     </nav>

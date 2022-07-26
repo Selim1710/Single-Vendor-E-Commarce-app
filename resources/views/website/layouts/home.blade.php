@@ -79,6 +79,14 @@
             </div>
         </div>
     </section>
+    <!-- notice -->
+    <section>
+        <div class="text_animation">
+            <p id="pot" class="mt-2 p-1">26th July Tuesday, our all branches are open except Multiplan Branch.
+                Additionally our online activities will remain open and operational.
+            </p>
+        </div>
+    </section>
     <!-- Category -->
     <section class="featured-Category border">
         <div class="categoryHeader">
@@ -163,7 +171,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 p-2 mt-4">
-                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> web development</h3><br>
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> web development</h3>
+                    <br>
                     <div class="description">
                         <article>
                             BGD Online Limited expertise in web development. We do outsourcing web design and provide
@@ -173,7 +182,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 p-2 mt-4">
-                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> internet connectivity </h3><br>
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> internet connectivity
+                    </h3><br>
                     <div class="description">
                         <article>
                             Internet access is the process that enables individuals and organisations to connect to the
@@ -182,7 +192,8 @@
                     </div>
                 </div>
                 <div class="col-lg-12 p-2 mt-4">
-                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> Domain Registration </h3><br>
+                    <h3 class="text-capitalize"><i class="fa fa-asterisk" aria-hidden="true"></i> Domain Registration
+                    </h3><br>
                     <div class="description">
                         <article>
                             We provide Bangladeshi .bd or .bangla and the all the popular domain registration services. Our
