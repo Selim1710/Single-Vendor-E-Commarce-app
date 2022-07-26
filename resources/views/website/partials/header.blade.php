@@ -35,45 +35,39 @@
                     <span class="input-group-addon"><i class="material-icons">&#xE8B6;</i></span>
                 </div>
             </form>
-            <div class="navbar-nav ml-auto">
-                <a href="{{ route('website.home') }}" class="nav-item nav-link"
-                    style="padding-right: 2.5rem;padding-left: 2.5rem;"><i class="fa fa-home"></i>
-                    <span>Home</span>
+            {{-- menu --}}
+            <div class="nav-2">
+                <ul>
+                    <li style="--clr:#00ade1;">
+                        <a href="{{ route('website.home') }}" data-text="home">home</a>
+                    </li>
+                    <li style="--clr:#ffeaa7;">
+                        <a href="{{ route('website.offers') }}" data-text="offers">offers</a>
+                    </li>
+                    <li style="--clr:#fd79a8;">
+                        <a href="{{ route('website.laptop.deals') }}" data-text="deals">deals</a>
+                    </li>
+                    @if (auth()->user())
+                    <li style="--clr:#fab1a0;">
+                        <a href="{{ route('user.profile', auth()->user()->id) }}" data-text="profile">profile <span class="badge badge-danger">
+                            {{ session()->has('cart') ? count(session()->get('cart')) : 0 }}
+                        </span></a>
+                    </li>
+                    @else
+                    <li style="--clr:#f1c40f;">
+                        <a href="{{ route('users.login.form') }}" data-text="accounts">Accounts</a>
+                    </li>
+                    @endif
+                </ul>
+            </div>
+            <div class="neon_light_button">
+                <a href="{{ route('user.customize.product') }}">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                    Customize
                 </a>
-                <a href="{{ route('website.offers') }}" class="nav-item nav-link"
-                    style="padding-right: 2.5rem;padding-left: 2.5rem;"><i class="fa fa-gift"></i>
-                    <span>Offers</span>
-                </a>
-                <a href="{{ route('website.laptop.deals') }}" class="nav-item nav-link"
-                    style="padding-right: 2.5rem;padding-left: 2.5rem;"><i class="fa fa-child" id="DealsId"></i>
-                    <span>Deals</span>
-                </a>
-                @if (auth()->user())
-                    <a href="{{ route('user.profile', auth()->user()->id) }}" class="nav-item nav-link"
-                        style="padding-left: 2.5rem;">
-                        <i class="fa fa-user">
-                            <span class="badge badge-danger">
-                                {{ session()->has('cart') ? count(session()->get('cart')) : 0 }}
-                            </span>
-                        </i>
-                        <span>Profile </span>
-                    </a>
-                @else
-                    <a href="{{ route('users.login.form') }}" class="nav-item nav-link"
-                        style="padding-left: 2.5rem;"><i class="fa fa-users"></i>
-                        <span>Accounts</span>
-                    </a>
-                @endif
-
-                <div class="neon_light_button" class="nav-item nav-link" style="padding-left: 2.5rem; margin-top:10px;">
-                    <a href="{{ route('user.customize.product') }}">
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        <span></span>
-                        Customize
-                    </a>
-                </div>
             </div>
         </div>
     </nav>
