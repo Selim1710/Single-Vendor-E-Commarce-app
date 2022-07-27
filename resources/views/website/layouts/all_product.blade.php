@@ -1,20 +1,23 @@
 @extends('website.master')
 @section('contents')
-    <section class="featured-Product border" id="featured_product">
+    <section class="all-product featured-Product border">
         <div class="productHeader">
             <h1>Our Products</h1>
             <p>Check & Get Your Desired Product !</p>
         </div>
         <div class="container">
             <div class="row border border-secondary rounded text-center">
-                <div class="col-lg-10 col-sm-6">
-                    <div class="filter">
-                        <h3><i class="fa fa-filter"></i> Filter</h3>
+                <div class="col-lg-8 col-s-6 d-flex justify-content-between">
+                    <h4>Desktop</h4>
+                    <div>
+                        <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#filterItem">
+                            <i class="fa fa-bars"></i>
+                        </button>
                     </div>
                 </div>
-                <div class="col-lg-2 col-sm-6">
-                    <div class="shorting d-flex">
-                        <p>shorted by:</p>
+                <div class="col-lg-4 col-s-6">
+                    <div class="shorting d-flex justify-content-center">
+                        <p>Shorted by:</p>
                         <select name="price" id="" class="form-control w-50">
                             <option value="low">Low</option>
                             <option value="mid">Mid</option>
@@ -24,12 +27,13 @@
                 </div>
             </div>
         </div>
-        <div class="d-flex">
+        <div class="allProductFilterItem">
             {{-- filter --}}
-            <div class="container w-25 border">
+            <div class="first container collapse" id="filterItem">
                 <div class="row m-2">
                     <div class="col-12 bg-white mt-2">
-                        <h2 class="p-2 rounded">Availability</h2>
+                        <h5 class="p-2 rounded">Availability</h5>
+
                         <h6><input type="checkbox"> sidenav</h6>
                         <h6><input type="checkbox"> sidenav</h6>
                         <h6><input type="checkbox"> sidenav</h6>
@@ -77,7 +81,7 @@
                 </div>
             </div>
             {{-- product --}}
-            <div class="container d-flex w-75">
+            <div class="second d-flex">
                 <div class="product">
                     <div class="row">
                         @foreach ($products as $product)

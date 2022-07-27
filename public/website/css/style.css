@@ -362,7 +362,7 @@
 }
 
 .featured-Product .column {
-  width: 232px;
+  width: 200px;
   height: auto;
   margin: 2%;
 }
@@ -388,6 +388,45 @@
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
 }
+
+/*********************** all product ***********************/
+
+.all-product .shorting p {
+  margin-left: 5px;
+  margin-right: 5px;
+
+}
+
+.allProductFilterItem {
+  display: flex;
+  overflow: hidden;
+}
+
+.allProductFilterItem .first {
+  width: 25%;
+  border: 2px solid grey;
+}
+
+.allProductFilterItem .second {
+  margin-left: 63px;
+}
+
+@media (max-width:768px) {
+
+  .allProductFilterItem {
+    display: inline-block;
+    overflow: auto;
+  }
+
+  .allProductFilterItem .first {
+    width: 100%;
+  }
+
+  .allProductFilterItem .second {
+    margin-left: 25px;
+  }
+}
+
 
 /*********************** product details ***********************/
 .model {
