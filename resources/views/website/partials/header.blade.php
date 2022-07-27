@@ -2,6 +2,10 @@
     <nav class="navbar navbar-dark navbar-default navbar-expand-xl">
         <a href="{{ route('website.home') }}" class="navbar-brand"><img src="{{ asset('website/images/bgdlogo.jpg') }}"
                 alt="logo">Zoom Computer</a>
+        {{-- mobile icon --}}
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
         <!-- mobile shopping cart -->
         <div class="mobile_shopping">
             @if (auth()->user())
@@ -17,14 +21,11 @@
             @endif
 
         </div>
-        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-            <span class="navbar-toggler-icon"></span>
-        </button>
         <div id="navbarCollapse" class="collapse navbar-collapse justify-content-start">
             <!-- search -->
             <form action="{{ route('website.search') }}" method="POST" class="navbar-form form-inline">
                 @csrf
-                <div class="input-group search-box">
+                <div class="input-group search-box w-100">
                     @if (!empty($search))
                         <input type="text" name="search" value="{{ $search }}" class="form-control"
                             placeholder="Search here...">
@@ -48,15 +49,16 @@
                         <a href="{{ route('website.laptop.deals') }}" data-text="deals">deals</a>
                     </li>
                     @if (auth()->user())
-                    <li style="--clr:#fab1a0;">
-                        <a href="{{ route('user.profile', auth()->user()->id) }}" data-text="profile">profile <span class="badge badge-danger">
-                            {{ session()->has('cart') ? count(session()->get('cart')) : 0 }}
-                        </span></a>
-                    </li>
+                        <li style="--clr:#fab1a0;">
+                            <a href="{{ route('user.profile', auth()->user()->id) }}" data-text="profile">profile <span
+                                    class="badge badge-danger">
+                                    {{ session()->has('cart') ? count(session()->get('cart')) : 0 }}
+                                </span></a>
+                        </li>
                     @else
-                    <li style="--clr:#f1c40f;">
-                        <a href="{{ route('users.login.form') }}" data-text="accounts">Accounts</a>
-                    </li>
+                        <li style="--clr:#f1c40f;">
+                            <a href="{{ route('users.login.form') }}" data-text="accounts">Accounts</a>
+                        </li>
                     @endif
                 </ul>
             </div>
