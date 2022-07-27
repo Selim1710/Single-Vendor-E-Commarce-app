@@ -6,19 +6,19 @@
             <p>Check & Get Your Desired Product !</p>
         </div>
         <div class="container">
-            <div class="row border border-secondary rounded text-center">
+            <div class="row border border-warning rounded text-center">
                 <div class="col-lg-8 col-s-6 d-flex justify-content-between">
-                    <h4>Desktop</h4>
-                    <div>
+                    <div class="m-2">
                         <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#filterItem">
                             <i class="fa fa-bars"></i>
                         </button>
                     </div>
+                    <h4 class="m-2">Desktop</h4>
                 </div>
                 <div class="col-lg-4 col-s-6">
                     <div class="shorting d-flex justify-content-center">
-                        <p>Shorted by:</p>
-                        <select name="price" id="" class="form-control w-50">
+                        <p class="mt-2">Shorted by:</p>
+                        <select name="price" id="" class="form-control w-50 mt-2">
                             <option value="low">Low</option>
                             <option value="mid">Mid</option>
                             <option value="high">High</option>
@@ -39,7 +39,7 @@
                         <h6><input type="checkbox"> sidenav</h6>
                     </div>
                     <div class="col-12 bg-white mt-3">
-                        <h2>Brand</h2>
+                        <h5>Brand</h5>
 
                         <h6><input type="checkbox"> brand</h6>
                         <h6><input type="checkbox"> brand</h6>
@@ -47,7 +47,7 @@
                         <h6><input type="checkbox"> brand</h6>
                     </div>
                     <div class="col-12 bg-white rounded mt-3">
-                        <h2>Processor Type</h2>
+                        <h5>Processor Type</h5>
 
                         <h6><input type="checkbox"> brand</h6>
                         <h6><input type="checkbox"> brand</h6>
@@ -55,7 +55,7 @@
                         <h6><input type="checkbox"> brand</h6>
                     </div>
                     <div class="col-12 bg-white rounded mt-3">
-                        <h2>Processor model</h2>
+                        <h5>Processor model</h5>
 
                         <h6><input type="checkbox"> brand</h6>
                         <h6><input type="checkbox"> brand</h6>
@@ -63,7 +63,7 @@
                         <h6><input type="checkbox"> brand</h6>
                     </div>
                     <div class="col-12 bg-white rounded mt-3">
-                        <h2>Generation</h2>
+                        <h5>Generation</h5>
 
                         <h6><input type="checkbox"> brand</h6>
                         <h6><input type="checkbox"> brand</h6>
@@ -71,7 +71,7 @@
                         <h6><input type="checkbox"> brand</h6>
                     </div>
                     <div class="col-12 bg-white rounded mt-3">
-                        <h2>Display Type</h2>
+                        <h5>Display Type</h5>
 
                         <h6><input type="checkbox"> brand</h6>
                         <h6><input type="checkbox"> brand</h6>
