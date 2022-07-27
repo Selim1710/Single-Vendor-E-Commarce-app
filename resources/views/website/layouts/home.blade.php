@@ -88,7 +88,7 @@
         </div>
     </section>
     <!-- Category -->
-    <section class="featured-Category border">
+    <section class="featured-Category">
         <div class="categoryHeader">
             <h1>Featured Category</h1>
             <p>Get Your Desired Product from Featured Category!</p>
