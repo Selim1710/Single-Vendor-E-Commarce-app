@@ -7,9 +7,10 @@
         </div>
         <div class="container">
             <div class="row border border-warning rounded text-center">
-                <div class="col-lg-8 col-s-6 d-flex justify-content-between">
+                <div class="col-lg-8 col-s-6 d-flex">
                     <div class="m-2">
-                        <button type="button" class="btn btn-dark" data-toggle="collapse" data-target="#filterItem">
+                        {{-- menu button for mobile --}}
+                        <button type="button" class="btn btn-dark" id="mobileMenuFilter" data-toggle="collapse" data-target="#mobileFilterItem">
                             <i class="fa fa-bars"></i>
                         </button>
                     </div>
@@ -28,8 +29,60 @@
             </div>
         </div>
         <div class="allProductFilterItem">
-            {{-- filter --}}
-            <div class="first container collapse" id="filterItem">
+            {{-- mobile filter items --}}
+            <div class="first container collapse" id="mobileFilterItem">
+                <div class="row m-2">
+                    <div class="col-12 bg-white mt-2">
+                        <h5 class="p-2 rounded">Availability</h5>
+
+                        <h6><input type="checkbox"> sidenav</h6>
+                        <h6><input type="checkbox"> sidenav</h6>
+                        <h6><input type="checkbox"> sidenav</h6>
+                    </div>
+                    <div class="col-12 bg-white mt-3">
+                        <h5>Brand</h5>
+
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                    </div>
+                    <div class="col-12 bg-white rounded mt-3">
+                        <h5>Processor Type</h5>
+
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                    </div>
+                    <div class="col-12 bg-white rounded mt-3">
+                        <h5>Processor model</h5>
+
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                    </div>
+                    <div class="col-12 bg-white rounded mt-3">
+                        <h5>Generation</h5>
+
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                    </div>
+                    <div class="col-12 bg-white rounded mt-3">
+                        <h5>Display Type</h5>
+
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                        <h6><input type="checkbox"> brand</h6>
+                    </div>
+                </div>
+            </div>
+            {{-- desktop filter items --}}
+            <div class="first container" id="desktopFilterItem">
                 <div class="row m-2">
                     <div class="col-12 bg-white mt-2">
                         <h5 class="p-2 rounded">Availability</h5>
@@ -81,8 +134,8 @@
                 </div>
             </div>
             {{-- product --}}
-            <div class="second d-flex">
-                <div class="product">
+            <div class="second">
+                <div class="container">
                     <div class="row">
                         @foreach ($products as $product)
                             <div class="column d-flex align-items-stretch">

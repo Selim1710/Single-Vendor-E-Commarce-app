@@ -397,6 +397,14 @@
 
 }
 
+#mobileMenuFilter{
+  display: none;
+}
+
+#desktopFilterItem{
+  display: block;
+}
+
 .allProductFilterItem {
   display: flex;
   overflow: hidden;
@@ -406,15 +414,18 @@
   width: 25%;
 }
 
-.allProductFilterItem .second {
-  margin-left: 63px;
-}
-
 @media (max-width:768px) {
 
   .allProductFilterItem {
     display: inline-block;
     overflow: auto;
+  }
+
+  #mobileMenuFilter{
+    display: block;
+  }
+  #desktopFilterItem{
+    display: none;
   }
 
   .allProductFilterItem .first {

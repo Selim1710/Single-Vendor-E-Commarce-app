@@ -4,12 +4,10 @@ namespace App\Http\Controllers\Website;
 
 use App\Http\Controllers\Controller;
 use App\Models\Category;
-use App\Models\LaptopDeal;
 use App\Models\Product;
 use App\Models\Offer;
 use App\Models\Stock;
 use App\Models\Subcategory;
-use App\Models\User;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
