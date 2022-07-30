@@ -40,7 +40,6 @@ class SubCategoryController extends Controller
         return view('admin.layouts.subCategory.edit_subCategory', compact('subCategory'));
     }
     public function update(Request $request,$id){
-        // dd($request->all());
         $subCategory = Subcategory::find($id);
         $subCategory->update([
             'sub_category_name' => $request->sub_category_name,
@@ -52,6 +51,5 @@ class SubCategoryController extends Controller
         $subCategory = Subcategory::find($id);
         $subCategory->delete();
         return redirect()->route('admin.manage.subCategory')->with('error', 'Sub-Category Deleted');
-
     }
 }

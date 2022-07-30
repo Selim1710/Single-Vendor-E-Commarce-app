@@ -50,9 +50,15 @@ class CategoryController extends Controller
     {
         $category=Category::find($id);
         $image = str_replace('\\','/',public_path('uploads/category/'.$category->image));
-        unlink($image);
-        $category->delete();
-        return redirect()->route('admin.manage.category')->with('error','Category deleted');
+        if(is_file($image)){
+            unlink($image);
+            $category->delete();
+            return redirect()->route('admin.manage.category')->with('error','Category deleted');
+        }else{
+            $category->delete();
+            return redirect()->route('admin.manage.category')->with('error','no image found! Category deleted');
+        }
+        
     }
     public function view($id)
     {

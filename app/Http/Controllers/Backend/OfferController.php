@@ -96,6 +96,9 @@ class OfferController extends Controller
             unlink($image);
             $offer->delete();
             return redirect()->route('admin.manage.offer')->with('error', 'Offer deleted');
+        }else{
+            $offer->delete();
+            return redirect()->route('admin.manage.offer')->with('error', 'image not found! Offer deleted');
         }
 
     }

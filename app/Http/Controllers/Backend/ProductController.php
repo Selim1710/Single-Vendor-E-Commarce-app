@@ -145,7 +145,8 @@ class ProductController extends Controller
             $product->delete();
             return redirect()->route('admin.manage.product')->with('error', 'Product deleted');
         } else {
-            return redirect()->back()->with('error', 'File Not found');
+            $product->delete();
+            return redirect()->back()->with('error', 'image not found! product deleted');
         }
     }
 

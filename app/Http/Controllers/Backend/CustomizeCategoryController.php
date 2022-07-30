@@ -50,9 +50,15 @@ class CustomizeCategoryController extends Controller
     {
         $category=CustomizationCategory::find($id);
         $image = str_replace('\\','/',public_path('uploads/customization/category/'.$category->image));
-        unlink($image);
-        $category->delete();
-        return redirect()->route('admin.manage.customize.category')->with('error','Category deleted');
+        if(is_file($image)){
+            unlink($image);
+            $category->delete();
+            return redirect()->route('admin.manage.customize.category')->with('error','Category deleted');
+        }else{
+            $category->delete();
+            return redirect()->route('admin.manage.customize.category')->with('error','image not found! Category deleted');
+        }
+       
     }
     public function view($id)
     {
