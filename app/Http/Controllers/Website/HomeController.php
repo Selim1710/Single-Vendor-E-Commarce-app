@@ -12,44 +12,66 @@ use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
-
     public function home()
     {
         $categories = Category::with('subCategories')->get();
-        $products = Product::with('subCategory')->orderBy('id','DESC')->paginate(8);
+        $products = Product::with('subCategory')->orderBy('id', 'DESC')->paginate(8);
         $offers_image = Offer::pluck('image');
-        return view('website.layouts.home', compact('categories', 'products','offers_image'));
+        return view('website.layouts.home', compact('categories', 'products', 'offers_image'));
     }
     public function search(Request $request)
     {
         $search = $request['search'] ?? "";
-        if($search != ""){
-            $products = Product::where('model','LIKE','%'.$search.'%')
-            ->orwhere('product_name','LIKE','%'.$search.'%')
-            ->orderBy('id','DESC')
-            ->get();
-            $result = Product::where('model','LIKE','%'.$search.'%')
-            ->orwhere('product_name','LIKE','%'.$search.'%')
-            ->get()
-            ->count();
-            return view('website.layouts.search', compact('products','search','result'));
-        }else{
-            $products = Product::with('subCategory')->orderBy('id','DESC')->get();
+        if ($search != "") {
+            $products = Product::where('model', 'LIKE', '%' . $search . '%')
+                ->orwhere('product_name', 'LIKE', '%' . $search . '%')
+                ->orderBy('id', 'DESC')
+                ->get();
+            $result = Product::where('model', 'LIKE', '%' . $search . '%')
+                ->orwhere('product_name', 'LIKE', '%' . $search . '%')
+                ->get()
+                ->count();
+            return view('website.layouts.search', compact('products', 'search', 'result'));
+        } else {
+            $products = Product::with('subCategory')->orderBy('id', 'DESC')->get();
             $result = '0';
-            return view('website.layouts.search', compact('products','search','result'));
+            return view('website.layouts.search', compact('products', 'search', 'result'));
         }
     }
+
+    ////////////////////////// price shorting ////////////////////////// 
     public function allProduct()
     {
-        $products = Product::with('subCategory')->orderBy('id','DESC')->paginate(8);
+        $products = Product::with('subCategory')->orderBy('id', 'DESC')->paginate(16);
         return view('website.layouts.all_product', compact('products'));
-        
     }
+
+    public function lowPrice()
+    {
+        $products = Product::where('regular_price', '<', '20000')->orderBy('id', 'DESC')->paginate(16);
+        return view('website.layouts.all_product', compact('products'));
+    }
+
+    public function midPrice()
+    {
+        $max = 50000;
+        $min = 20000;
+        $products = Product::whereBetween('regular_price', [$min, $max])->orderBy('id', 'DESC')->paginate(16);
+        return view('website.layouts.all_product', compact('products'));
+    }
+    public function highPrice()
+    {
+        $products = Product::where('regular_price', '>', '50000')->orderBy('id', 'DESC')->paginate(16);
+        return view('website.layouts.all_product', compact('products'));
+    }
+
+    ////////////////////////// price shorting ////////////////////////// 
+
 
     public function subCategoryProduct($id)
     {
         $subCategory = Subcategory::find($id);
-        $products = Product::where('subCategory_id', '=', $id)->orderBy('id','DESC')->get();
+        $products = Product::where('subCategory_id', '=', $id)->orderBy('id', 'DESC')->get();
         return view('website.layouts.sub_category_product', compact('products'));
     }
     public function categoryProduct($id)
@@ -57,7 +79,7 @@ class HomeController extends Controller
         $category = Category::find($id);
         $subCategory = Subcategory::where('category_id', '=', $id)->get();
         foreach ($subCategory as $sub) {
-            $products = Product::where('subCategory_id', '=', $sub->id)->orderBy('id','DESC')->get();
+            $products = Product::where('subCategory_id', '=', $sub->id)->orderBy('id', 'DESC')->get();
         }
         return view('website.layouts.category_product', compact('products'));
     }
@@ -80,7 +102,7 @@ class HomeController extends Controller
         foreach ($category as $cat) {
             $sub_cat = Subcategory::where('category_id', '=', $cat->id)->get();
             foreach ($sub_cat as $sub) {
-                $product = Product::where('subCategory_id', '=', $sub->id)->orderBy('id','DESC')->get();
+                $product = Product::where('subCategory_id', '=', $sub->id)->orderBy('id', 'DESC')->get();
             }
         }
         $laptopDeals = $product;
@@ -89,7 +111,7 @@ class HomeController extends Controller
         foreach ($category as $cat) {
             $sub_cat = Subcategory::where('category_id', '=', $cat->id)->get();
             foreach ($sub_cat as $sub) {
-                $product = Product::where('subCategory_id', '=', $sub->id)->orderBy('id','DESC')->get();
+                $product = Product::where('subCategory_id', '=', $sub->id)->orderBy('id', 'DESC')->get();
             }
         }
         $tabletDeals = $product;
@@ -115,13 +137,13 @@ class HomeController extends Controller
         $search_c2 = $request['search_c2'] ?? "";
         // remain: specific product will be show
         if ($search_c1 && $search_c2 != "") {
-            $search_c1 = Product::where('product_name','LIKE',"%$search_c1%")
-            ->orwhere('model','LIKE',"%$search_c1%")
-            ->get();
-            $search_c2 = Product::where('product_name','LIKE',"%$search_c2%")
-            ->orwhere('model','LIKE',"%$search_c2%")
-            ->get();
-            return view('website.layouts.compare_product_table', compact('search_c1','search_c2'));
+            $search_c1 = Product::where('product_name', 'LIKE', "%$search_c1%")
+                ->orwhere('model', 'LIKE', "%$search_c1%")
+                ->get();
+            $search_c2 = Product::where('product_name', 'LIKE', "%$search_c2%")
+                ->orwhere('model', 'LIKE', "%$search_c2%")
+                ->get();
+            return view('website.layouts.compare_product_table', compact('search_c1', 'search_c2'));
         } else {
             return redirect()->route('website.home')->with('error', 'Search is empty');
         }

@@ -30,6 +30,10 @@ Route::group(['prefix' => 'website'], function () {
 
     // all product
     Route::get('/view/all/product', [HomeController::class, 'allProduct'])->name('website.all.product');
+    Route::get('/view/shorting/low/price', [HomeController::class, 'lowPrice'])->name('website.shorting.low.price');
+    Route::get('/view/shorting/mid/price', [HomeController::class, 'midPrice'])->name('website.shorting.mid.price');
+    Route::get('/view/shorting/high/price', [HomeController::class, 'highPrice'])->name('website.shorting.high.price');
+
 
     // see all categories
     Route::get('/show/sub/category/product/{id}', [HomeController::class, 'subCategoryProduct'])->name('show.sub.category.product');

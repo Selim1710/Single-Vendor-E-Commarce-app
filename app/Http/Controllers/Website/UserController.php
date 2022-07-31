@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function loginForm()
     {
-        return view('website.pages.login');
+        return view ('website.pages.login');
     }
     public function doLogin(Request $request)
     {
