@@ -142,7 +142,7 @@
         <div class="container">
             <div class="row">
                 @foreach ($products as $product)
-                    <div class="column d-flex align-items-stretch">
+                    <div class="column d-flex align-items-stretch justify-content-center">
                         <div class="box">
                             <a href="{{ route('website.product.details', $product->id) }}">
                                 <div class="img-box">
@@ -157,8 +157,9 @@
                                 <h6>
                                     Price: {{ $product->regular_price }}
                                 </h6>
-                                <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-primary">Add To
-                                    Cart</a>
+                                <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning">
+                                    Add To Cart
+                                </a>
                             </div>
                         </div>
                     </div>
@@ -173,7 +174,7 @@
     <section class="company-descripiton border">
         <div class="container">
             <div class="row">
-                <div class="col-lg-12 text-center font-weight-bold mt-4">
+                <div class="col-lg-12 font-weight-bold mt-4">
                     <h1>We provide more services <i class="fa fa-handshake-o" aria-hidden="true"></i> </h1>
                 </div>
             </div>

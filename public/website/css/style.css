@@ -260,27 +260,30 @@
 }
 
 /*********************** see all categories ***********************/
-.all-categories{
+.all-categories {
   border-bottom: 1px solid #a0a5b1;
 }
-.desktop_all_categories{
+
+.desktop_all_categories {
   display: block;
 }
-.mobile_all_categories{
+
+.mobile_all_categories {
   color: white;
-  background:#16a085;
+  background: #16a085;
   width: 100%;
 }
 
-.mobile_all_categories{
+.mobile_all_categories {
   display: none;
 }
 
-@media(max-width:768px){
-  .desktop_all_categories{
+@media(max-width:768px) {
+  .desktop_all_categories {
     display: none;
   }
-  .mobile_all_categories{
+
+  .mobile_all_categories {
     display: block;
   }
 }
@@ -399,21 +402,39 @@
   overflow: hidden;
   background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
 }
+.featured-Product .box .img-box{
+  height: 200px;
+  width:100%;
+}
 
 .featured-Product .box .img-box img {
   width: 100%;
-  height: auto;
+  height: 100%;
   transition: all .2s;
 }
 
 .featured-Product .box .detail-box {
   padding: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
 }
 
 .featured-Product .box:hover .img-box img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
   transition: 1s;
+}
+
+@media(max-width:768px){
+  .featured-Product .box .detail-box {
+    padding: 8%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+  }
 }
 
 /*********************** all product ***********************/
@@ -425,15 +446,17 @@
   margin-left: 5px;
   margin-right: 5px;
 }
-.all-product .shorting .shortingPrice ul{
-  border:2px solid grey;
+
+.all-product .shorting .shortingPrice ul {
+  border: 2px solid grey;
   list-style-type: none;
 }
-#mobileMenuFilter{
+
+#mobileMenuFilter {
   display: none;
 }
 
-#desktopFilterItem{
+#desktopFilterItem {
   display: block;
 }
 
@@ -451,6 +474,7 @@
   height: auto;
   margin: 1%;
 }
+
 .all-product .box {
   color: #ffffff;
   border-radius: 15px;
@@ -458,8 +482,22 @@
   background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
 }
 
+.all-product .box .box_image {
+  height: 200px;
+  width: 100%;
+}
+
+.all-product .box .box_image img {
+  width: 100%;
+  height: 100%;
+}
+
 .all-product .second .column .box .detail-box {
   padding: 8%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
 }
 
 .all-product .second .column .box:hover img {
@@ -476,10 +514,11 @@
     overflow: auto;
   }
 
-  #mobileMenuFilter{
+  #mobileMenuFilter {
     display: block;
   }
-  #desktopFilterItem{
+
+  #desktopFilterItem {
     display: none;
   }
 
@@ -496,8 +535,13 @@
     height: auto;
     margin: 1%;
   }
+
   .all-product .second .column .box .detail-box {
     padding: 2%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
   }
 }
 
@@ -563,10 +607,17 @@
 /*********************** company-descripiton ***********************/
 .company-descripiton {
   background-color: #f1f2f6;
+  text-align: left;
 }
 
 .company-descripiton .description {
   font-size: 1.5rem;
+}
+
+@media(max-width:768px){
+  .company-descripiton {
+    text-align: center;
+  }
 }
 
 /*********************** Customization ***********************/

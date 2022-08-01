@@ -159,9 +159,8 @@
                             <div class="column d-flex align-items-stretch">
                                 <div class="box">
                                     <a href="{{ route('website.product.details', $product->id) }}">
-                                        <div>
-                                            <img src="{{ asset('uploads/products/' . $product->product_image) }}"
-                                                style="width:100%;height:auto;">
+                                        <div class="box_image">
+                                            <img src="{{ asset('uploads/products/' . $product->product_image) }}">
                                         </div>
                                     </a>
                                     <div class="detail-box">
@@ -171,7 +170,7 @@
                                         <h6>
                                             Price: {{ $product->regular_price }}
                                         </h6>
-                                        <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-primary mb-1">
+                                        <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-warning mb-1">
                                             Add To Cart
                                         </a>
                                     </div>
