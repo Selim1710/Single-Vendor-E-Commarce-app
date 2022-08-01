@@ -7,8 +7,8 @@
         <div class="desktop_all_categories category p-lg-1">
             @foreach ($categories as $category)
                 <div class="btn-group">
-                    <a href="#" class="btn btn-light m-1 text-uppercase" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="btn btn-light m-1 text-uppercase" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         {{ $category->category_name }}
                     </a>
                     @if (!empty($category->subCategories))
@@ -29,8 +29,8 @@
         <div class=" collapse category p-lg-1" id="category">
             @foreach ($categories as $category)
                 <div class="btn-group">
-                    <a href="#" class="btn btn-light m-1 text-uppercase" data-toggle="dropdown"
-                        aria-haspopup="true" aria-expanded="false">
+                    <a href="#" class="btn btn-light m-1 text-uppercase" data-toggle="dropdown" aria-haspopup="true"
+                        aria-expanded="false">
                         {{ $category->category_name }}
                     </a>
                     @if (!empty($category->subCategories))
@@ -140,34 +140,32 @@
             <p>Check & Get Your Desired Product !</p>
         </div>
         <div class="container">
-            <div class="product">
-                <div class="row">
-                    @foreach ($products as $product)
-                        <div class="column d-flex align-items-stretch">
-                            <div class="box">
-                                <a href="{{ route('website.product.details', $product->id) }}">
-                                    <div class="img-box">
-                                        <img src="{{ asset('uploads/products/' . $product->product_image) }}"
-                                            class="img-fluid">
-                                    </div>
-                                </a>
-                                <div class="detail-box">
-                                    <h5>
-                                        Model: {{ $product->model }}
-                                    </h5>
-                                    <h6>
-                                        Price: {{ $product->regular_price }}
-                                    </h6>
-                                    <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-primary">Add To
-                                        Cart</a>
+            <div class="row">
+                @foreach ($products as $product)
+                    <div class="column d-flex align-items-stretch">
+                        <div class="box">
+                            <a href="{{ route('website.product.details', $product->id) }}">
+                                <div class="img-box">
+                                    <img src="{{ asset('uploads/products/' . $product->product_image) }}"
+                                        class="img-fluid">
                                 </div>
+                            </a>
+                            <div class="detail-box">
+                                <h5>
+                                    Model: {{ $product->model }}
+                                </h5>
+                                <h6>
+                                    Price: {{ $product->regular_price }}
+                                </h6>
+                                <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-primary">Add To
+                                    Cart</a>
                             </div>
                         </div>
-                    @endforeach
-                </div>
-                <div class="text-center mb-4"><a href="{{ route('website.all.product') }}" class="btn text-white w-25"
-                        style="background-color: #e84393;">View All Product</a>
-                </div>
+                    </div>
+                @endforeach
+            </div>
+            <div class="text-center mb-4"><a href="{{ route('website.all.product') }}" class="btn text-white w-25"
+                    style="background-color: #e84393;">View All Product</a>
             </div>
         </div>
     </section>

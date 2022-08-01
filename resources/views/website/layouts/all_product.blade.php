@@ -1,8 +1,8 @@
 @extends('website.master')
 @section('contents')
-    <section class="all-product featured-Product border">
+    <section class="all-product border">
         <div class="productHeader">
-            <h1>Our Products</h1>
+            <h1>All Products</h1>
             <p>Check & Get Your Desired Product !</p>
         </div>
         <div class="container">
@@ -25,15 +25,17 @@
                         <div class="shortingPrice">
                             <div class="dropdown">
                                 <button type="button" class="btn btn-light" data-toggle="dropdown">
-                                  Price
+                                    Price
                                 </button>
                                 <div class="dropdown-menu">
                                     <a class="dropdown-item" href="{{ route('website.all.product') }}">all</a>
-                                  <a class="dropdown-item" href="{{ route('website.shorting.low.price') }}">Low(< 20K)</a>
-                                  <a class="dropdown-item" href="{{ route('website.shorting.mid.price') }}">Mid(< 50K)</a>
-                                  <a class="dropdown-item" href="{{ route('website.shorting.high.price') }}">High(> 50K)</a>
+                                    <a class="dropdown-item" href="{{ route('website.shorting.low.price') }}">Low(< 20K)</a>
+                                            <a class="dropdown-item" href="{{ route('website.shorting.mid.price') }}">Mid(<
+                                                    50K)</a>
+                                                    <a class="dropdown-item"
+                                                        href="{{ route('website.shorting.high.price') }}">High(> 50K)</a>
                                 </div>
-                              </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -157,9 +159,9 @@
                             <div class="column d-flex align-items-stretch">
                                 <div class="box">
                                     <a href="{{ route('website.product.details', $product->id) }}">
-                                        <div class="img-box">
+                                        <div>
                                             <img src="{{ asset('uploads/products/' . $product->product_image) }}"
-                                                class="img-fluid">
+                                                style="width:100%;height:auto;">
                                         </div>
                                     </a>
                                     <div class="detail-box">
@@ -169,8 +171,9 @@
                                         <h6>
                                             Price: {{ $product->regular_price }}
                                         </h6>
-                                        <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-primary">Add To
-                                            Cart</a>
+                                        <a href="{{ route('add.to.cart', $product->id) }}" class="btn btn-primary mb-1">
+                                            Add To Cart
+                                        </a>
                                     </div>
                                 </div>
                             </div>

@@ -388,9 +388,9 @@
 }
 
 .featured-Product .column {
-  width: 200px;
+  width: 262px;
   height: auto;
-  margin: 2%;
+  margin: 1%;
 }
 
 .featured-Product .box {
@@ -413,9 +413,13 @@
 .featured-Product .box:hover .img-box img {
   -webkit-transform: scale(1.1);
   transform: scale(1.1);
+  transition: 1s;
 }
 
 /*********************** all product ***********************/
+.all-product {
+  background-color: #f1f2f6;
+}
 
 .all-product .shorting p {
   margin-left: 5px;
@@ -442,6 +446,29 @@
   width: 25%;
 }
 
+.all-product .column {
+  width: 230px;
+  height: auto;
+  margin: 1%;
+}
+.all-product .box {
+  color: #ffffff;
+  border-radius: 15px;
+  overflow: hidden;
+  background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
+}
+
+.all-product .second .column .box .detail-box {
+  padding: 8%;
+}
+
+.all-product .second .column .box:hover img {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+  transition: 1s;
+
+}
+
 @media (max-width:768px) {
 
   .allProductFilterItem {
@@ -461,7 +488,16 @@
   }
 
   .allProductFilterItem .second {
-    margin-left: 25px;
+    margin-left: 10px;
+  }
+
+  .all-product .second .column {
+    width: 190px;
+    height: auto;
+    margin: 1%;
+  }
+  .all-product .second .column .box .detail-box {
+    padding: 2%;
   }
 }
 
