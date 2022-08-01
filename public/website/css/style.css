@@ -259,6 +259,32 @@
   }
 }
 
+/*********************** see all categories ***********************/
+.all-categories{
+  border-bottom: 1px solid #a0a5b1;
+}
+.desktop_all_categories{
+  display: block;
+}
+.mobile_all_categories{
+  color: white;
+  background:#16a085;
+  width: 100%;
+}
+
+.mobile_all_categories{
+  display: none;
+}
+
+@media(max-width:768px){
+  .desktop_all_categories{
+    display: none;
+  }
+  .mobile_all_categories{
+    display: block;
+  }
+}
+
 /*********************** offers ***********************/
 .product-offer {
   background-color: #dfe6e9;

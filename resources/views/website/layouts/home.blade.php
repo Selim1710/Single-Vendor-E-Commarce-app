@@ -1,15 +1,35 @@
 @extends('website.master')
 @section('contents')
     <!-- See All Categories Button -->
+
     <section class="all-categories">
-        <button class="btn w-100 text-white" style="background:#16a085;" type="button" data-toggle="collapse"
-            data-target="#category" aria-expanded="false" aria-controls="collapseExample">
+        {{-- desktop --}}
+        <div class="desktop_all_categories category p-lg-1">
+            @foreach ($categories as $category)
+                <div class="btn-group">
+                    <a href="#" class="btn btn-light m-1 text-uppercase" data-toggle="dropdown"
+                        aria-haspopup="true" aria-expanded="false">
+                        {{ $category->category_name }}
+                    </a>
+                    @if (!empty($category->subCategories))
+                        <div class="dropdown-menu">
+                            @foreach ($category->subCategories as $subCategory)
+                                <a class="dropdown-item"
+                                    href="{{ route('show.sub.category.product', $subCategory->id) }}">{{ $subCategory->sub_category_name }}</a>
+                            @endforeach
+                        </div>
+                    @endif
+                </div>
+            @endforeach
+        </div>
+        {{-- mobile --}}
+        <button class="btn mobile_all_categories" type="button" data-toggle="collapse" data-target="#category">
             See All Categories &rarr;
         </button>
         <div class=" collapse category p-lg-1" id="category">
             @foreach ($categories as $category)
                 <div class="btn-group">
-                    <a href="#" class="btn btn-light dropdown-toggle m-1 text-uppercase" data-toggle="dropdown"
+                    <a href="#" class="btn btn-light m-1 text-uppercase" data-toggle="dropdown"
                         aria-haspopup="true" aria-expanded="false">
                         {{ $category->category_name }}
                     </a>
