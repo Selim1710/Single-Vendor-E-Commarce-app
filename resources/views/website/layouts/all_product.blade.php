@@ -28,12 +28,16 @@
                                     Price
                                 </button>
                                 <div class="dropdown-menu">
-                                    <a class="dropdown-item" href="{{ route('website.all.product') }}">all</a>
-                                    <a class="dropdown-item" href="{{ route('website.shorting.low.price') }}">Low(< 20K)</a>
-                                            <a class="dropdown-item" href="{{ route('website.shorting.mid.price') }}">Mid(<
-                                                    50K)</a>
-                                                    <a class="dropdown-item"
-                                                        href="{{ route('website.shorting.high.price') }}">High(> 50K)</a>
+                                    <a class="dropdown-item" href="{{ route('website.all.product') }}">
+                                        all
+                                    </a>
+                                    <a class="dropdown-item" href="{{ route('website.shorting.low.price') }}">
+                                        Low(less 20K) </a>
+                                    <a class="dropdown-item" href="{{ route('website.shorting.mid.price') }}">
+                                        Mid(upto 50K) </a>
+                                    <a class="dropdown-item" href="{{ route('website.shorting.high.price') }}">
+                                        High(50K+)
+                                    </a>
                                 </div>
                             </div>
                         </div>
@@ -96,54 +100,57 @@
             </div>
             {{-- desktop filter items --}}
             <div class="first container" id="desktopFilterItem">
-                <form action="#">
+                <form action="{{ route('user.filter.all.product') }}" method="POST">
+                    @csrf
                     <div class="row ml-2">
                         <div class="col-12 bg-white mt-2">
                             <h5 class="p-2 rounded">Availability</h5>
-
-                            <h6><input type="checkbox"> sidenav</h6>
-                            <h6><input type="checkbox"> sidenav</h6>
-                            <h6><input type="checkbox"> sidenav</h6>
+                            
+                            <h6><input type="checkbox" name="in_stock"> in stock</h6>
+                            <h6><input type="checkbox" name="out_stock"> out of stock</h6>
                         </div>
                         <div class="col-12 bg-white mt-3">
-                            <h5>Brand</h5>
+                            <h5>Processor</h5>
 
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
+                            @foreach($processor as $value)
+                            <h6><input type="checkbox" name="{{ $value }}"> {{ $value }}</h6>
+                            @endforeach
+                            
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
-                            <h5>Processor Type</h5>
+                            <h5>Display</h5>
 
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
+                            @foreach($display as $value)
+                            <h6><input type="checkbox" name="{{ $value }}"> {{ $value }}</h6>
+                            @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
-                            <h5>Processor model</h5>
+                            <h5>memory</h5>
 
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
+                            @foreach($memory as $value)
+                            <h6><input type="checkbox" name="{{ $value }}"> {{ $value }}</h6>
+                            @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
-                            <h5>Generation</h5>
+                            <h5>graphics</h5>
 
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
+                            @foreach($graphics as $value)
+                            <h6><input type="checkbox" name="{{ $value }}"> {{ $value }}</h6>
+                            @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
-                            <h5>Display Type</h5>
+                            <h5>operating system</h5>
 
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
-                            <h6><input type="checkbox"> brand</h6>
+                            @foreach($operating as $value)
+                            <h6><input type="checkbox" name="{{ $value }}"> {{ $value }}</h6>
+                            @endforeach
+                        </div>
+                        <div class="col-12 bg-white rounded mt-3">
+                            <h5>battery</h5>
+
+                            @foreach($battery as $value)
+                            <h6><input type="checkbox" name="{{ $value }}"> {{ $value }}</h6>
+                            @endforeach
                         </div>
                         <div class="col-12 mt-2">
                             <button type="submit" class="btn btn-secondary">Filter Result</button>

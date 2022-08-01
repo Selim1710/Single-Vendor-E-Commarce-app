@@ -39,11 +39,35 @@ class HomeController extends Controller
         }
     }
 
+    public function categoryProduct($id)
+    {
+        $category = Category::find($id);
+        $subCategory = Subcategory::where('category_id', '=', $id)->get();
+        foreach ($subCategory as $sub) {
+            $products = Product::where('subCategory_id', '=', $sub->id)->orderBy('id', 'DESC')->get();
+        }
+        return view('website.layouts.category_product', compact('products'));
+    }
+
+    public function subCategoryProduct($id)
+    {
+        $subCategory = Subcategory::find($id);
+        $products = Product::where('subCategory_id', '=', $id)->orderBy('id', 'DESC')->get();
+        return view('website.layouts.sub_category_product', compact('products'));
+    }
+
     ////////////////////////// price shorting ////////////////////////// 
     public function allProduct()
     {
         $products = Product::with('subCategory')->orderBy('id', 'DESC')->paginate(16);
-        return view('website.layouts.all_product', compact('products'));
+        $processor = Product::pluck('processor')->unique();
+        $display = Product::pluck('display')->unique();
+        $memory = Product::pluck('memory')->unique();
+        $graphics = Product::pluck('graphics')->unique();
+        $operating = Product::pluck('operating_system')->unique();
+        $battery = Product::pluck('battery')->unique();
+
+        return view('website.layouts.all_product', compact('products','processor','display','memory','graphics','operating','battery'));
     }
 
     public function lowPrice()
@@ -65,23 +89,10 @@ class HomeController extends Controller
         return view('website.layouts.all_product', compact('products'));
     }
 
-    ////////////////////////// price shorting ////////////////////////// 
-
-
-    public function subCategoryProduct($id)
+    ////////////////////////// prodcut filtering ////////////////////////// 
+    public function filterAllProduct(Request $request)
     {
-        $subCategory = Subcategory::find($id);
-        $products = Product::where('subCategory_id', '=', $id)->orderBy('id', 'DESC')->get();
-        return view('website.layouts.sub_category_product', compact('products'));
-    }
-    public function categoryProduct($id)
-    {
-        $category = Category::find($id);
-        $subCategory = Subcategory::where('category_id', '=', $id)->get();
-        foreach ($subCategory as $sub) {
-            $products = Product::where('subCategory_id', '=', $sub->id)->orderBy('id', 'DESC')->get();
-        }
-        return view('website.layouts.category_product', compact('products'));
+        dd($request->all());
     }
 
     public function offers()
