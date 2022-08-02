@@ -3,6 +3,13 @@
 <!-- style="border:5px solid red;" -->
 <!-- Product Offer Details  -->
 <section class="product-offer">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb text-capitalize">
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+            <li class="breadcrumb-item"><a href="#">offer</a></li>
+            <li class="breadcrumb-item active" aria-current="page">details</li>
+        </ol>
+    </nav>
     <div class="container">
         <div class="offer text-center">
             <br><br>

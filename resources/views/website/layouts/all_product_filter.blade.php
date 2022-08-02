@@ -2,8 +2,13 @@
 @section('contents')
     <section class="all-product border">
         <div class="productHeader">
-            <h1>All Products</h1>
-            <p>Check & Get Your Desired Product !</p>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb text-capitalize">
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-filter"></i></a></li>
+                    <li class="breadcrumb-item active" aria-current="page">All-product</li>
+                </ol>
+            </nav>
         </div>
         <div class="container">
             <div class="row border border-warning rounded text-center">
@@ -48,55 +53,69 @@
         <div class="allProductFilterItem">
             {{-- mobile filter items --}}
             <div class="first container collapse" id="mobileFilterItem">
-                <div class="row">
-                    <div class="col-12 bg-white mt-3">
-                        <h5 class="p-2 rounded">Availability</h5>
+                <form action="{{ route('user.filter.all.product') }}" method="POST">
+                    @csrf
+                    <div class="row">
+                        <div class="col-12 bg-white mt-2">
+                            <h5 class="p-2 rounded">Availability</h5>
 
-                        <h6><input type="checkbox"> sidenav</h6>
-                        <h6><input type="checkbox"> sidenav</h6>
-                        <h6><input type="checkbox"> sidenav</h6>
-                    </div>
-                    <div class="col-12 bg-white mt-3">
-                        <h5>Brand</h5>
+                            <h6><input type="checkbox" name="in_stock"> in stock</h6>
+                            <h6><input type="checkbox" name="out_stock"> out of stock</h6>
+                        </div>
+                        <div class="col-12 bg-white mt-3">
+                            <h5>Processor</h5>
 
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                    </div>
-                    <div class="col-12 bg-white rounded mt-3">
-                        <h5>Processor Type</h5>
+                            @foreach ($processor as $value)
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
+                            @endforeach
 
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                    </div>
-                    <div class="col-12 bg-white rounded mt-3">
-                        <h5>Processor model</h5>
+                        </div>
+                        <div class="col-12 bg-white rounded mt-3">
+                            <h5>Display</h5>
 
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                    </div>
-                    <div class="col-12 bg-white rounded mt-3">
-                        <h5>Generation</h5>
+                            @foreach ($display as $value)
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
+                            @endforeach
+                        </div>
+                        <div class="col-12 bg-white rounded mt-3">
+                            <h5>memory</h5>
 
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                    </div>
-                    <div class="col-12 bg-white rounded mt-3">
-                        <h5>Display Type</h5>
+                            @foreach ($memory as $value)
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
+                            @endforeach
+                        </div>
+                        <div class="col-12 bg-white rounded mt-3">
+                            <h5>graphics</h5>
 
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
-                        <h6><input type="checkbox"> brand</h6>
+                            @foreach ($graphics as $value)
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
+                            @endforeach
+                        </div>
+                        <div class="col-12 bg-white rounded mt-3">
+                            <h5>operating system</h5>
+
+                            @foreach ($operating as $value)
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
+                            @endforeach
+                        </div>
+                        <div class="col-12 bg-white rounded mt-3">
+                            <h5>battery</h5>
+
+                            @foreach ($battery as $value)
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
+                            @endforeach
+                        </div>
+                        <div class="col-12 mt-2">
+                            <button type="submit" class="btn btn-secondary" id="filterButton">Filter Result</button>
+                        </div>
                     </div>
-                </div>
+                </form>
             </div>
             {{-- desktop filter items --}}
             <div class="first container" id="desktopFilterItem">
@@ -113,7 +132,8 @@
                             <h5>Processor</h5>
 
                             @foreach ($processor as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
 
                         </div>
@@ -121,35 +141,40 @@
                             <h5>Display</h5>
 
                             @foreach ($display as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>memory</h5>
 
                             @foreach ($memory as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>graphics</h5>
 
                             @foreach ($graphics as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>operating system</h5>
 
                             @foreach ($operating as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>battery</h5>
 
                             @foreach ($battery as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 mt-2">

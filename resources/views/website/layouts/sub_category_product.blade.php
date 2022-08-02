@@ -5,8 +5,13 @@
 
 <section class="featured-Product border">
     <div class="productHeader">
-        <h1>Sub-Category Product</h1>
-        <p>Check & Get Your Desired Product !</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-capitalize">
+                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">sub-category</a></li>
+                <li class="breadcrumb-item active" aria-current="page">product</li>
+            </ol>
+        </nav>
     </div>
     <div class="container">
         <div class="row">

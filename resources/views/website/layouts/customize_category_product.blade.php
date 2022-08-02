@@ -2,8 +2,13 @@
 @section('contents')
 <section class="featured-Product border" id="featured_product">
     <div class="productHeader">
-        <h1>Customize Products</h1>
-        <p>Customize & Build your own PC !</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-capitalize">
+                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">customization</a></li>
+                <li class="breadcrumb-item active" aria-current="page">product</li>
+            </ol>
+        </nav>
     </div>
     <div class="product">
         <div class="row">

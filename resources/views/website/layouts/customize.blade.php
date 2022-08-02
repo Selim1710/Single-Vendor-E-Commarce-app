@@ -3,6 +3,13 @@
 @section('contents')
     <div id="invoice">
         <div class="toolbar hidden-print">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb text-capitalize">
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#">product</a></li>
+                    <li class="breadcrumb-item active" aria-current="page">customization</li>
+                </ol>
+            </nav>
             <div class="text-right">
                 <button id="printInvoice" class="btn btn-info"><i class="fa fa-print"></i> Print</button>
                 <button class="btn btn-info"><i class="fa fa-file-pdf-o"></i> Export as PDF</button>

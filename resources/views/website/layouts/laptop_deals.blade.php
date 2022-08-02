@@ -2,7 +2,15 @@
 @section('contents')
 
 <!-- title -->
-<section class="Laptop-Deal-title"> <br>
+<section class="Laptop-Deal-title"> 
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb text-capitalize">
+            <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+            <li class="breadcrumb-item"><a href="#">laptop</a></li>
+            <li class="breadcrumb-item active" aria-current="page">deals</li>
+        </ol>
+    </nav>
+    <br>
     <div class="container">
         <div class="title text-center p-4 border border-dark">
             <p>স্টার টেক অনলাইন শপ অথবা যেকোন আউটলেট থেকে Palit, MSI, ASUS সহ

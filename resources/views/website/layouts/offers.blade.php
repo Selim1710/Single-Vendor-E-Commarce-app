@@ -4,7 +4,12 @@
 
 <section class="featured-Product border">
     <div class="productHeader">
-        <h1> See Our Offers</h1>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-capitalize">
+                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+                <li class="breadcrumb-item active" aria-current="page">offers</li>
+            </ol>
+        </nav>
         <p class="text-center">অফারের অফারগুলো দেখতে নিচে স্ক্রল করুন &nbsp;⬇️</p>
     </div>
     <div class="container">

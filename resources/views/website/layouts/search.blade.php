@@ -2,8 +2,13 @@
 @section('contents')
 <section class="featured-Product border" id="featured_product">
     <div class="productHeader">
-        <h1>Our Products</h1>
-        <p>Check & Get Your Desired Product !</p>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb text-capitalize">
+                <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
+                <li class="breadcrumb-item"><a href="#">product</a></li>
+                <li class="breadcrumb-item active" aria-current="page">search</li>
+            </ol>
+        </nav>
     </div>
     <div class="product_found">
         <h2 class="text-danger text-center py-4">Total searching result found: {{ $result }}</h2>
