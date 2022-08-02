@@ -67,34 +67,84 @@ class HomeController extends Controller
         $operating = Product::pluck('operating_system')->unique();
         $battery = Product::pluck('battery')->unique();
 
-        return view('website.layouts.all_product', compact('products','processor','display','memory','graphics','operating','battery'));
+        return view('website.layouts.all_product', compact('products', 'processor', 'display', 'memory', 'graphics', 'operating', 'battery'));
     }
 
     public function lowPrice()
     {
         $products = Product::where('regular_price', '<', '20000')->orderBy('id', 'DESC')->paginate(16);
-        return view('website.layouts.all_product', compact('products'));
+        $processor = Product::pluck('processor')->unique();
+        $display = Product::pluck('display')->unique();
+        $memory = Product::pluck('memory')->unique();
+        $graphics = Product::pluck('graphics')->unique();
+        $operating = Product::pluck('operating_system')->unique();
+        $battery = Product::pluck('battery')->unique();
+
+        return view('website.layouts.all_product', compact('products', 'processor', 'display', 'memory', 'graphics', 'operating', 'battery'));
     }
 
     public function midPrice()
     {
         $max = 50000;
         $min = 20000;
+        $processor = Product::pluck('processor')->unique();
+        $display = Product::pluck('display')->unique();
+        $memory = Product::pluck('memory')->unique();
+        $graphics = Product::pluck('graphics')->unique();
+        $operating = Product::pluck('operating_system')->unique();
+        $battery = Product::pluck('battery')->unique();
         $products = Product::whereBetween('regular_price', [$min, $max])->orderBy('id', 'DESC')->paginate(16);
-        return view('website.layouts.all_product', compact('products'));
+
+        return view('website.layouts.all_product', compact('products', 'processor', 'display', 'memory', 'graphics', 'operating', 'battery'));
     }
     public function highPrice()
     {
         $products = Product::where('regular_price', '>', '50000')->orderBy('id', 'DESC')->paginate(16);
-        return view('website.layouts.all_product', compact('products'));
+        $processor = Product::pluck('processor')->unique();
+        $display = Product::pluck('display')->unique();
+        $memory = Product::pluck('memory')->unique();
+        $graphics = Product::pluck('graphics')->unique();
+        $operating = Product::pluck('operating_system')->unique();
+        $battery = Product::pluck('battery')->unique();
+
+        return view('website.layouts.all_product', compact('products', 'processor', 'display', 'memory', 'graphics', 'operating', 'battery'));
     }
 
     ////////////////////////// prodcut filtering ////////////////////////// 
     public function filterAllProduct(Request $request)
     {
-        dd($request->all());
+        $array = $request->all();
+        $filter = $array ?? "";
+        if ($filter) {
+            $products = Product::whereIn('processor', $filter)
+                ->orwhereIn('display', $filter)
+                ->orwhereIn('memory', $filter)
+                ->orwhereIn('graphics', $filter)
+                ->orwhereIn('operating_system', $filter)
+                ->orwhereIn('battery', $filter)
+                ->get();
+
+                $result = $products->count();
+
+                $processor = Product::pluck('processor')->unique();
+                $display = Product::pluck('display')->unique();
+                $memory = Product::pluck('memory')->unique();
+                $graphics = Product::pluck('graphics')->unique();
+                $operating = Product::pluck('operating_system')->unique();
+                $battery = Product::pluck('battery')->unique();
+        }else{
+            $products = Product::with('subCategory')->orderBy('id', 'DESC')->paginate(16);
+            $processor = Product::pluck('processor')->unique();
+            $display = Product::pluck('display')->unique();
+            $memory = Product::pluck('memory')->unique();
+            $graphics = Product::pluck('graphics')->unique();
+            $operating = Product::pluck('operating_system')->unique();
+            $battery = Product::pluck('battery')->unique();
+        }
+        return view('website.layouts.all_product_filter', compact('products','result', 'processor', 'display', 'memory', 'graphics', 'operating', 'battery'));
     }
 
+    ////////////////////////// The end ////////////////////////// 
     public function offers()
     {
         $offers = Offer::all()->sortByDesc('id')->values();

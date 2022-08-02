@@ -16,7 +16,7 @@
                         </button>
                     </div>
                     <h4 class="m-2">Desktop</h4>
-                    <a href="{{ URL::current() }}" class="btn btn-light border border-danger m-auto">Refresh</a>
+                    <h4 class="text-danger font-weight-bold m-auto">Total product found: {{ $result }}</h4>
                 </div>
                 <div class="col-lg-4 col-s-6">
                     {{-- shorting --}}
@@ -187,9 +187,6 @@
                     </div>
                 </div>
             </div>
-        </div>
-        <div class="float-right mr-4">
-            {{ $products->links() }}
         </div>
         <br><br>
     </section>
