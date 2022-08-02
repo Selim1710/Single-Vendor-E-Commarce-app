@@ -5,7 +5,7 @@
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb text-capitalize">
                     <li class="breadcrumb-item"><a href="#"><i class="fa fa-home"></i></a></li>
-                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-filter"></i></a></li>
+                    <li class="breadcrumb-item"><a href="#"><i class="fa fa-filter"> filter</i></a></li>
                     <li class="breadcrumb-item active" aria-current="page">All-product</li>
                 </ol>
             </nav>

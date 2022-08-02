@@ -468,6 +468,9 @@
 .allProductFilterItem .first {
   width: 25%;
 }
+.allProductFilterItem .second {
+  width: 75%;
+}
 
 .all-product .column {
   width: 230px;
