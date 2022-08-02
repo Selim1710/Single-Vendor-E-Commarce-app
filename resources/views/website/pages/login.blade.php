@@ -5,7 +5,8 @@
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.1.3/dist/css/bootstrap.min.css"
+        integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
     <!-- style -->
     <link rel="stylesheet" href="{{ asset('website/login/form.css') }}">
@@ -18,11 +19,11 @@
 <body>
     <div class="wrapper fadeInDown">
         <!-- Message -->
-        @if(session()->has('error'))
-        <p class="alert alert-danger">{{ session()->get('error') }}</p>
+        @if (session()->has('error'))
+            <p class="alert alert-danger">{{ session()->get('error') }}</p>
         @endif
-        @if(session()->has('message'))
-        <p class="alert alert-success text-center">{{ session()->get('message') }}</p>
+        @if (session()->has('message'))
+            <p class="alert alert-success text-center">{{ session()->get('message') }}</p>
         @endif
         <!-- end -->
         <div id="formContent">

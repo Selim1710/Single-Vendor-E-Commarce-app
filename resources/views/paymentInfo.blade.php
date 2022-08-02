@@ -102,8 +102,8 @@
 
                     <div class="mb-3">
                         <label for="address">Address</label>
-                        <input type="text" class="form-control" id="address" name="address" value="{{ $user->address }}"
-                            required>
+                        <input type="text" class="form-control" id="address" name="address"
+                            value="{{ $user->address }}" required>
                     </div>
 
                     <button class="btn btn-info btn-lg btn-block" type="submit">Pay Now</button>

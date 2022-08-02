@@ -64,7 +64,8 @@
                             <h5>Processor</h5>
 
                             @foreach ($processor as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
 
                         </div>
@@ -72,35 +73,40 @@
                             <h5>Display</h5>
 
                             @foreach ($display as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>memory</h5>
 
                             @foreach ($memory as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>graphics</h5>
 
                             @foreach ($graphics as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>operating system</h5>
 
                             @foreach ($operating as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>battery</h5>
 
                             @foreach ($battery as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 mt-2">
@@ -124,7 +130,8 @@
                             <h5>Processor</h5>
 
                             @foreach ($processor as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
 
                         </div>
@@ -132,35 +139,40 @@
                             <h5>Display</h5>
 
                             @foreach ($display as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>memory</h5>
 
                             @foreach ($memory as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>graphics</h5>
 
                             @foreach ($graphics as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>operating system</h5>
 
                             @foreach ($operating as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 bg-white rounded mt-3">
                             <h5>battery</h5>
 
                             @foreach ($battery as $value)
-                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}"> {{ $value }}</h6>
+                                <h6><input type="checkbox" name="{{ $value }}" value="{{ $value }}">
+                                    {{ $value }}</h6>
                             @endforeach
                         </div>
                         <div class="col-12 mt-2">
@@ -182,8 +194,8 @@
                                         </div>
                                     </a>
                                     <div class="detail-box">
-                                        <h5>
-                                            Model: {{ $product->model }}
+                                        <h5 style="white-space: nowrap;overflow:hidden;text-overflow:ellipsis;">
+                                            {{ $product->model }}
                                         </h5>
                                         <h6>
                                             Price: {{ $product->regular_price }}

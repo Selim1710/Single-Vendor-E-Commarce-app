@@ -9,6 +9,7 @@ use App\Models\Offer;
 use App\Models\Stock;
 use App\Models\Subcategory;
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
 
 class HomeController extends Controller
 {

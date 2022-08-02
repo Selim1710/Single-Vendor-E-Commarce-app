@@ -55,8 +55,7 @@
                                     <tbody>
                                         <tr>
                                             <td><input type="image" name="image" alt="image" disabled></td>
-                                            <td><input type="text" name="name" value=""
-                                                    disabled></td>
+                                            <td><input type="text" name="name" value="" disabled></td>
                                             <td><input type="text" value="" disabled></td>
                                             <td><input type="text" value="" disabled></td>
                                             <td><a href="#"><i class="fa fa-trash"></i></a></td>
@@ -76,7 +75,8 @@
                         @else
                             <div>
                                 <p class="bg-warning text-white p-2">Please! Select customization product from bellow &nbsp;
-                                    <i class="fa fa-arrow-down"></i></p>
+                                    <i class="fa fa-arrow-down"></i>
+                                </p>
                             </div>
                         @endif
                     </div>

@@ -73,7 +73,7 @@
             </div>
         </div>
     </nav>
-    <div class="border" style="border-color: #16a085;background-color:#16a085;">
+    <div>
         <!--  message -->
         @if (session()->has('error'))
             <p class="alert alert-danger">{{ session()->get('error') }}</p>

@@ -109,6 +109,7 @@
         padding-right: 20px;
     }
 </style>
+
 <body>
     <div class="head-title">
         <h1 class="text-center m-0 p-0">Invoice</h1>
@@ -177,16 +178,16 @@
                 <th class="w-50">Quantity</th>
                 <th class="w-50">Total</th>
             </tr>
-            @foreach($orders as $order)
-            <tr align="center">
-                <td>{{ $order->product_id }}</td>
-                <td>{{ $order->model }}</td>
-                <td>{{ $order->product_name }}</td>
-                <td>{{ $order->price }}</td>
-                <td>{{ $order->offer }} %</td>
-                <td>{{ $order->quantity }}</td>
-                <td>{{ $order->total }}</td>
-            </tr>
+            @foreach ($orders as $order)
+                <tr align="center">
+                    <td>{{ $order->product_id }}</td>
+                    <td>{{ $order->model }}</td>
+                    <td>{{ $order->product_name }}</td>
+                    <td>{{ $order->price }}</td>
+                    <td>{{ $order->offer }} %</td>
+                    <td>{{ $order->quantity }}</td>
+                    <td>{{ $order->total }}</td>
+                </tr>
             @endforeach
             <tr>
                 <td colspan="7">

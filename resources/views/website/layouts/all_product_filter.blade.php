@@ -196,7 +196,7 @@
                                         </div>
                                     </a>
                                     <div class="detail-box">
-                                        <h5>
+                                        <h5 style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
                                             Model: {{ $product->model }}
                                         </h5>
                                         <h6>
