@@ -100,30 +100,28 @@
         </div>
     </section>
     <!-- notice -->
-    <section>
-        <div class="text_animation">
-            <p id="pot" class="mt-2 p-1">26th July Tuesday, our all branches are open except Multiplan Branch.
-                Additionally our online activities will remain open and operational.
-            </p>
-        </div>
-    </section>
+    <div class="text_animation">
+        <p id="pot">26th July Tuesday, our all branches are open except Multiplan Branch.
+            Additionally our online activities will remain open and operational.
+        </p>
+    </div>
     <!-- Category -->
     <section class="featured-Category">
         <div class="categoryHeader">
-            <h1>Featured Category</h1>
+            <h2>Featured Category</h2>
             <p>Get Your Desired Product from Featured Category!</p>
         </div>
         <div class="container">
             <div class="row">
                 @foreach ($categories as $category)
-                    <div class="col-4 col-lg-2 rounded">
-                        <div class="category-card d-flex align-items-stretch">
+                    <div class="col-lg-2 mt-2">
+                        <div class="category_card">
                             <a href="{{ route('show.category.product', $category->id) }}">
-                                <div class="cart-img img-fluid text-center m-2">
-                                    <img src="{{ asset('/uploads/category/' . $category->image) }}" alt=""
-                                        class="img-fluid">
-                                    <br>
-                                    <p class="text-center">{{ $category->category_name }}</p>
+                                <div class="category_card_img">
+                                    <img src="{{ asset('/uploads/category/' . $category->image) }}" alt="">
+                                </div>
+                                <div class="category_card_details">
+                                    <p>{{ $category->category_name }}</p>
                                 </div>
                             </a>
                         </div>
@@ -136,7 +134,7 @@
     <!-- product -->
     <section class="featured-Product border">
         <div class="productHeader">
-            <h1>Featured Product</h1>
+            <h2>Featured Product</h2>
             <p>Check & Get Your Desired Product !</p>
         </div>
         <div class="container">
@@ -165,8 +163,7 @@
                     </div>
                 @endforeach
             </div>
-            <div class="text-center mb-4"><a href="{{ route('website.all.product') }}" class="btn text-white w-25"
-                    style="background-color: #e84393;">View All Product</a>
+            <div class="text-center mb-4"><a href="{{ route('website.all.product') }}" class="view_all_product_button btn">View All Product</a>
             </div>
         </div>
     </section>

@@ -186,7 +186,7 @@
                 <div class="container">
                     <div class="row">
                         @foreach ($products as $product)
-                            <div class="column d-flex align-items-stretch">
+                            <div class="column align-items-stretch">
                                 <div class="box">
                                     <a href="{{ route('website.product.details', $product->id) }}">
                                         <div class="box_image">

@@ -328,37 +328,43 @@
   margin: 2%;
   padding: 1%;
 }
+
 /* card */
-.card{
+.card {
   display: flex;
   flex-direction: column;
   align-items: stretch;
   margin-top: 2%;
 }
-.card .card-badge{
+
+.card .card-badge {
   padding: 1%;
-  color:white;
-  background:#40739e;
+  color: white;
+  background: #40739e;
   border-radius: 5px;
-} 
-.card .card-img{
+}
+
+.card .card-img {
   height: 200px;
   width: auto;
 }
 
-.card .card-img img{
+.card .card-img img {
   height: 100%;
   width: 100%;
 }
-.card .card-details{
+
+.card .card-details {
   font-weight: bold;
   padding-bottom: 10%;
 }
-.card .card-details a{
+
+.card .card-details a {
   color: #0c0d0d;
   text-decoration: none;
 }
-.card .card-details p{
+
+.card .card-details p {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -366,7 +372,7 @@
   padding-left: 6%;
 }
 
-.card .card-details span{
+.card .card-details span {
   padding-top: 4%;
   padding-left: 6%;
 }
@@ -398,7 +404,7 @@
   margin: 0;
   padding: 0;
   text-align: center;
-  line-height: 50px;
+  line-height: 40px;
   transform: translateX(100%);
   animation: linear infinite;
   animation-name: textAnimation;
@@ -417,19 +423,68 @@
 
 /*********************** category ***********************/
 .featured-Category {
+  border: 1px solid #f1f2f6;
   background-color: #f1f2f6;
 }
 
 .categoryHeader {
   text-align: center;
-  margin: 2%;
+  margin: 50px 10px 20px 50px;
   padding: 1%;
 }
 
-.category-card{
-  margin: 2%;
-  width: 100%;
+/* category cart */
+.category_card {
+  border: 2px solid #ffffff;
+  background: #ffffff;
   border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+}
+
+.category_card a:hover {
+  text-decoration: none;
+}
+
+.category_card_img {
+  height: 80px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
+}
+
+/* hh */
+.category_card_img img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+}
+
+.category_card_details {
+  text-align: center;
+  text-transform: capitalize;
+  color: #0c0d0d;
+  font-size: 1.6rem;
+}
+
+.category_card_details:hover {
+  color: #4b4b4b;
+}
+
+@media(max-width:768px) {
+  .category_card_img {
+    height: 40px;
+    width: 40px;
+  }
+
+  .category_card_details {
+    text-align: center;
+    text-transform: capitalize;
+    color: #0c0d0d;
+    font-size: 1.4rem;
+  }
 }
 
 /*********************** product ***********************/
@@ -507,6 +562,20 @@
   background-color: #f1f2f6;
 }
 
+/* filter */
+.all-product .total_result {
+  border: 1px solid  #f1f2f6;
+  color: red;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: auto;
+  padding: 1% 0%;
+}
+
+.all-product .shorting{
+  margin-top: 2%;
+}
+
 .all-product .shorting p {
   margin-left: 5px;
   margin-right: 5px;
@@ -542,6 +611,7 @@
   width: 230px;
   height: auto;
   margin: 1%;
+  display: flex;
 }
 
 .all-product .box {
@@ -579,7 +649,28 @@
 
 }
 
+/* button */
+.view_all_product_button {
+  background-color: #e84393;
+  color: white;
+  width: 25%;
+}
+
 @media (max-width:768px) {
+
+  /* filter result*/
+.all-product .total_result {
+  border: 1px solid red;
+  color: red;
+  font-weight: bold;
+  text-transform: capitalize;
+  margin: auto;
+  margin-top: 4%;
+
+}
+  .all-product .shorting{
+    margin-top: 4%;
+  }
 
   .allProductFilterItem {
     display: inline-block;
@@ -599,11 +690,11 @@
   }
 
   .allProductFilterItem .second {
-    margin-left: 10px;
+    width: 100%;
   }
 
   .all-product .second .column {
-    width: 190px;
+    width: 176px;
     height: auto;
     margin: 1%;
   }
@@ -615,6 +706,11 @@
     justify-content: center;
     text-align: center;
   }
+
+  .view_all_product_button {
+    width: 50%;
+  }
+
 }
 
 
@@ -857,39 +953,8 @@
   color: #f1f2f6;
 }
 
-.footerFlex {
-  display: flex;
-}
-
-.footerFlex .support {
-  padding: 2%;
-  width: 30%;
-  display: flex;
+.footer-content {
+  padding: 4%;
+  margin-top: 4%;
   text-align: center;
-  flex-direction: column;
-}
-
-.about-us {
-  padding: 4%;
-  width: 30%;
-}
-
-.stay-connected {
-  padding: 4%;
-  width: 30%;
-}
-
-@media(max-width:768){
-   .footerFlex {
-    display: block;
-  }
-  .about-us {
-    padding: 4%;
-    width: 100%;
-  }
-
-  .stay-connected {
-    padding: 4%;
-    width: 100%;
-  }
 }

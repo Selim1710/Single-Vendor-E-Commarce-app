@@ -12,7 +12,7 @@
         </div>
         <div class="container">
             <div class="row border border-warning rounded text-center">
-                <div class="col-lg-8 col-s-6 d-flex">
+                <div class="col-8 col-lg-4 d-flex">
                     <div class="m-2">
                         {{-- menu button for mobile --}}
                         <button type="button" class="btn btn-dark" id="mobileMenuFilter" data-toggle="collapse"
@@ -21,9 +21,11 @@
                         </button>
                     </div>
                     <h4 class="m-2">Desktop</h4>
-                    <h4 class="text-danger font-weight-bold m-auto">Total product found: {{ $result }}</h4>
                 </div>
-                <div class="col-lg-4 col-s-6">
+                <div class="col-12 col-lg-4">
+                    <h4 class="total_result">Total product found: {{ $result }}</h4>
+                </div>
+                <div class="col-6 col-lg-4">
                     {{-- shorting --}}
                     <div class="shorting d-flex justify-content-end">
                         <p class="mt-2">Shorted by:</p>
