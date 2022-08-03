@@ -116,8 +116,8 @@
         <div class="container">
             <div class="row">
                 @foreach ($categories as $category)
-                    <div class="col-4 col-lg-2 rounded d-flex align-items-stretch">
-                        <div class="card">
+                    <div class="col-4 col-lg-2 rounded">
+                        <div class="category-card d-flex align-items-stretch">
                             <a href="{{ route('show.category.product', $category->id) }}">
                                 <div class="cart-img img-fluid text-center m-2">
                                     <img src="{{ asset('/uploads/category/' . $category->image) }}" alt=""

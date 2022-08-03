@@ -22,25 +22,29 @@
         </div>
     </section>
     <!-- laptop -->
-    <section class="featured-Category">
-        <div class="categoryHeader">
+    <section class="all-deals">
+        <div class="dealsHeader">
             <h1>Ramadan Laptop Mega Deal</h1>
             <p>Get exciting discount on Graphics Card</p>
         </div>
         <div class="container">
             <div class="row">
                 @foreach ($laptopDeals as $deal)
-                    <div class="col-6 col-lg-3 d-flex align-items-stretch">
+                    <div class="col-6 col-lg-3">
                         <div class="card">
-                            <div class="card-body font-weight-bold">
-                                <p class="p-1 text-white rounded" style="background:#40739e;">
-                                    Save: {{ $deal['regular_price'] - $deal['product_offer'] / 100 }} ৳
-                                </p>
-                                <a href="{{ route('website.deals.details', $deal->id) }}" style="color:black;">
-                                    <img src="{{ asset('uploads/products/' . $deal->product_image) }}" alt=""
-                                        class="img-fluid"><br><br>
-                                    <p style="white-space: nowrap;overflow: hidden;text-overflow: ellipsis;">
-                                        Model: {{ $deal->model }}
+                            {{-- badge --}}
+                            <p class="card-badge">
+                                Save: {{ $deal['regular_price'] - ($deal['regular_price'] * $deal['product_offer']) / 100 }} ৳
+                            </p>
+                            {{-- image --}}
+                            <div class="card-img">
+                                <img src="{{ asset('uploads/products/' . $deal->product_image) }}">
+                            </div>
+                            {{-- cart body --}}
+                            <div class="card-details">
+                                <a href="{{ route('website.deals.details', $deal->id) }}">
+                                    <p>
+                                        {{ $deal->model }}
                                     </p>
                                     <span class="text-danger">Price: {{ $deal->regular_price }} ৳</span>
                                 </a>
@@ -61,17 +65,22 @@
         <div class="container">
             <div class="row">
                 @foreach ($tabletDeals as $deal)
-                    <div class="col-6 col-lg-3 d-flex align-items-stretch">
+                    <div class="col-6 col-lg-3">
                         <div class="card">
-                            <div class="card-body font-weight-bold">
-                                <!-- save money -->
-                                <p class="p-1 text-white rounded" style="background:#40739e;">
-                                    Save: {{ $deal['regular_price'] - $deal['product_offer'] / 100 }} ৳
-                                </p>
-                                <a href="{{ route('website.deals.details', $deal->id) }}" style="color:black;">
-                                    <img src="{{ asset('uploads/products/' . $deal->product_image) }}" alt=""
-                                        class="img-fluid"><br><br>
-                                    <p>Model: {{ $deal->model }}</p>
+                            {{-- badge --}}
+                            <p class="card-badge">
+                                Save: {{ $deal['regular_price'] - ($deal['regular_price'] * $deal['product_offer']) / 100 }} ৳
+                            </p>
+                            {{-- image --}}
+                            <div class="card-img">
+                                <img src="{{ asset('uploads/products/' . $deal->product_image) }}">
+                            </div>
+                            {{-- cart body --}}
+                            <div class="card-details">
+                                <a href="{{ route('website.deals.details', $deal->id) }}">
+                                    <p>
+                                        {{ $deal->model }}
+                                    </p>
                                     <span class="text-danger">Price: {{ $deal->regular_price }} ৳</span>
                                 </a>
                             </div>

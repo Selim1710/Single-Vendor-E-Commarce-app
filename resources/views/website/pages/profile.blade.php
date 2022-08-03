@@ -73,7 +73,6 @@
                             (int)$grand_total += ($order->price * $order->quantity) - ($order->price * $order->quantity * ($order->offer/100));
                             @endphp
                             <td>{{ $order->payment_status }}</td>
-
                             @if($order->order_status != 'accepted')
                             <td>pending</td>
                             @else

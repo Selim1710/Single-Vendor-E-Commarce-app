@@ -1,13 +1,9 @@
 <section class="companyDescripton">
-    <div class="footerD">
-        <div class="support text-center">
+    <div class="footerFlex">
+        <div class="support">
             <h4>SUPPORT</h4>
-            <div class="time">
-                <h5>Time: 10.00am to 06.00pm</h5>
-            </div>
-            <div class="contact">
-                <h5>Contact: 016........</h5>
-            </div>
+            <h5>Time: 09.30am to 06.30pm</h5>
+            <h5>Contact: 01628-520989</h5>
         </div>
         <div class="about-us text-center">
             <h4>ABOUT US </h4>

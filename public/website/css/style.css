@@ -197,7 +197,7 @@
   margin-bottom: 0;
 }
 
-@media only screen and (max-width:768px) {
+@media(max-width:768px) {
 
   .mobile_shopping {
     display: flex;
@@ -255,7 +255,6 @@
 @media (max-width:768px) {
   .search-box {
     margin-top: 10px;
-
   }
 }
 
@@ -318,6 +317,60 @@
   border-radius: 5px;
 }
 
+/*********************** deals ***********************/
+
+.all-deals {
+  background-color: #f1f2f6;
+}
+
+.dealsHeader {
+  text-align: center;
+  margin: 2%;
+  padding: 1%;
+}
+/* card */
+.card{
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  margin-top: 2%;
+}
+.card .card-badge{
+  padding: 1%;
+  color:white;
+  background:#40739e;
+  border-radius: 5px;
+} 
+.card .card-img{
+  height: 200px;
+  width: auto;
+}
+
+.card .card-img img{
+  height: 100%;
+  width: 100%;
+}
+.card .card-details{
+  font-weight: bold;
+  padding-bottom: 10%;
+}
+.card .card-details a{
+  color: #0c0d0d;
+  text-decoration: none;
+}
+.card .card-details p{
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  padding-top: 4%;
+  padding-left: 6%;
+}
+
+.card .card-details span{
+  padding-top: 4%;
+  padding-left: 6%;
+}
+
 /*********************** slider ***********************/
 .product-slider {
   background-color: #dfe6e9;
@@ -373,7 +426,7 @@
   padding: 1%;
 }
 
-.card {
+.category-card{
   margin: 2%;
   width: 100%;
   border-radius: 5px;
@@ -402,9 +455,10 @@
   overflow: hidden;
   background: linear-gradient(to bottom, #f1f2f3 25px, #222831 25px);
 }
-.featured-Product .box .img-box{
+
+.featured-Product .box .img-box {
   height: 200px;
-  width:100%;
+  width: 100%;
 }
 
 .featured-Product .box .img-box img {
@@ -427,7 +481,18 @@
   transition: 1s;
 }
 
-@media(max-width:768px){
+/***** FOR IPAD DESIGN *****/
+@media(max-width:880px) {
+  .featured-Product .column {
+    height: auto;
+    width: 41%;
+    margin: 4%;
+  }
+
+}
+
+/***** FOR MOBILE DESIGN *****/
+@media(max-width:768px) {
   .featured-Product .box .detail-box {
     padding: 8%;
     display: flex;
@@ -468,6 +533,7 @@
 .allProductFilterItem .first {
   width: 25%;
 }
+
 .allProductFilterItem .second {
   width: 75%;
 }
@@ -620,7 +686,7 @@
   font-size: 1.5rem;
 }
 
-@media(max-width:768px){
+@media(max-width:768px) {
   .company-descripiton {
     text-align: center;
   }
@@ -791,13 +857,16 @@
   color: #f1f2f6;
 }
 
-.footerD {
+.footerFlex {
   display: flex;
 }
 
-.support {
-  padding: 4%;
+.footerFlex .support {
+  padding: 2%;
   width: 30%;
+  display: flex;
+  text-align: center;
+  flex-direction: column;
 }
 
 .about-us {
@@ -810,62 +879,10 @@
   width: 30%;
 }
 
-/*********************** FOR IPAD DESIGN ***********************/
-@media only screen and (max-width:880px) {
-
-  /* featured product */
-  .featured-Product .column {
-    height: 41%;
-    width: 41%;
-    margin: 4%;
-  }
-
-}
-
-/*********************** FOR MOBILE DESIGN ***********************/
-@media only screen and (max-width:768px) {
-
-  /* Navbar */
-  .searchBar {
-    margin-top: 20%;
-    width: 100%;
-  }
-
-  .menu ul li {
-    display: block;
-    padding-left: 0%;
-    text-align: center;
-  }
-
-  .makeFlex {
+@media(max-width:768){
+   .footerFlex {
     display: block;
   }
-
-
-  /* Category */
-  .cardCategory {
-    margin: 2%;
-    width: 100%;
-    border-radius: 25px;
-  }
-
-  /* featured product */
-  .featured-Product .column {
-    height: 40%;
-    width: 40%;
-    margin: 4%;
-  }
-
-  /* footer */
-  .footerD {
-    display: block;
-  }
-
-  .support {
-    padding: 4%;
-    width: 100%;
-  }
-
   .about-us {
     padding: 4%;
     width: 100%;
