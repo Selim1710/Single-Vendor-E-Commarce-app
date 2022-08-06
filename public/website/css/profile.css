@@ -49,7 +49,8 @@ body{
   object-fit: cover;
 }
 
-.profile_card_img i {
+.profile_card_img i{
+  border:2px solid #ffffff;
   height: 100%;
   width: 100%;
   font-size: 3.5rem;
@@ -72,6 +73,10 @@ body{
   .profile_card_img {
     height: 40px;
     width: 40px;
+  }
+  .profile_card_img i{
+    border:2px solid blue;
+    font-size: 1.8rem;
   }
 
   .profile_card_details {

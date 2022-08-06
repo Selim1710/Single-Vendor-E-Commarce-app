@@ -84,26 +84,6 @@ class UserController extends Controller
         return view('website.pages.profile', compact('user', 'carts', 'orders','total_product'));
     }
 
-    public function changeImage($id)
-    {
-        $user = User::find($id);
-        return view('website.pages.profile_image_form', compact('user'));
-    }
-    public function updateProfileImage(Request $request, $id)
-    {
-        $user = User::find($id);
-        $fileName = "";
-        if ($request->hasfile('image')) {
-            $file = $request->file('image');
-            $filename = date('Ymdmhs') . '.' . $file->getClientOriginalExtension();
-            $file->move(public_path('/uploads/users'), $filename);
-        }
-        $user->update([
-            "image" => $filename,
-        ]);
-        return redirect()->route('user.profile', $user->id)->with('message', 'Profile Image Updated');
-    }
-
     public function edit($id)
     {
         $user = User::find($id);
@@ -119,16 +99,5 @@ class UserController extends Controller
             "phone" => $request->phone,
         ]);
         return redirect()->route('user.profile', $user->id)->with('message', 'Profile Updated');
-    }
-
-    public function downloadPDF($id)
-    {
-        $user = User::find($id);
-        $orders = Order::where('customer_id', '=', $id)->get();
-        $sub_total = Order::where('customer_id', '=', $id)->sum('total');
-        // return view('website.layouts.download_pdf',compact('user','orders','sub_total'));
-
-        $pdf = PDF::loadView('website.layouts.download_pdf', compact('user', 'orders', 'sub_total'));
-        return $pdf->download('MyOrderList.pdf');
     }
 }

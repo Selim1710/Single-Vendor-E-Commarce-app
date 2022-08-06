@@ -18,7 +18,7 @@
     <section class="user-profile">
         <div class="container">
             <div class="row">
-                <div class="col-8 col-lg-12">
+                <div class="col-12">
                     {{-- profile header --}}
                     <div class="profile-header">
                         <i class="fa fa-user-circle" style="font-size:2.8rem;"></i>
