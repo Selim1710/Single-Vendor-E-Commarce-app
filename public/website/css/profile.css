@@ -2,96 +2,82 @@
   margin: 0;
   padding: 0;
   font-family: 'Times New Roman', Times, serif;
+  box-sizing: border-box;
 }
 
-/*********************** edit profile button ***********************/
-.edit_profile {
-  float: right;
+body{
+  background-color: #ecf0f1;
 }
 
-/*********************** profile image ***********************/
-.user_image {
-  margin-top: 14%;
-  width:25%;
+/*********************** profile header ***********************/
+.profile-header{
+  display: flex;
+  justify-content: center;
+  padding: 4% 0%;
 }
 
-.change_image a {
-  margin-left: 0%;
-  width: auto;
+/*********************** settings ***********************/
+.profile-settings{
+  display: flex;
+  justify-content: end;
 }
 
-/*********************** tab ***********************/
-/* mobile nav */
-.mobile_design {
-  display: none;
+/*********************** card ***********************/
+/* profile cart */
+.profile_card {
+  border: 2px solid #ffffff;
+  background: #ffffff;
+  border-radius: 5px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
 
-/* desktop nav */
-.desktop_design {
-  display: block;
+.profile_card:hover{
+  box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
 }
 
-.nav {
-  line-height: 0.3rem;
+.profile_card a:hover {
+  text-decoration: none;
 }
 
-nav>.nav.nav-tabs {
-
-  border: none;
-  color: #fff;
-  background: #272e38;
-  border-radius: 0;
-
+.profile_card_img {
+  height: 80px;
+  width: 80px;
+  margin-left: auto;
+  margin-right: auto;
+  object-fit: cover;
 }
 
-nav>div a.nav-item.nav-link,
-nav>div a.nav-item.nav-link.active {
-  border: none;
-  padding: 2%;
-  color: #fff;
-  background: #272e38;
-  border-radius: 0;
+.profile_card_img i {
+  height: 100%;
+  width: 100%;
+  font-size: 3.5rem;
+  object-fit: cover;
+  text-align: center;
 }
 
-nav>div a.nav-item.nav-link.active:after {
-  content: "";
-  position: relative;
-  bottom: -60px;
-  left: -10%;
-  border: 15px solid transparent;
-  border-top-color: #e74c3c;
+.profile_card_details {
+  text-align: center;
+  text-transform: capitalize;
+  color: #0c0d0d;
+  font-size: 1.6rem;
 }
 
-.tab-content {
-  background: #fdfdfd;
-  line-height: 25px;
-  border: 1px solid #ddd;
-  padding: 30px 25px;
+.profile_card_details:hover {
+  color: #4b4b4b;
 }
 
-nav>div a.nav-item.nav-link:hover,
-nav>div a.nav-item.nav-link:focus {
-  border: none;
-  background: #e74c3c;
-  color: #fff;
-  border-radius: 0;
-  transition: background 0.20s linear;
-}
-
-/*********************** MOBILE DESIGN ***********************/
-@media only screen and (max-width:886px) {
-
-  .change_image a {
-    width: 100%;
+@media(max-width:768px) {
+  .profile_card_img {
+    height: 40px;
+    width: 40px;
   }
 
-  /* mobile nav */
-  .mobile_design {
-    display: block;
-  }
-
-  /* desktop nav */
-  .desktop_design {
-    display: none;
+  .profile_card_details {
+    text-align: center;
+    text-transform: capitalize;
+    color: #0c0d0d;
+    font-size: 1.4rem;
   }
 }
