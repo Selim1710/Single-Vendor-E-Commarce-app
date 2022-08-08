@@ -80,6 +80,18 @@
                             </a>
                         </div>
                     </div>
+                    <div class="col-lg-3 mt-2">
+                        <div class="profile_card">
+                            <a href="#">
+                                <div class="profile_card_img">
+                                    <i class="fa fa-key" aria-hidden="true"></i>
+                                </div>
+                                <div class="profile_card_details">
+                                    <p>Forget Password</p>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>

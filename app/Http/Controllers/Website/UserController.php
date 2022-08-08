@@ -102,8 +102,7 @@ class UserController extends Controller
 
     public function orderList($id)
     {
-        $Orders = Order::where('customer_id','=','$id')->get();
-        return $Orders;
+        $orders = Order::where('customer_id','=',$id)->get();
         return view('website.layouts.order_list',compact('orders'));
     }
     public function myCart()
