@@ -79,7 +79,7 @@
             <p class="alert alert-danger">{{ session()->get('error') }}</p>
         @endif
         @if (session()->has('message'))
-            <p class="alert alert-danger">{{ session()->get('message') }}</p>
+            <p class="alert alert-success">{{ session()->get('message') }}</p>
         @endif
         <!-- end -->
     </div>

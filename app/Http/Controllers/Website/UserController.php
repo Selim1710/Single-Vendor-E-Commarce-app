@@ -14,7 +14,7 @@ class UserController extends Controller
 
     public function loginForm()
     {
-        return view ('website.pages.login');
+        return view('website.pages.login');
     }
     public function doLogin(Request $request)
     {
@@ -32,10 +32,10 @@ class UserController extends Controller
 
     public function checkBanned()
     {
-        if(auth()->user()->status != 'active'){
+        if (auth()->user()->status != 'active') {
             Auth::logout();
             return redirect()->route('users.login.form')->with('error', 'you have banned');
-        }else{
+        } else {
             return redirect()->route('website.home')->with('message', 'Login Successful');
         }
     }
@@ -55,9 +55,8 @@ class UserController extends Controller
             "phone" => 'required',
         ]);
         if ($request->password != $request->confirm_password) {
-            return redirect()->back()->with('message', 'Invalid password');
-           
-        }else{
+            return redirect()->back()->with('error', 'Invalid password');
+        } else {
             User::create([
                 "name" => $request->name,
                 "email" => $request->email,
@@ -72,16 +71,16 @@ class UserController extends Controller
     public function logout()
     {
         Auth::logout();
-        return redirect()->route('website.home')->with('error', 'Logout successful');
+        return redirect()->route('website.home')->with('message', 'Logout successful');
     }
 
+    //////////////////// profile //////////////////// 
     public function profile($id)
     {
         $user = User::find($id);
-        $carts = session()->get('cart');
         $orders = Order::where('customer_id', '=', $id)->get();
         $total_product = Order::where('customer_id', $id)->count();
-        return view('website.pages.profile', compact('user', 'carts', 'orders','total_product'));
+        return view('website.pages.profile', compact('user', 'orders', 'total_product'));
     }
 
     public function edit($id)
@@ -99,5 +98,17 @@ class UserController extends Controller
             "phone" => $request->phone,
         ]);
         return redirect()->route('user.profile', $user->id)->with('message', 'Profile Updated');
+    }
+
+    public function orderList($id)
+    {
+        $Orders = Order::where('customer_id','=','$id')->get();
+        return $Orders;
+        return view('website.layouts.order_list',compact('orders'));
+    }
+    public function myCart()
+    {
+        $carts = session()->get('cart');
+        return view('website.layouts.my_cart',compact('carts'));
     }
 }

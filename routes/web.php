@@ -63,6 +63,8 @@ Route::group(['prefix' => 'website'], function () {
     Route::get('/user/profile/{id}', [UserController::class, 'profile'])->name('user.profile');
     Route::get('/user/edit/profile/{id}', [UserController::class, 'edit'])->name('user.edit.profile');
     Route::post('/user/update/profile/{id}', [UserController::class, 'updateProfile'])->name('user.update.profile');
+    Route::get('/user/view/order/list/{id}', [UserController::class, 'orderList'])->name('user.view.order.list');
+    Route::get('/user/view/my/cart', [UserController::class, 'myCart'])->name('user.view.my.cart');
 
     // product details
     Route::get('/product/details/{id}', [HomeController::class, 'productDetails'])->name('website.product.details');

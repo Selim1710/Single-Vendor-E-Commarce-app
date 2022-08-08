@@ -27,7 +27,7 @@
                     {{-- settings --}}
                     <div class="profile-settings">
                         <div class="dropdown">
-                            <button type="button" class="btn" data-toggle="dropdown">
+                            <button type="button" class="btn btn-light border" data-toggle="dropdown">
                                 <i class="fa fa-cog" aria-hidden="true"> Settings</i>
                             </button>
                             <div class="dropdown-menu">
@@ -58,7 +58,7 @@
                 <div class="row">
                     <div class="col-lg-3 mt-2">
                         <div class="profile_card">
-                            <a href="#">
+                            <a href="{{ route('user.view.order.list',$user->id) }}">
                                 <div class="profile_card_img">
                                     <i class="fa fa-first-order" aria-hidden="true"></i>
                                 </div>
@@ -70,7 +70,7 @@
                     </div>
                     <div class="col-lg-3 mt-2">
                         <div class="profile_card">
-                            <a href="#">
+                            <a href="{{ route('user.view.my.cart') }}">
                                 <div class="profile_card_img">
                                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                                 </div>
