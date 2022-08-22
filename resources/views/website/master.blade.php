@@ -30,7 +30,7 @@
     @yield('contents')
     @include('website.partials.footer')
     <!-- js file -->
-    <script src="{{ asset('website/js/bootstrap.js') }}"></script>
+    <script src="{{ asset('website/js/main.js') }}"></script>
     <!-- payment gateway popup -->
     <script>
         (function(window, document) {

@@ -11,32 +11,15 @@
             </ol>
         </nav>
         <div class="container">
-            <div class="offer text-center">
-                <br><br>
-                <div class="time d-flex">
-                    <span class="title text-uppercase">offers ends in</span>
-                    <div class="time-details">
-                        <span class="digit">0</span>
-                        <span class="digit">1</span><br>
-                        <span class="tag pr-2">Days</span>
-                    </div>
-                    <div class="time-details">
-                        <span class="digit">0</span>
-                        <span class="digit">1</span><br>
-                        <span class="tag pr-2">Hour</span>
-                    </div>
-                    <div class="time-details">
-                        <span class="digit">1</span>
-                        <span class="digit">1</span><br>
-                        <span class="tag pr-2">Minute</span>
-                    </div>
-                    <div class="time-details">
-                        <span class="digit">1</span>
-                        <span class="digit">0</span><br>
-                        <span class="tag pr-2">Seconds</span>
+            <div class="offer">
+                <div class="offer-deadline">
+                    <h4 class="text-uppercase mt-2">offers ends in:</h4>
+                    <div class="ml-3 mr-2 mt-2">
+                        <h4 id="productDeadline" class="bg-danger p-1 text-white rounded">
+                            {{ $offer->deadline }}
+                        </h4>
                     </div>
                 </div>
-                <br><br>
                 <div class="offer-details">
                     <img src="{{ asset('/uploads/offer/' . $offer->image) }}" class="w-100 h-75"><br><br>
                     <p>

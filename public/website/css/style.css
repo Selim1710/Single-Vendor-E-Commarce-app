@@ -297,24 +297,15 @@
 }
 
 .offer-details {
+  text-align: center;
   width: 60%;
   height: 40%;
   margin-left: 20%;
 }
 
-.time {
-  margin-left: 40%;
-}
-
-.title {
-  margin-right: 3%;
-}
-
-.digit {
-  color: white;
-  background-color: #e84118;
-  padding: 10%;
-  border-radius: 5px;
+.offer-deadline{
+  display: flex;
+  justify-content: flex-end;
 }
 
 /*********************** deals ***********************/
@@ -563,7 +554,7 @@
 
 /* filter */
 .all-product .total_result {
-  border: 1px solid  #f1f2f6;
+  border: 1px solid #f1f2f6;
   color: red;
   font-weight: bold;
   text-transform: capitalize;
@@ -571,7 +562,7 @@
   padding: 1% 0%;
 }
 
-.all-product .shorting{
+.all-product .shorting {
   margin-top: 2%;
 }
 
@@ -658,16 +649,17 @@
 @media (max-width:768px) {
 
   /* filter result*/
-.all-product .total_result {
-  border: 1px solid red;
-  color: red;
-  font-weight: bold;
-  text-transform: capitalize;
-  margin: auto;
-  margin-top: 4%;
+  .all-product .total_result {
+    border: 1px solid red;
+    color: red;
+    font-weight: bold;
+    text-transform: capitalize;
+    margin: auto;
+    margin-top: 4%;
 
-}
-  .all-product .shorting{
+  }
+
+  .all-product .shorting {
     margin-top: 4%;
   }
 

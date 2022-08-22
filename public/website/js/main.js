@@ -8,3 +8,7 @@
         return true;
     }
 });
+
+////////////// offer //////////////
+var deadline = document.getElementById('productDeadline');
+console.log(deadline);
