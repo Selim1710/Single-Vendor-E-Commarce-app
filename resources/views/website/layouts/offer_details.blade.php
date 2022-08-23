@@ -15,13 +15,13 @@
                 <div class="offer-deadline">
                     <h4 class="text-uppercase mt-2">offers ends in:</h4>
                     <div class="ml-3 mr-2 mt-2">
-                        <h4 id="productDeadline" class="bg-danger p-1 text-white rounded">
+                        <h4 class="bg-danger p-1 text-white rounded">
                             {{ $offer->deadline }}
                         </h4>
                     </div>
                 </div>
                 <div class="offer-details">
-                    <img src="{{ asset('/uploads/offer/' . $offer->image) }}" class="w-100 h-75"><br><br>
+                    <img src="{{ asset('/uploads/offer/' . $offer->image) }}" class="w-100 h-auto"><br><br>
                     <p>
                         {{ $offer->details }}
                     </p>
@@ -34,3 +34,7 @@
         </div>
     </section>
 @endsection
+{{-- <script type="text">
+    var offer = {!! json_encode($offer->deadline) !!};
+    var deadline = document.getElementById('productDeadline');
+</script> --}}
