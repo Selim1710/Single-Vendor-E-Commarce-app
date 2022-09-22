@@ -15,7 +15,7 @@ class CreateProductsTable extends Migration
             $table->integer('regular_price');
             $table->string('product_image');
             $table->double('product_offer');
-            $table->string('product_description');
+            $table->text('product_description');
 
             // specifications
             $table->string('processor');
