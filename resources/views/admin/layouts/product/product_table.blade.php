@@ -59,7 +59,7 @@
                 <td>{{ $product->regular_price }}</td>
                 <td> <img src="{{ asset('/uploads/products/'.$product->product_image ) }}" style="width:80px;height:80px;" alt=""> </td>
                 <td>{{ $product->product_offer }} %</td>
-                <td>{{ $product->product_description }}</td>
+                <td><p style="height: 100px;width:250px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;">{{ $product->product_description }}</p></td>
                 <!-- specification -->
                 <td>{{ $product->processor }}</td>
                 <td>{{ $product->display }}</td>
